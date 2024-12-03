@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Builder</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    <table style="width: 100%; height: 100vh; border-collapse: collapse;">
+        <tr>
+            <!-- Sidebar -->
+            <td style="width: 25%; border-right: 1px solid #ccc; vertical-align: top; background-color: #f7f7f7; padding: 10px;">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="logo.png" alt="University of Calgary" style="width: 50%;"><br>
+                    <p style="font-weight: bold;">Start Something</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="text" placeholder="Search" style="width: 70%; padding: 5px;">
+                    <button style="width: 25%; padding: 5px; background-color: #d9534f; color: white; border: none;">Filter</button>
+                </div>
+                <div>
+                    <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; background-color: white;">
+                        <div>
+                            <span style="font-weight: bold;">SENG 401</span> - Software Architecture
+                            <button style="float: right; background-color: #d9534f; color: white; border: none; padding: 5px;">View</button>
+                        </div>
+                        <p style="font-size: 12px; color: #666;">Course Information</p>
+                    </div>
+                    <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; background-color: white;">
+                        <div>
+                            <span style="font-weight: bold;">SENG 435</span> - Software Testing
+                            <button style="float: right; background-color: #d9534f; color: white; border: none; padding: 5px;">View</button>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            
+            <!-- Main Schedule -->
+            <td style="width: 75%; vertical-align: top; padding: 10px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <button style="padding: 5px 10px; background-color: #d9534f; color: white; border: none;">&lt;</button>
+                    <h1 style="margin: 0;">Fall 2024</h1>
+                    <button style="padding: 5px 10px; background-color: #d9534f; color: white; border: none;">&gt;</button>
+                </div>
+                <div style="text-align: center; margin-bottom: 10px;">
+                    <span>September 10 - December 22</span> | <span>8:00 A.M. - 9:00 P.M.</span>
+                </div>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <th style="border: 1px solid #ccc; background-color: #d9534f; color: white; padding: 5px;">Monday</th>
+                        <th style="border: 1px solid #ccc; background-color: #d9534f; color: white; padding: 5px;">Tuesday</th>
+                        <th style="border: 1px solid #ccc; background-color: #d9534f; color: white; padding: 5px;">Wednesday</th>
+                        <th style="border: 1px solid #ccc; background-color: #d9534f; color: white; padding: 5px;">Thursday</th>
+                        <th style="border: 1px solid #ccc; background-color: #d9534f; color: white; padding: 5px;">Friday</th>
+                        <th style="border: 1px solid #ccc; background-color: #d9534f; color: white; padding: 5px;">Notes</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; height: 100px;"></td>
+                        <td style="border: 1px solid #ccc; height: 100px;">
+                            <div style="margin: 10px; padding: 5px; background-color: #cfe2ff; border-radius: 15px;">SENG 401 LEC 01</div>
+                        </td>
+                        <td style="border: 1px solid #ccc; height: 100px;"></td>
+                        <td style="border: 1px solid #ccc; height: 100px;">
+                            <div style="margin: 10px; padding: 5px; background-color: #cfe2ff; border-radius: 15px;">SENG 401 LEC 01</div>
+                        </td>
+                        <td style="border: 1px solid #ccc; height: 100px;"></td>
+                        <td style="border: 1px solid #ccc; height: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; height: 100px;"></td>
+                        <td style="border: 1px solid #ccc; height: 100px;"></td>
+                        <td style="border: 1px solid #ccc; height: 100px;"></td>
+                        <td style="border: 1px solid #ccc; height: 100px;">
+                            <div style="margin: 10px; padding: 5px; background-color: #cfe2ff; border-radius: 15px;">SENG 401 LAB B01</div>
+                        </td>
+                        <td style="border: 1px solid #ccc; height: 100px;"></td>
+                        <td style="border: 1px solid #ccc; height: 100px;"></td>
+                    </tr>
+                </table>
+                <div style="text-align: center; margin-top: 10px;">
+                    <button style="padding: 10px 20px; background-color: #d9534f; color: white; border: none;">Save Schedule As PDF</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
