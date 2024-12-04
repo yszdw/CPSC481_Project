@@ -13,12 +13,6 @@
     }
   </style>
   <style id="st_globalStyles">
-    /* MEDIA QUERIES */
-    .anima-desktop-only {
-      @media (max-width: 768px) {
-        display: none !important;
-      }
-    }
 
     /* SCROLLBAR */
 
@@ -93,80 +87,9 @@
     body[mode="code"] [data-id]:hover {
       transform: none !important;
     }
-
-    /* ANIMA BUTTONS */
-    .an-button {
-      position: relative;
-      height: 28px;
-      padding: 0 20px;
-      font-size: 14px;
-      border-radius: 4px;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      vertical-align: middle;
-      white-space: nowrap;
-      transition-property: all;
-      transition-duration: 100ms;
-      appearance: none;
-      cursor: pointer;
-      user-select: none;
-      transition: all 0.2s ease;
-      border-width: 0;
-    }
-
-    .an-button > div {
-      width: 100%;
-    }
-
-    .an-button.primary {
-      background: #ff6250;
-      color: #ffffff;
-    }
-
-    .an-button.primary:hover:not(:disabled) {
-      background: #e2412e;
-    }
-
-    .an-button.secondary {
-      background: transparent;
-      border: 1px solid #ff6250;
-      color: #ff6250;
-    }
-
-    .an-button.secondary:hover:not(:disabled) {
-      color: #ffffff;
-      background: #ff6250;
-    }
-
-    .an-button.rounded {
-      border-radius: 100px;
-    }
-
-    .an-button:disabled {
-      opacity: 0.5;
-    }
-
-    .an-button:disabled {
-      cursor: default;
-    }
-
-    .an-button:active,
-    .an-button:focus {
-      outline: none;
-    }
   </style>
   <meta charset="utf-8" />
   <meta content="width=1920, maximum-scale=1.0" name="viewport" />
-  <link
-    href="https://animaproject.s3.amazonaws.com/home/favicon.png"
-    rel="shortcut icon"
-    type="image/png"
-  />
-  <meta content="website" name="og:type" />
-  <meta content="photo" name="twitter:card" />
-  <script id="anima-load-script" src="load.js"></script>
-  <script id="anima-hotspots-script" src="hotspots.js"></script>
   <style id="hotspots-styles">
     .hotspot {
       position: absolute;
@@ -182,19 +105,10 @@
       display: none !important;
     }
   </style>
-  <script
-    id="s_turbo"
-    src="https://animaapp.s3.amazonaws.com/static/turbo.es2017-umd.js"
-  ></script>
-  <script id="anima-overrides-script" src="overrides.js"></script>
-  <script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script>
   <style>
     @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
     @import url("https://fonts.googleapis.com/css?family=Inter:500,400,400italic,300");
-
-    /* The following line is used to measure usage of this code. You can remove it if you want. */
-    @import url("https://px.animaapp.com/6750c8c370d25d94b4ca7fb3.6750c8c470d25d94b4ca7fb6.C8AQf20.hch.png");
 
     .screen textarea:focus,
     .screen input:focus {
@@ -2025,132 +1939,6 @@
   <style id="action-links-styles">
     @import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
 
-    #anima-interface {
-      transition: all 0.5s ease-in-out;
-    }
-
-    #anima-watermark {
-      transition: all 0.5s ease-in-out;
-      display: none;
-    }
-    #anima-watermark-link {
-      position: fixed;
-      bottom: 20px;
-      height: 30px;
-      border-radius: 1000px;
-      background: #3b3b3b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      user-select: none;
-      transition: width 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      text-decoration: none;
-      color: #fff;
-      padding: 8px 16px 8px 11px;
-      font-family: Mulish, sans-serif;
-      font-size: 12px;
-    }
-    #anima-watermark-link .text {
-      margin-left: 6px;
-    }
-
-    .omniview-anima-action-links .link {
-      height: 30px;
-      width: 30px;
-      border-radius: 1000px;
-      background: #3b3b3b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      user-select: none;
-      transition: width 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      text-decoration: none;
-      color: #fff;
-    }
-    .omniview-anima-action-links #comment-link .text,
-    .omniview-anima-action-links #code-link .text {
-      display: none;
-      font-size: 12px;
-      margin-right: 5px;
-    }
-    .omniview-anima-action-links #comment-link:hover,
-    .omniview-anima-action-links #code-link:hover {
-      width: 105px;
-    }
-    .omniview-anima-action-links #comment-link.pop-active,
-    .omniview-anima-action-links #code-link.pop-active {
-      width: 105px;
-      background: #ff6250;
-    }
-    .omniview-anima-action-links #comment-link.pop-active .text,
-    .omniview-anima-action-links #code-link.pop-active .text {
-      display: block;
-    }
-    .omniview-anima-action-links #comment-link:hover .text,
-    .omniview-anima-action-links #code-link:hover .text {
-      display: block;
-    }
-
-    .link.navigation {
-      position: fixed;
-      left: 50%;
-      transform: translateX(-50%);
-      width: auto;
-      height: 32px;
-      color: #fff;
-      font-size: 12px;
-      cursor: default;
-      padding: 0 5px;
-    }
-    .link.navigation .icon {
-      margin: 0 6px;
-      fill: none;
-      stroke: currentColor;
-      cursor: pointer;
-    }
-    .link.navigation .icon.disabled {
-      opacity: 0.5;
-      cursor: default;
-    }
-
-    .link.navigation .home-icon {
-      margin-left: 6px;
-      fill: currentColor;
-      stroke: currentColor;
-      cursor: pointer;
-    }
-
-    .omniview-anima-action-links .restart {
-      height: 30px;
-      padding: 0 12px;
-      background: #3b3b3b;
-      border-radius: 1000px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #f1f1f1;
-      font-size: 12px;
-    }
-
-    .omniview-anima-action-links {
-      display: flex;
-      align-items: center;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      font-family: Mulish, sans-serif;
-      transition: all 0.5s ease-in-out;
-      opacity: 1;
-    }
-
-    .omniview-anima-action-links > * + * {
-      margin-right: 0;
-      margin-left: 10px;
-    }
-
     .idle {
       opacity: 0;
       pointer-events: none;
@@ -2297,41 +2085,6 @@
       border-right-width: 0;
       border-left-color: #fff;
     }
-
-    #anima-comment-popover,
-    #anima-code-popover {
-      background: #333333;
-      color: #fff;
-    }
-
-    #anima-comment-popover.top > .arrow,
-    #anima-comment-popover.top > .arrow:after,
-    #anima-code-popover.top > .arrow:after,
-    #anima-code-popover.top > .arrow {
-      border-top-color: #333;
-    }
-
-    #anima-comment-popover .btn,
-    #anima-code-popover .btn {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 6px 20px;
-      background: #ff6250;
-      color: #fff;
-      border-radius: 100px;
-      width: max-content;
-      text-decoration: none;
-    }
-
-    @media screen and (max-width: 550px) {
-      #anima-watermark-link {
-        padding: 6px !important;
-      }
-      #anima-watermark-link .text {
-        display: none !important;
-      }
-    }
   </style>
 </head>
 <div
@@ -2371,7 +2124,7 @@
     alt="UC-horz-rgb 1"
     class="uc-horz-rgb-1-GORMlr"
     data-id="1142:1896"
-    src="https://cdn.animaapp.com/projects/6750c8c570d25d94b4ca7fb8/releases/6750c8dfe2458650d339fbe4/img/uc-horz-rgb-1-1.png"
+    src="./pngs/uc-horz-rgb-1-1.png"
   />
   <div
     class="filter-GORMlr valign-text-middle inter-normal-dove-gray-16px"
@@ -2821,7 +2574,7 @@
         alt="Group"
         class="group-qnk4Um group"
         data-id="1142:2002"
-        src="https://cdn.animaapp.com/projects/6750c8c570d25d94b4ca7fb8/releases/6750c8dfe2458650d339fbe4/img/group-6@2x.png"
+        src="./pngs/group-6@2x.png"
       />
       <img
         alt="ph:eye-closed"
@@ -2869,7 +2622,7 @@
         alt="Group"
         class="group-eNLuf2 group"
         data-id="1142:2019"
-        src="https://cdn.animaapp.com/projects/6750c8c570d25d94b4ca7fb8/releases/6750c8dfe2458650d339fbe4/img/group-6@2x.png"
+        src="./pngs/group-6@2x.png"
       />
       <img
         alt="streamline:eye-optic"
@@ -2934,13 +2687,13 @@
     alt="Group"
     class="group-GORMlr group"
     data-id="1142:2041"
-    src="https://cdn.animaapp.com/projects/6750c8c570d25d94b4ca7fb8/releases/6750c8dfe2458650d339fbe4/img/group-5@2x.png"
+    src="./pngs/group-5@2x.png"
   />
   <img
     alt="Group"
     class="group-odWrLE group"
     data-id="1142:2044"
-    src="https://cdn.animaapp.com/projects/6750c8c570d25d94b4ca7fb8/releases/6750c8dfe2458650d339fbe4/img/group-6@2x.png"
+    src="./pngs/group-6@2x.png"
   />
   <p
     class="allows-course-to-be-GORMlr allows-course-to-be inter-light-black-10px"
@@ -3010,7 +2763,7 @@
         alt="Group"
         class="group-xqFkk7 group"
         data-id="1142:1793"
-        src="https://cdn.animaapp.com/projects/6750c8c570d25d94b4ca7fb8/releases/6750c8dfe2458650d339fbe4/img/group-6@2x.png"
+        src="./pngs/group-6@2x.png"
       />
       <img
         alt="ph:eye-closed"
