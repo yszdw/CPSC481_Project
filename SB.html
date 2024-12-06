@@ -1,10 +1,205 @@
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=1920, maximum-scale=1.0" name="viewport" />
+<html>
+ <head>
+  <style type="text/css">
+   .turbo-progress-bar {
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: #0076ff;
+      z-index: 9999;
+      transition:
+        width 300ms ease-out,
+        opacity 150ms 150ms ease-in;
+      transform: translate3d(0, 0, 0);
+    }
+  </style>
+  <style id="st_globalStyles">
+   /* MEDIA QUERIES */
+    .anima-desktop-only {
+      @media (max-width: 768px) {
+        display: none !important;
+      }
+    }
+
+    /* SCROLLBAR */
+
+    [dark-scroll]::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    [dark-scroll]::-webkit-scrollbar-track-piece {
+      background-color: #2b2b2b;
+      border: 1px solid #1d1d1d;
+    }
+
+    [dark-scroll]::-webkit-scrollbar-thumb {
+      height: 10px;
+      background-color: #4d4d4d;
+    }
+
+    [dark-scroll]::-webkit-scrollbar-thumb:hover {
+      background-color: #5a5a5a;
+    }
+
+    /* LOAD PROGRESS */
+
+    .turbolinks-progress-bar {
+      height: 3px;
+      background-color: #ff6250;
+    }
+
+    /* GROUPING */
+
+    [data-id].ui-selecting {
+      box-shadow: inset 0 0 0 1px #4285f4 !important;
+    }
+
+    [data-id].ui-selected {
+      box-shadow: inset 0 0 0 1px #4285f4 !important;
+    }
+
+    /* CURSOR */
+
+    body[mode='comments'] * {
+      cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjkxNjQ4IDIzLjQxMDlDNS40OTE1MyAyMi45ODg3IDUuOTMxNzkgMjIuMzkzNSA2LjIzMjggMjEuNjQwN0M0Ljc5MDY5IDE5LjczODMgNCAxNy4zOTMzIDQgMTQuOTk3NUM0IDguOTM0MSA4LjkzMjgyIDQgMTUuMDAyMiA0QzIxLjA3MTcgNCAyNiA4LjkzOTE5IDI2IDE1LjAwMjVDMjYgMjEuMDY1OSAyMS4wNjcyIDI2IDE0Ljk5NzggMjZDMTIuOTg5NiAyNiAxMS4wMzUzIDI1LjQ1NTcgOS4zMjM2NyAyNC40MjMxQzguNDI5NjUgMjQuOTU3MiA3LjQxNDM0IDI1LjIyNjggNi4zMDAxOCAyNS4yMjY4QzUuOTU0MjYgMjUuMjI2OCA1LjU5OTM1IDI1LjIwMTQgNS4yNTM0MiAyNS4xNDU0QzQuOTAzIDI1LjA4OTUgNC42Mjg5NiAyNC44MDQ2IDQuNTUyNTggMjQuNDE4QzQuNDc2MjEgMjQuMDI2NCA0LjYxOTk3IDIzLjYyOTYgNC45MTY0OCAyMy40MTA5WiIgZmlsbD0iI0ZGNjI1MCIvPgo8L3N2Zz4K') 0 24,
+        auto !important;
+    }
+
+    body[mode='code'] [data-id]:not(.hidden) {
+      cursor: default;
+    }
+
+    /* default node state */
+
+    body[mode='code'] [data-id]:not(.hidden),
+    body[mode='comments'] [data-id]:not(.hidden) {
+      pointer-events: all;
+    }
+
+    /* is_image */
+
+    body[mode='code'] [data-id].is_image [data-id],
+    body[mode='comments'] [data-id].is_image [data-id] {
+      pointer-events: none !important;
+    }
+
+    /* without a data-id or ignored */
+
+    [data-id].ignore,
+    body[mode='code'] *:not([data-id]) {
+      pointer-events: none !important;
+    }
+
+    /* disable transforms for ignored elements */
+
+
+    body[mode='code'] [data-id]:hover {
+      transform: none !important;
+    }
+
+    /* ANIMA BUTTONS */
+    .an-button {
+      position: relative;
+      height: 28px;
+      padding: 0 20px;
+      font-size: 14px;
+      border-radius: 4px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      transition-property: all;
+      transition-duration: 100ms;
+      appearance: none;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      border-width: 0;
+    }
+
+    .an-button>div {
+      width: 100%;
+    }
+
+    .an-button.primary {
+      background: #ff6250;
+      color: #ffffff;
+    }
+
+    .an-button.primary:hover:not(:disabled) {
+      background: #e2412e;
+    }
+
+    .an-button.secondary {
+      background: transparent;
+      border: 1px solid #ff6250;
+      color: #ff6250;
+    }
+
+    .an-button.secondary:hover:not(:disabled) {
+      color: #ffffff;
+      background: #ff6250;
+    }
+
+    .an-button.rounded {
+      border-radius: 100px;
+    }
+
+    .an-button:disabled {
+      opacity: 0.5;
+    }
+
+    .an-button:disabled {
+      cursor: default;
+    }
+
+    .an-button:active,
+    .an-button:focus {
+      outline: none;
+    }
+  </style>
+  <meta charset="utf-8"/>
+  <meta content="width=1920, maximum-scale=1.0" name="viewport"/>
+  <link href="https://animaproject.s3.amazonaws.com/home/favicon.png" rel="shortcut icon" type="image/png"/>
+  <meta content="website" name="og:type"/>
+  <meta content="photo" name="twitter:card"/>
+  <script id="anima-load-script" src="load.js">
+  </script>
+  <script id="anima-hotspots-script" src="hotspots.js">
+  </script>
+  <style id="hotspots-styles">
+   .hotspot {
+      position: absolute;
+      border: 1px solid #2a9fd8;
+      background: rgba(0, 173, 255, 0.54);
+      opacity: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+  </style>
+  <style id="hide-styles">
+   .hotspot {
+      display: none !important;
+    }
+  </style>
+  <script id="s_turbo" src="https://animaapp.s3.amazonaws.com/static/turbo.es2017-umd.js">
+  </script>
+  <script id="anima-overrides-script" src="overrides.js">
+  </script>
+  <script src="https://animaapp.s3.amazonaws.com/js/timeline.js">
+  </script>
   <style>
-    @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+   @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
     @import url("https://fonts.googleapis.com/css?family=Inter:500,400,400italic,300");
+
+    /* The following line is used to measure usage of this code. You can remove it if you want. */
+    @import url("https://px.animaapp.com/6750c8c370d25d94b4ca7fb3.6750c8c470d25d94b4ca7fb6.C8AQf20.hch.png");
+
 
     .screen textarea:focus,
     .screen input:focus {
@@ -19,12 +214,188 @@
     .screen div {
       -webkit-text-size-adjust: none;
     }
+
+    .component-wrapper a {
+      display: contents;
+      pointer-events: auto;
+      text-decoration: none;
+    }
+
+    .component-wrapper * {
+      -webkit-font-smoothing: antialiased;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    .component-wrapper a *,
+    .component-wrapper input,
+    .component-wrapper video,
+    .component-wrapper iframe {
+      pointer-events: auto;
+    }
+
+    .component-wrapper.not-ready,
+    .component-wrapper.not-ready * {
+      visibility: hidden !important;
+    }
+
+    .screen a {
+      display: contents;
+      text-decoration: none;
+    }
+
+    .full-width-a {
+      width: 100%;
+    }
+
+    .full-height-a {
+      height: 100%;
+    }
+
+    .container-center-vertical {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .container-center-vertical>* {
+      flex-shrink: 0;
+      pointer-events: auto;
+    }
+
+    .container-center-horizontal {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      pointer-events: none;
+      width: 100%;
+    }
+
+    .container-center-horizontal>* {
+      flex-shrink: 0;
+      pointer-events: auto;
+    }
+
+    .auto-animated div {
+      --z-index: -1;
+      opacity: 0;
+      position: absolute;
+    }
+
+    .auto-animated input {
+      --z-index: -1;
+      opacity: 0;
+      position: absolute;
+    }
+
+    .auto-animated .container-center-vertical,
+    .auto-animated .container-center-horizontal {
+      opacity: 1;
+    }
+
+    .overlay-base {
+      display: none;
+      height: 100%;
+      opacity: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .overlay-base.animate-appear {
+      align-items: center;
+      animation: reveal 0.3s ease-in-out 1 normal forwards;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+    }
+
+    .overlay-base.animate-disappear {
+      animation: reveal 0.3s ease-in-out 1 reverse forwards;
+      display: block;
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    .overlay-base.animate-disappear * {
+      pointer-events: none;
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .animate-nodelay {
+      animation-delay: 0s;
+    }
+
+    .align-self-flex-start {
+      align-self: flex-start;
+    }
+
+    .align-self-flex-end {
+      align-self: flex-end;
+    }
+
+    .align-self-flex-center {
+      align-self: flex-center;
+    }
+
+    .valign-text-middle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .valign-text-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .listeners-active,
+    .listeners-active * {
+      pointer-events: auto;
+    }
+
+    .hidden,
+    .hidden * {
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    .smart-layers-pointers,
+    .smart-layers-pointers * {
+      pointer-events: auto;
+      visibility: visible;
+    }
+
+    .listeners-active-click,
+    .listeners-active-click * {
+      cursor: pointer;
+    }
+
     * {
       box-sizing: border-box;
     }
+
     :root {
       --alto: #d9d9d9;
       --black: #000000;
+      --chicago: #645b5b;
       --concrete: #f2f2f2;
       --dove-gray: #6d6e71;
       --feijoa: #a9dd91;
@@ -33,20 +404,21 @@
       --flax-2: #eed78580;
       --white: #ffffff;
 
-      --font-size-l: 12px;
-      --font-size-m: 10px;
-      --font-size-xl: 13px;
-      --font-size-xxl: 15px;
-      --font-size-xxxl: 16px;
-      --font-size-xxxxl: 20px;
-      --font-size-xxxxxl: 24px;
+      --font-size-l: 24px;
+      --font-size-m: 20px;
+      --font-size-s: 16px;
+      --font-size-xs: 15px;
+      --font-size-xxs: 13px;
+      --font-size-xxxs: 12px;
+      --font-size-xxxxs: 10px;
 
       --font-family-inter: "Inter", Helvetica;
     }
+
     .inter-normal-black-20px {
       color: var(--black);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-xxxxl);
+      font-size: var(--font-size-m);
       font-style: normal;
       font-weight: 400;
     }
@@ -54,7 +426,7 @@
     .inter-medium-black-16px {
       color: var(--black);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-xxxl);
+      font-size: var(--font-size-s);
       font-style: normal;
       font-weight: 500;
     }
@@ -62,7 +434,7 @@
     .inter-normal-concrete-20px {
       color: var(--concrete);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-xxxxl);
+      font-size: var(--font-size-m);
       font-style: normal;
       font-weight: 400;
     }
@@ -70,7 +442,7 @@
     .inter-medium-black-13px {
       color: var(--black);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-xl);
+      font-size: var(--font-size-xxs);
       font-style: normal;
       font-weight: 500;
     }
@@ -78,7 +450,7 @@
     .inter-normal-dove-gray-16px {
       color: var(--dove-gray);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-xxxl);
+      font-size: var(--font-size-s);
       font-style: italic;
       font-weight: 400;
     }
@@ -86,7 +458,7 @@
     .inter-medium-black-15px {
       color: var(--black);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-xxl);
+      font-size: var(--font-size-xs);
       font-style: normal;
       font-weight: 500;
     }
@@ -94,7 +466,7 @@
     .inter-light-black-12px {
       color: var(--black);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-l);
+      font-size: var(--font-size-xxxs);
       font-style: normal;
       font-weight: 300;
     }
@@ -102,7 +474,7 @@
     .inter-light-black-10px {
       color: var(--black);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-m);
+      font-size: var(--font-size-xxxxs);
       font-style: normal;
       font-weight: 300;
     }
@@ -110,10 +482,13 @@
     .inter-light-black-13px {
       color: var(--black);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-xl);
+      font-size: var(--font-size-xxs);
       font-style: normal;
       font-weight: 300;
     }
+
+    :root {}
+
 
     /* screen - schedule-builder-adding-courses */
 
@@ -126,6 +501,15 @@
       overflow-x: hidden;
       position: relative;
       width: 1920px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-7-GORMlr {
+      background-color: transparent;
+      height: 218px;
+      left: 20px;
+      position: absolute;
+      top: 844px;
+      width: 442px;
     }
 
     .schedule-builder-adding-courses .back-icon-GORMlr {
@@ -176,14 +560,14 @@
 
     .schedule-builder-adding-courses .save-schedule-as-pdf-GORMlr {
       background-color: transparent;
-      color: #645b5b;
+      color: var(--chicago);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-xxxxxl);
+      font-size: var(--font-size-l);
       font-style: normal;
       font-weight: 400;
       height: auto;
       left: 1017px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -209,7 +593,7 @@
       font-weight: 500;
       height: auto;
       left: 1041px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: center;
@@ -221,12 +605,12 @@
       background-color: transparent;
       color: var(--black);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-xxxxxl);
+      font-size: var(--font-size-l);
       font-style: normal;
       font-weight: 300;
       height: 74px;
       left: 372px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -248,7 +632,7 @@
       background-color: transparent;
       height: 20px;
       left: 418px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -260,7 +644,7 @@
       background-color: transparent;
       height: 20px;
       left: 688px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -284,7 +668,7 @@
       background-color: transparent;
       height: 20px;
       left: 921px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -320,7 +704,7 @@
       background-color: transparent;
       height: 32px;
       left: 1242px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -344,7 +728,7 @@
       background-color: transparent;
       height: 32px;
       left: 1422px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -426,7 +810,7 @@
       background-color: transparent;
       height: 24px;
       left: 592px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -439,7 +823,7 @@
       background-color: transparent;
       height: 24px;
       left: 692px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -452,7 +836,7 @@
       background-color: transparent;
       height: 24px;
       left: 1017px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -465,7 +849,7 @@
       background-color: transparent;
       height: 24px;
       left: 1190px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -478,7 +862,7 @@
       background-color: transparent;
       height: 24px;
       left: 1375px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -491,7 +875,7 @@
       background-color: transparent;
       height: 24px;
       left: 1548px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -504,7 +888,7 @@
       background-color: transparent;
       height: 24px;
       left: 862px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -517,7 +901,7 @@
       background-color: transparent;
       height: 24px;
       left: 592px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -530,7 +914,7 @@
       background-color: transparent;
       height: 24px;
       left: 585px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -543,7 +927,7 @@
       background-color: transparent;
       height: 24px;
       left: 588px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -556,7 +940,7 @@
       background-color: transparent;
       height: 24px;
       left: 585px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -569,7 +953,7 @@
       background-color: transparent;
       height: 24px;
       left: 592px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -582,7 +966,7 @@
       background-color: transparent;
       height: 24px;
       left: 592px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -595,7 +979,7 @@
       background-color: transparent;
       height: 24px;
       left: 592px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -608,7 +992,7 @@
       background-color: transparent;
       height: 24px;
       left: 593px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -621,7 +1005,7 @@
       background-color: transparent;
       height: 24px;
       left: 592px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -634,7 +1018,7 @@
       background-color: transparent;
       height: 24px;
       left: 593px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -647,7 +1031,7 @@
       background-color: transparent;
       height: 24px;
       left: 593px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -1068,18 +1452,107 @@
       width: 15px;
     }
 
+    .schedule-builder-adding-courses .group-33-GORMlr {
+      background-color: transparent;
+      height: 90px;
+      left: 25px;
+      position: absolute;
+      top: 338px;
+      width: 476px;
+    }
+
+    .schedule-builder-adding-courses .group-26-0qPSrv {
+      background-color: transparent;
+      height: 90px;
+      left: 0px;
+      position: relative;
+      top: 0px;
+      width: 486px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-181-xqFkk7 {
+      background-color: #f0f0f0;
+      border: 1px solid;
+      border-color: var(--alto);
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px #00000040;
+      height: 90px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 476px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-182-xqFkk7 {
+      background-color: #ddeb88;
+      box-shadow: 2px 2px 4px #00000040;
+      height: 63px;
+      left: 1px;
+      position: absolute;
+      top: 12px;
+      width: 80px;
+    }
+
+    .schedule-builder-adding-courses .software-testing-reliability-and-quality-xqFkk7 {
+      background-color: transparent;
+      height: 26px;
+      left: 91px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 24px;
+      width: 259px;
+    }
+
+    .schedule-builder-adding-courses .university-of-calgary-xqFkk7 {
+      height: 16px;
+      top: 51px;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .try-all-classes-3-xqFkk7 {
+      background-color: transparent;
+      height: 15px;
+      left: 91px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 70px;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .seng-xqFkk7 {
+      height: 16px;
+      top: 26px;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x438-xqFkk7 {
+      background-color: transparent;
+      height: 16px;
+      left: 28px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: center;
+      top: 48px;
+      width: auto;
+    }
+
     .schedule-builder-adding-courses .group-34-GORMlr {
       background-color: transparent;
-      height: 89px;
-      left: 23px;
+      height: 555px;
+      left: 30px;
       position: absolute;
-      top: 342px;
+      top: 440px;
       width: 473px;
     }
 
     .schedule-builder-adding-courses .group-27-CD4zmR {
       background-color: transparent;
-      height: 89px;
+      height: 555px;
       left: 0px;
       position: relative;
       top: 0px;
@@ -1092,77 +1565,107 @@
       border-color: var(--alto);
       border-radius: 5px;
       box-shadow: 2px 2px 4px #00000040;
-      height: 89px;
+      height: 70px;
       left: 0px;
       position: absolute;
-      top: 0px;
+      top: 2px;
       width: 473px;
     }
 
     .schedule-builder-adding-courses .rectangle-95-qnk4Um {
       background-color: var(--flax);
       box-shadow: 2px 2px 4px #00000040;
-      height: 63px;
+      height: 50px;
       left: 1px;
       position: absolute;
-      top: 12px;
+      top: 11px;
       width: 80px;
     }
 
     .schedule-builder-adding-courses .software-requirements-engineering-qnk4Um {
       background-color: transparent;
-      height: 26px;
+      height: 20px;
       left: 91px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
-      top: 18px;
+      top: 16px;
       width: 302px;
     }
 
     .schedule-builder-adding-courses .university-of-calgary-qnk4Um {
-      top: 52px;
+      height: 13px;
+      top: 43px;
+      white-space: nowrap;
+      width: 127px;
     }
 
     .schedule-builder-adding-courses .try-all-classes-1-qnk4Um {
       background-color: transparent;
-      height: 15px;
+      height: 12px;
       left: 91px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
-      top: 69px;
-      width: auto;
+      top: 56px;
+      white-space: nowrap;
+      width: 96px;
     }
 
     .schedule-builder-adding-courses .seng-qnk4Um {
-      top: 27px;
+      height: 13px;
+      top: 23px;
+      white-space: nowrap;
+      width: 36px;
     }
 
     .schedule-builder-adding-courses .x471-qnk4Um {
       background-color: transparent;
-      height: 16px;
+      height: 13px;
       left: 30px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: center;
-      top: 49px;
-      width: auto;
+      top: 40px;
+      white-space: nowrap;
+      width: 23px;
     }
 
-    .schedule-builder-adding-courses .group-qnk4Um {
+    .schedule-builder-adding-courses .call_to_action_24dp_-qnk4Um {
       height: 24px;
-      left: 443px;
-      top: 9px;
-      width: 24px;
+      left: 445px;
+      top: 0px;
     }
 
-    .schedule-builder-adding-courses .pheye-closed-qnk4Um {
-      left: 421px;
-      top: 12px;
+    .schedule-builder-adding-courses .call_to_action_24dp_-fwut4q {
+      height: 24px;
+      left: 30px;
+      top: 531px;
+    }
+
+    .schedule-builder-adding-courses .image-qnk4Um {
+      left: 26px;
+      top: 447px;
+    }
+
+    .schedule-builder-adding-courses .image-3-qnk4Um {
+      left: 28px;
+      top: 490px;
+    }
+
+    .schedule-builder-adding-courses .call_to_action_24dp_-GORMlr {
+      height: 30px;
+      left: 475px;
+      top: 338px;
+    }
+
+    .schedule-builder-adding-courses .call_to_action_24dp_-odWrLE {
+      height: 30px;
+      left: 472px;
+      top: 245px;
     }
 
     .schedule-builder-adding-courses .group-32-GORMlr {
@@ -1210,12 +1713,12 @@
       background-color: transparent;
       color: var(--black);
       font-family: var(--font-family-inter);
-      font-size: var(--font-size-xxxxl);
+      font-size: var(--font-size-m);
       font-style: normal;
       font-weight: 500;
       height: 24px;
       left: 91px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -1225,14 +1728,16 @@
     }
 
     .schedule-builder-adding-courses .university-of-calgary-eNLuf2 {
+      height: 16px;
       top: 33px;
+      width: auto;
     }
 
     .schedule-builder-adding-courses .try-all-classes-4-eNLuf2 {
       background-color: transparent;
       height: 15px;
       left: 91px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -1240,32 +1745,28 @@
       width: auto;
     }
 
+    .schedule-builder-adding-courses .call_to_action_24dp_-eNLuf2 {
+      height: 30px;
+      left: 449px;
+      top: 2px;
+    }
+
     .schedule-builder-adding-courses .seng-eNLuf2 {
+      height: 16px;
       top: 21px;
+      width: auto;
     }
 
     .schedule-builder-adding-courses .x401-eNLuf2 {
       background-color: transparent;
       height: 16px;
       left: 29px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: center;
       top: 43px;
       width: auto;
-    }
-
-    .schedule-builder-adding-courses .group-eNLuf2 {
-      height: 24px;
-      left: 444px;
-      top: 5px;
-      width: 24px;
-    }
-
-    .schedule-builder-adding-courses .streamlineeye-optic-eNLuf2 {
-      left: 419px;
-      top: 5px;
     }
 
     .schedule-builder-adding-courses .calendar-GORMlr {
@@ -1305,22 +1806,13 @@
       background-color: transparent;
       height: 19px;
       left: 1041px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
       top: 750px;
       white-space: nowrap;
       width: auto;
-    }
-
-    .schedule-builder-adding-courses .rectangle-7-GORMlr {
-      background-color: transparent;
-      height: 218px;
-      left: 20px;
-      position: absolute;
-      top: 844px;
-      width: 442px;
     }
 
     .schedule-builder-adding-courses .rectangle-241-GORMlr {
@@ -1339,7 +1831,7 @@
       background-color: transparent;
       height: 18px;
       left: 171px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: center;
@@ -1347,27 +1839,13 @@
       width: 155px;
     }
 
-    .schedule-builder-adding-courses .pheye-closed-GORMlr {
-      left: 70px;
-      top: 923px;
-    }
-
     .schedule-builder-adding-courses .streamlineeye-optic-GORMlr {
-      left: 52px;
-      top: 899px;
-    }
-
-    .schedule-builder-adding-courses .group-GORMlr {
-      height: 17px;
-      left: 70px;
-      top: 890px;
-      width: 23px;
-    }
-
-    .schedule-builder-adding-courses .group-odWrLE {
+      background-color: transparent;
       height: 24px;
-      left: 69px;
-      top: 963px;
+      left: 52px;
+      mix-blend-mode: color-burn;
+      position: absolute;
+      top: 899px;
       width: 24px;
     }
 
@@ -1385,7 +1863,7 @@
       background-color: transparent;
       height: auto;
       left: 110px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -1395,18 +1873,18 @@
 
     .schedule-builder-adding-courses .light_mode-GORMlr {
       background-color: transparent;
-      height: 20px;
-      left: 68px;
+      height: 24px;
+      left: 56px;
       position: absolute;
-      top: 1005px;
-      width: 25px;
+      top: 1009px;
+      width: 24px;
     }
 
     .schedule-builder-adding-courses .switches-colour-sche-GORMlr {
       background-color: transparent;
       height: auto;
       left: 110px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -1414,109 +1892,86 @@
       width: 317px;
     }
 
-    .schedule-builder-adding-courses .group-33-GORMlr {
-      background-color: transparent;
-      height: 91px;
-      left: 25px;
-      position: absolute;
-      top: 451px;
-      width: 476px;
-    }
-
-    .schedule-builder-adding-courses .group-26-0qPSrv {
-      background-color: transparent;
-      height: 91px;
-      left: 0px;
-      position: relative;
-      top: 0px;
-      width: 486px;
-    }
-
-    .schedule-builder-adding-courses .rectangle-181-xqFkk7 {
-      background-color: #f0f0f0;
+    .schedule-builder-adding-courses .rectangle-273-GORMlr {
+      background-color: var(--white);
       border: 1px solid;
-      border-color: var(--alto);
-      border-radius: 5px;
-      box-shadow: 2px 2px 4px #00000040;
-      height: 90px;
-      left: 0px;
+      border-color: var(--black);
+      border-radius: 4px;
+      box-shadow: 3px 3px 4px #00000040;
+      height: 61px;
+      left: 705px;
       position: absolute;
-      top: 1px;
-      width: 476px;
+      top: 999px;
+      width: 279px;
     }
 
-    .schedule-builder-adding-courses .rectangle-182-xqFkk7 {
-      background-color: #ddeb88;
-      box-shadow: 2px 2px 4px #00000040;
-      height: 63px;
-      left: 1px;
+    .schedule-builder-adding-courses .rectangle-274-GORMlr {
+      background-color: var(--white);
+      border: 1px solid;
+      border-color: var(--black);
+      border-radius: 4px;
+      box-shadow: 3px 3px 4px #00000040;
+      height: 61px;
+      left: 1311px;
       position: absolute;
-      top: 13px;
-      width: 80px;
+      top: 999px;
+      width: 279px;
     }
 
-    .schedule-builder-adding-courses
-      .software-testing-reliability-and-quality-xqFkk7 {
+    .schedule-builder-adding-courses .save-schedule-to-favourites-GORMlr {
       background-color: transparent;
-      height: 26px;
-      left: 91px;
-      letter-spacing: 0px;
+      color: var(--chicago);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-m);
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 710px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
-      top: 25px;
-      width: 259px;
+      top: 1015px;
+      width: 279px;
     }
 
-    .schedule-builder-adding-courses .university-of-calgary-xqFkk7 {
-      top: 52px;
+    .schedule-builder-adding-courses .image-GORMlr {
+      left: 438px;
+      top: 443px;
     }
 
-    .schedule-builder-adding-courses .try-all-classes-3-xqFkk7 {
+    .schedule-builder-adding-courses .image-odWrLE {
+      left: 437px;
+      top: 251px;
+    }
+
+    .schedule-builder-adding-courses .image-3-GORMlr {
+      left: 438px;
+      top: 345px;
+    }
+
+    .schedule-builder-adding-courses .view-favourites-GORMlr {
       background-color: transparent;
-      height: 15px;
-      left: 91px;
-      letter-spacing: 0px;
+      color: var(--chicago);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-l);
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 1354px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
-      top: 71px;
-      width: auto;
-    }
-
-    .schedule-builder-adding-courses .seng-xqFkk7 {
-      top: 27px;
-    }
-
-    .schedule-builder-adding-courses .x438-xqFkk7 {
-      background-color: transparent;
-      height: 16px;
-      left: 28px;
-      letter-spacing: 0px;
-      line-height: normal;
-      position: absolute;
-      text-align: center;
-      top: 49px;
-      width: auto;
-    }
-
-    .schedule-builder-adding-courses .group-xqFkk7 {
-      height: 24px;
-      left: 445px;
-      top: 5px;
-      width: 24px;
-    }
-
-    .schedule-builder-adding-courses .pheye-closed-xqFkk7 {
-      left: 416px;
-      top: 0px;
+      top: 1015px;
+      width: 271px;
     }
 
     .schedule-builder-adding-courses .allows-course-to-be {
       background-color: transparent;
       height: auto;
       left: 110px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -1530,15 +1985,32 @@
       width: 45px;
     }
 
-    .schedule-builder-adding-courses .group {
+    .schedule-builder-adding-courses .call_to_action_24dp_ {
       background-color: transparent;
       position: absolute;
+      width: 24px;
+    }
+
+    .schedule-builder-adding-courses .image {
+      background-color: transparent;
+      height: 27px;
+      object-fit: cover;
+      position: absolute;
+      width: 27px;
+    }
+
+    .schedule-builder-adding-courses .image-3 {
+      background-color: transparent;
+      height: 23px;
+      object-fit: cover;
+      position: absolute;
+      width: 27px;
     }
 
     .schedule-builder-adding-courses .lec-01 {
       background-color: transparent;
       height: 18px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -1550,7 +2022,7 @@
     .schedule-builder-adding-courses .lec-02 {
       background-color: transparent;
       height: 18px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -1563,13 +2035,6 @@
       object-fit: cover;
       position: absolute;
       width: 1px;
-    }
-
-    .schedule-builder-adding-courses .pheye-closed {
-      background-color: transparent;
-      height: 24px;
-      position: absolute;
-      width: 24px;
     }
 
     .schedule-builder-adding-courses .rectangle-2 {
@@ -1596,19 +2061,17 @@
 
     .schedule-builder-adding-courses .seng {
       background-color: transparent;
-      height: 16px;
       left: 23px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: center;
-      width: auto;
     }
 
     .schedule-builder-adding-courses .seng-401 {
       background-color: transparent;
       height: 19px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -1619,7 +2082,7 @@
     .schedule-builder-adding-courses .seng-471 {
       background-color: transparent;
       height: 19px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
@@ -1627,720 +2090,678 @@
       width: auto;
     }
 
-    .schedule-builder-adding-courses .streamlineeye-optic {
-      background-color: transparent;
-      height: 24px;
-      mix-blend-mode: color-burn;
-      position: absolute;
-      width: 24px;
-    }
-
     .schedule-builder-adding-courses .university-of-calgary {
       background-color: transparent;
-      height: 16px;
       left: 91px;
-      letter-spacing: 0px;
+      letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
-      width: auto;
     }
   </style>
-  <script
-    crossorigin="anonymous"
-    id="anime-js-script"
-    integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8="
-    src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"
-  ></script>
-  <script
-    id="imgloaded-js-script"
-    src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
-  ></script>
-</head>
-<div
-  class="schedule-builder-adding-courses screen"
-  data-id="1142:1885"
-  style="margin-top: 70px"
->
-  <img
-    alt="back-icon"
-    class="back-icon-GORMlr"
-    data-id="1142:1886"
-    src="./svgs/back-icon-1.svg"
-  />
-  <div class="search-bar-GORMlr search-bar" data-id="1142:1888">
-    <div class="rectangle-2-fUgBRQ rectangle-2" data-id="I1142:1888;4:6"></div>
-  </div>
-  <div class="search-bar-odWrLE search-bar" data-id="1142:1889">
-    <div class="rectangle-2-4xafj8 rectangle-2" data-id="I1142:1889;4:6"></div>
-  </div>
-  <div class="rectangle-114-GORMlr" data-id="1142:1890"></div>
-  <div class="save-schedule-as-pdf-GORMlr" data-id="1142:1891">
-    Save Schedule As PDF
-  </div>
-  <img
-    alt="next-icon"
-    class="next-icon-GORMlr"
-    data-id="1142:1892"
-    src="./svgs/next-icon-1.svg"
-  />
-  <h1 class="title-GORMlr" data-id="1142:1894">Fall 2024</h1>
-  <div class="start-something-GORMlr valign-text-middle" data-id="1142:1895">
-    Start
-    <br />
-    Something
-  </div>
-  <img
-    alt="UC-horz-rgb 1"
-    class="uc-horz-rgb-1-GORMlr"
-    data-id="1142:1896"
-    src="./pngs/uc-horz-rgb-1-1.png"
-  />
-  <div
-    class="filter-GORMlr valign-text-middle inter-normal-dove-gray-16px"
-    data-id="1142:1897"
-  >
-    Filter
-  </div>
-  <div
-    class="febuary-01-GORMlr valign-text-middle inter-normal-dove-gray-16px"
-    data-id="1142:1898"
-  >
-    Febuary-01
-  </div>
-  <div class="search-bar-8Yf26g search-bar" data-id="1142:1899">
-    <div class="rectangle-2-5yxVxd rectangle-2" data-id="I1142:1899;4:6"></div>
-  </div>
-  <div
-    class="febuary-07-GORMlr valign-text-middle inter-normal-dove-gray-16px"
-    data-id="1142:1900"
-  >
-    Febuary-07
-  </div>
-  <div class="search-bar-Mn7a88 search-bar" data-id="1142:1901">
-    <div class="rectangle-2-7e29c1 rectangle-2" data-id="I1142:1901;4:6"></div>
-  </div>
-  <div class="search-bar-ASeC80 search-bar" data-id="1142:1902">
-    <div class="rectangle-2-ExKV2F rectangle-2" data-id="I1142:1902;4:6"></div>
-  </div>
-  <div
-    class="x800-am-GORMlr valign-text-middle inter-normal-dove-gray-16px"
-    data-id="1142:1903"
-  >
-    8:00 A.M.
-  </div>
-  <div class="search-bar-azxLTg search-bar" data-id="1142:1904">
-    <div class="rectangle-2-PuxRQ5 rectangle-2" data-id="I1142:1904;4:6"></div>
-  </div>
-  <div
-    class="x700-pm-GORMlr valign-text-middle inter-normal-dove-gray-16px"
-    data-id="1142:1905"
-  >
-    7:00 P.M.
-  </div>
-  <div class="sce-bui-bottom-GORMlr sce-bui-bottom" data-id="1142:1906"></div>
-  <div class="sce-bui-bottom-odWrLE sce-bui-bottom" data-id="1142:1907"></div>
-  <div class="sce-bui-top-GORMlr" data-id="1142:1908"></div>
-  <img
-    alt="Line 52"
-    class="line-52-GORMlr"
-    data-id="1142:1909"
-    src="./svgs/line-52-1.svg"
-  />
-  <img
-    alt="Line 53"
-    class="line-53-GORMlr"
-    data-id="1142:1910"
-    src="./svgs/line-52-1.svg"
-  />
-  <img
-    alt="Line 54"
-    class="line-54-GORMlr"
-    data-id="1142:1911"
-    src="./svgs/line-52-1.svg"
-  />
-  <img
-    alt="Line 55"
-    class="line-55-GORMlr"
-    data-id="1142:1912"
-    src="./svgs/line-52-1.svg"
-  />
-  <img
-    alt="Line 80"
-    class="line-80-GORMlr line-80"
-    data-id="1142:1913"
-    src="./svgs/line-52-1.svg"
-  />
-  <div
-    class="x8-am-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1914"
-  >
-    8 AM
-  </div>
-  <div
-    class="monday-GORMlr valign-text-middle inter-normal-concrete-20px"
-    data-id="1142:1915"
-  >
-    Monday
-  </div>
-  <div
-    class="wednesday-GORMlr valign-text-middle inter-normal-concrete-20px"
-    data-id="1142:1916"
-  >
-    Wednesday
-  </div>
-  <div
-    class="thursday-GORMlr valign-text-middle inter-normal-concrete-20px"
-    data-id="1142:1917"
-  >
-    Thursday
-  </div>
-  <div
-    class="friday-GORMlr valign-text-middle inter-normal-concrete-20px"
-    data-id="1142:1918"
-  >
-    Friday
-  </div>
-  <div
-    class="notes-GORMlr valign-text-middle inter-normal-concrete-20px"
-    data-id="1142:1919"
-  >
-    Notes
-  </div>
-  <div
-    class="tuesday-GORMlr valign-text-middle inter-normal-concrete-20px"
-    data-id="1142:1920"
-  >
-    Tuesday
-  </div>
-  <div
-    class="x9-am-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1921"
-  >
-    9 AM
-  </div>
-  <div
-    class="x10-am-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1922"
-  >
-    10 AM
-  </div>
-  <div
-    class="x11-am-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1923"
-  >
-    11 AM
-  </div>
-  <div
-    class="x12-pm-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1924"
-  >
-    12 PM
-  </div>
-  <div
-    class="x1-pm-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1925"
-  >
-    1 PM
-  </div>
-  <div
-    class="x2-pm-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1926"
-  >
-    2 PM
-  </div>
-  <div
-    class="x3-pm-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1927"
-  >
-    3 PM
-  </div>
-  <div
-    class="x4-pm-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1928"
-  >
-    4 PM
-  </div>
-  <div
-    class="x5-pm-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1929"
-  >
-    5 PM
-  </div>
-  <div
-    class="x6-pm-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1930"
-  >
-    6 PM
-  </div>
-  <div
-    class="x7-pm-GORMlr valign-text-middle inter-normal-black-20px"
-    data-id="1142:1931"
-  >
-    7 PM
-  </div>
-  <img
-    alt="Line 56"
-    class="line-56-GORMlr"
-    data-id="1142:1932"
-    src="./svgs/line-56-1.svg"
-  />
-  <img
-    alt="Line 67"
-    class="line-67-GORMlr"
-    data-id="1142:1933"
-    src="./svgs/line-67-1.svg"
-  />
-  <img
-    alt="Line 69"
-    class="line-69-GORMlr"
-    data-id="1142:1934"
-    src="./svgs/line-69-1.svg"
-  />
-  <img
-    alt="Line 70"
-    class="line-70-GORMlr"
-    data-id="1142:1935"
-    src="./svgs/line-70-1.svg"
-  />
-  <img
-    alt="Line 72"
-    class="line-72-GORMlr"
-    data-id="1142:1936"
-    src="./svgs/line-70-1.svg"
-  />
-  <img
-    alt="Line 74"
-    class="line-74-GORMlr"
-    data-id="1142:1937"
-    src="./svgs/line-70-1.svg"
-  />
-  <img
-    alt="Line 75"
-    class="line-75-GORMlr"
-    data-id="1142:1938"
-    src="./svgs/line-70-1.svg"
-  />
-  <img
-    alt="Line 76"
-    class="line-76-GORMlr"
-    data-id="1142:1939"
-    src="./svgs/line-70-1.svg"
-  />
-  <img
-    alt="Line 77"
-    class="line-77-GORMlr"
-    data-id="1142:1940"
-    src="./svgs/line-70-1.svg"
-  />
-  <img
-    alt="Line 78"
-    class="line-78-GORMlr"
-    data-id="1142:1941"
-    src="./svgs/line-70-1.svg"
-  />
-  <img
-    alt="Line 79"
-    class="line-79-GORMlr"
-    data-id="1142:1942"
-    src="./svgs/line-70-1.svg"
-  />
-  <img
-    alt="Line 71"
-    class="line-71-GORMlr"
-    data-id="1142:1943"
-    src="./svgs/line-70-1.svg"
-  />
-  <img
-    alt="Line 64"
-    class="line-64-GORMlr"
-    data-id="1142:1944"
-    src="./svgs/line-64-1.svg"
-  />
-  <img
-    alt="Line 65"
-    class="line-65-GORMlr"
-    data-id="1142:1945"
-    src="./svgs/line-65-1.svg"
-  />
-  <img
-    alt="Line 66"
-    class="line-66-GORMlr"
-    data-id="1142:1946"
-    src="./svgs/line-66-1.svg"
-  />
-  <img
-    alt="Line 63"
-    class="line-63-GORMlr"
-    data-id="1142:1947"
-    src="./svgs/line-63-1.svg"
-  />
-  <img
-    alt="Line 61"
-    class="line-61-GORMlr"
-    data-id="1142:1948"
-    src="./svgs/line-61-1.svg"
-  />
-  <img
-    alt="Line 62"
-    class="line-62-GORMlr"
-    data-id="1142:1949"
-    src="./svgs/line-62-1.svg"
-  />
-  <img
-    alt="Line 59"
-    class="line-59-GORMlr"
-    data-id="1142:1950"
-    src="./svgs/line-59-1.svg"
-  />
-  <img
-    alt="Line 60"
-    class="line-60-GORMlr"
-    data-id="1142:1951"
-    src="./svgs/line-60-1.svg"
-  />
-  <img
-    alt="Line 58"
-    class="line-58-GORMlr"
-    data-id="1142:1952"
-    src="./svgs/line-58-1.svg"
-  />
-  <img
-    alt="Line 57"
-    class="line-57-GORMlr"
-    data-id="1142:1953"
-    src="./svgs/line-57-1.svg"
-  />
-  <div class="rectangle-202-GORMlr" data-id="1142:1954"></div>
-  <div class="rectangle-175-GORMlr" data-id="1142:1955"></div>
-  <div class="rectangle-177-GORMlr" data-id="1142:1956"></div>
-  <div class="rectangle-176-GORMlr" data-id="1142:1957"></div>
-  <div class="rectangle-267-GORMlr" data-id="1142:1958"></div>
-  <div class="rectangle-268-GORMlr" data-id="1142:1959"></div>
-  <div class="rectangle-269-GORMlr" data-id="1142:1960"></div>
-  <div class="rectangle-270-GORMlr" data-id="1142:1961"></div>
-  <div
-    class="seng-401-GORMlr valign-text-middle seng-401 inter-medium-black-16px"
-    data-id="1142:1962"
-  >
-    SENG 401
-  </div>
-  <div
-    class="seng-401-odWrLE valign-text-middle seng-401 inter-medium-black-16px"
-    data-id="1142:1963"
-  >
-    SENG 401
-  </div>
-  <div
-    class="lec-01-GORMlr valign-text-middle lec-01 inter-medium-black-15px"
-    data-id="1142:1964"
-  >
-    LEC 01
-  </div>
-  <div
-    class="seng-471-GORMlr valign-text-middle seng-471 inter-medium-black-16px"
-    data-id="1142:1965"
-  >
-    SENG 471
-  </div>
-  <div
-    class="lec-02-GORMlr valign-text-middle lec-02 inter-medium-black-15px"
-    data-id="1142:1966"
-  >
-    LEC 02
-  </div>
-  <div
-    class="seng-471-odWrLE valign-text-middle seng-471 inter-medium-black-16px"
-    data-id="1142:1967"
-  >
-    SENG 471
-  </div>
-  <div
-    class="lec-02-odWrLE valign-text-middle lec-02 inter-medium-black-15px"
-    data-id="1142:1968"
-  >
-    LEC 02
-  </div>
-  <div class="rectangle-271-GORMlr" data-id="1142:1969"></div>
-  <div class="rectangle-272-GORMlr" data-id="1142:1970"></div>
-  <div
-    class="seng-471-8Yf26g valign-text-middle seng-471 inter-medium-black-16px"
-    data-id="1142:1971"
-  >
-    SENG 471
-  </div>
-  <div
-    class="lec-02-8Yf26g valign-text-middle lec-02 inter-medium-black-15px"
-    data-id="1142:1972"
-  >
-    LEC 02
-  </div>
-  <div
-    class="lec-01-odWrLE valign-text-middle lec-01 inter-medium-black-15px"
-    data-id="1142:1973"
-  >
-    LEC 01
-  </div>
-  <div class="rectangle-266-GORMlr" data-id="1142:1974"></div>
-  <img
-    alt="Line 80"
-    class="line-80-odWrLE line-80"
-    data-id="1142:1975"
-    src="./svgs/line-80-3.svg"
-  />
-  <img
-    alt="Line 89"
-    class="line-89-GORMlr"
-    data-id="1142:1976"
-    src="./svgs/line-89-1.svg"
-  />
-  <img
-    alt="Line 88"
-    class="line-88-GORMlr"
-    data-id="1142:1977"
-    src="./svgs/line-88-1.svg"
-  />
-  <img
-    alt="Line 46"
-    class="line-46-GORMlr"
-    data-id="1142:1978"
-    src="./svgs/line-46-1.svg"
-  />
-  <div class="group-34-GORMlr" data-id="1142:1993">
-    <div class="group-27-CD4zmR" data-id="1142:1994">
-      <div class="rectangle-94-qnk4Um" data-id="1142:1995"></div>
-      <div class="rectangle-95-qnk4Um" data-id="1142:1996"></div>
-      <div
-        class="software-requirements-engineering-qnk4Um valign-text-middle inter-medium-black-16px"
-        data-id="1142:1997"
-      >
-        SOFTWARE REQUIREMENTS ENGINEERING
-      </div>
-      <div
-        class="university-of-calgary-qnk4Um valign-text-middle university-of-calgary inter-light-black-13px"
-        data-id="1142:1998"
-      >
-        University of Calgary
-      </div>
-      <div
-        class="try-all-classes-1-qnk4Um valign-text-middle inter-light-black-12px"
-        data-id="1142:1999"
-      >
-        Try all classes (1)
-      </div>
-      <div
-        class="seng-qnk4Um valign-text-middle seng inter-medium-black-13px"
-        data-id="1142:2000"
-      >
-        SENG
-      </div>
-      <div
-        class="x471-qnk4Um valign-text-middle inter-medium-black-13px"
-        data-id="1142:2001"
-      >
-        471
-      </div>
-      <img
-        alt="Group"
-        class="group-qnk4Um group"
-        data-id="1142:2002"
-        src="./pngs/group-6@2x.png"
-      />
-      <img
-        alt="ph:eye-closed"
-        class="pheye-closed-qnk4Um pheye-closed"
-        data-id="1142:2005"
-        src="./svgs/ph-eye-closed-4.svg"
-      />
+  <script crossorigin="anonymous" id="anime-js-script" integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js">
+  </script>
+  <script id="imgloaded-js-script" src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js">
+  </script>
+  <style id="action-links-styles">
+   @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+    #anima-interface {
+      transition: all 0.5s ease-in-out;
+    }
+
+    #anima-watermark {
+      transition: all 0.5s ease-in-out;
+      display: none;
+    }
+
+    #anima-watermark-link {
+      position: fixed;
+      bottom: 20px;
+      height: 30px;
+      border-radius: 1000px;
+      background: #3B3B3B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      text-decoration: none;
+      color: #fff;
+      padding: 8px 16px 8px 11px;
+      font-family: Mulish, sans-serif;
+      font-size: 12px;
+    }
+
+    #anima-watermark-link .text {
+      margin-left: 6px;
+    }
+
+    .omniview-anima-action-links .link {
+      height: 30px;
+      width: 30px;
+      border-radius: 1000px;
+      background: #3B3B3B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .omniview-anima-action-links #comment-link .text,
+    .omniview-anima-action-links #code-link .text {
+      display: none;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+    .omniview-anima-action-links #comment-link:hover,
+    .omniview-anima-action-links #code-link:hover {
+      width: 105px;
+    }
+
+    .omniview-anima-action-links #comment-link.pop-active,
+    .omniview-anima-action-links #code-link.pop-active {
+      width: 105px;
+      background: #FF6250;
+    }
+
+    .omniview-anima-action-links #comment-link.pop-active .text,
+    .omniview-anima-action-links #code-link.pop-active .text {
+      display: block
+    }
+
+    .omniview-anima-action-links #comment-link:hover .text,
+    .omniview-anima-action-links #code-link:hover .text {
+      display: block;
+    }
+
+    .link.navigation {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      height: 32px;
+      color: #fff;
+      font-size: 12px;
+      cursor: default;
+      padding: 0 5px;
+    }
+
+    .link.navigation .icon {
+      margin: 0 6px;
+      fill: none;
+      stroke: currentColor;
+      cursor: pointer;
+    }
+
+    .link.navigation .icon.disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+
+    .link.navigation .home-icon {
+      margin-left: 6px;
+      fill: currentColor;
+      stroke: currentColor;
+      cursor: pointer;
+    }
+
+    .omniview-anima-action-links .restart {
+      height: 30px;
+      padding: 0 12px;
+      background: #3B3B3B;
+      border-radius: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #f1f1f1;
+      font-size: 12px;
+    }
+
+    .omniview-anima-action-links {
+      display: flex;
+      align-items: center;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-family: Mulish, sans-serif;
+      transition: all 0.5s ease-in-out;
+      opacity: 1;
+    }
+
+    .omniview-anima-action-links>*+* {
+      margin-right: 0;
+      margin-left: 10px;
+    }
+
+    .idle {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #popoverOpener {
+      position: absolute;
+      left: 50%;
+      margin-left: -10vw;
+      text-align: center;
+      top: 45vh;
+      width: 20vw;
+    }
+
+
+    .popover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1060;
+      display: none;
+      font-family: "sans-serif";
+      font-size: 14px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    }
+
+    .popover.top {
+      margin-top: -12px
+    }
+
+    .popover.right {
+      margin-left: 10px
+    }
+
+    .popover.bottom {
+      margin-top: 10px
+    }
+
+    .popover.left {
+      margin-left: -10px
+    }
+
+    .popover-title {
+      padding: 8px 14px;
+      margin: 0;
+      font-size: 14px;
+      background-color: #f7f7f7;
+      border-bottom: 1px solid #ebebeb;
+      border-radius: 5px 5px 0 0
+    }
+
+    .popover-content {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      overflow: hidden;
+      font-family: Mulish, sans-serif;
+    }
+
+
+
+    .popover>.arrow,
+    .popover>.arrow:after {
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid
+    }
+
+    .popover>.arrow {
+      border-width: 11px
+    }
+
+    .popover>.arrow:after {
+      content: "";
+      border-width: 10px
+    }
+
+    .popover.top>.arrow {
+      bottom: -11px;
+      left: 50%;
+      margin-left: -11px;
+      border-top-color: #999;
+      border-top-color: rgba(0, 0, 0, .25);
+      border-bottom-width: 0
+    }
+
+    .popover.top>.arrow:after {
+      bottom: 1px;
+      margin-left: -10px;
+      content: " ";
+      border-top-color: #fff;
+      border-bottom-width: 0
+    }
+
+    .popover.right>.arrow {
+      top: 50%;
+      left: -11px;
+      margin-top: -11px;
+      border-right-color: #999;
+      border-right-color: rgba(0, 0, 0, .25);
+      border-left-width: 0
+    }
+
+    .popover.right>.arrow:after {
+      bottom: -10px;
+      left: 1px;
+      content: " ";
+      border-right-color: #fff;
+      border-left-width: 0
+    }
+
+    .popover.bottom>.arrow {
+      top: -11px;
+      left: 50%;
+      margin-left: -11px;
+      border-top-width: 0;
+      border-bottom-color: #999;
+      border-bottom-color: rgba(0, 0, 0, .25)
+    }
+
+    .popover.bottom>.arrow:after {
+      top: 1px;
+      margin-left: -10px;
+      content: " ";
+      border-top-width: 0;
+      border-bottom-color: #fff
+    }
+
+    .popover.left>.arrow {
+      top: 50%;
+      right: -11px;
+      margin-top: -11px;
+      border-right-width: 0;
+      border-left-color: #999;
+      border-left-color: rgba(0, 0, 0, .25)
+    }
+
+    .popover.left>.arrow:after {
+      right: 1px;
+      bottom: -10px;
+      content: " ";
+      border-right-width: 0;
+      border-left-color: #fff
+    }
+
+
+
+    #anima-comment-popover,
+    #anima-code-popover {
+      background: #333333;
+      color: #fff;
+    }
+
+    #anima-comment-popover.top>.arrow,
+    #anima-comment-popover.top>.arrow:after,
+    #anima-code-popover.top>.arrow:after,
+    #anima-code-popover.top>.arrow {
+      border-top-color: #333;
+    }
+
+    #anima-comment-popover .btn,
+    #anima-code-popover .btn {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 6px 20px;
+      background: #FF6250;
+      color: #fff;
+      border-radius: 100px;
+      width: max-content;
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 550px) {
+      #anima-watermark-link {
+        padding: 6px !important;
+      }
+
+      #anima-watermark-link .text {
+        display: none !important;
+      }
+    }
+  </style>
+ </head>
+ <body style="margin: 0;background: #ffffff;">
+  <input id="anPageName" name="page" type="hidden" value="schedule-builder-adding-courses"/>
+  <div class="container-center-horizontal">
+   <div class="schedule-builder-adding-courses screen" data-id="1142:954" style="margin-top: 70px;">
+    <img alt="Rectangle 7" class="rectangle-7-GORMlr" data-id="1142:1085" src="./svgs/rectangle-7.svg"/>
+    <img alt="back-icon" class="back-icon-GORMlr" data-id="1142:955" src="./svgs/back-icon-1.svg"/>
+    <div class="search-bar-GORMlr search-bar" data-id="1142:957">
+     <div class="rectangle-2-fUgBRQ rectangle-2" data-id="I1142:957;4:6">
+     </div>
     </div>
-  </div>
-  <div class="group-32-GORMlr" data-id="1142:2010">
-    <div class="group-28-8NKxov" data-id="1142:2011">
-      <div class="rectangle-96-eNLuf2" data-id="1142:2012"></div>
-      <div class="rectangle-97-eNLuf2" data-id="1142:2013"></div>
-      <div
-        class="software-architecture-eNLuf2 valign-text-middle"
-        data-id="1142:2014"
-      >
-        Software Architecture
-      </div>
-      <div
-        class="university-of-calgary-eNLuf2 valign-text-middle university-of-calgary inter-light-black-13px"
-        data-id="1142:2015"
-      >
-        University of Calgary
-      </div>
-      <div
-        class="try-all-classes-4-eNLuf2 valign-text-middle inter-light-black-12px"
-        data-id="1142:2016"
-      >
-        Try all classes (4)
-      </div>
-      <div
-        class="seng-eNLuf2 valign-text-middle seng inter-medium-black-13px"
-        data-id="1142:2017"
-      >
-        SENG
-      </div>
-      <div
-        class="x401-eNLuf2 valign-text-middle inter-medium-black-13px"
-        data-id="1142:2018"
-      >
-        401
-      </div>
-      <img
-        alt="Group"
-        class="group-eNLuf2 group"
-        data-id="1142:2019"
-        src="./pngs/group-6@2x.png"
-      />
-      <img
-        alt="streamline:eye-optic"
-        class="streamlineeye-optic-eNLuf2 streamlineeye-optic"
-        data-id="1142:2022"
-        src="./svgs/streamline-eye-optic-3.svg"
-      />
+    <div class="search-bar-odWrLE search-bar" data-id="1142:958">
+     <div class="rectangle-2-4xafj8 rectangle-2" data-id="I1142:958;4:6">
+     </div>
     </div>
-  </div>
-  <img
-    alt="Calendar"
-    class="calendar-GORMlr calendar"
-    data-id="1142:2026"
-    src="./svgs/calendar-2.svg"
-  />
-  <img
-    alt="Calendar"
-    class="calendar-odWrLE calendar"
-    data-id="1142:2027"
-    src="./svgs/calendar-2.svg"
-  />
-  <div class="rectangle-180-GORMlr" data-id="1142:2028"></div>
-  <div class="rectangle-179-GORMlr" data-id="1142:2029"></div>
-  <div
-    class="seng-401-8Yf26g valign-text-middle seng-401 inter-medium-black-16px"
-    data-id="1142:2030"
-  >
-    SENG 401
-  </div>
-  <div
-    class="lab-b01-GORMlr valign-text-middle inter-medium-black-16px"
-    data-id="1142:2031"
-  >
-    LAB B01
-  </div>
-  <img
-    alt="Rectangle 7"
-    class="rectangle-7-GORMlr"
-    data-id="1142:2032"
-    src="./svgs/rectangle-7-1.svg"
-  />
-  <div class="rectangle-241-GORMlr" data-id="1142:2033"></div>
-  <div
-    class="icon-legend-GORMlr valign-text-middle inter-light-black-12px"
-    data-id="1142:2034"
-  >
-    Icon Legend
-  </div>
-  <img
-    alt="ph:eye-closed"
-    class="pheye-closed-GORMlr pheye-closed"
-    data-id="1142:2035"
-    src="./svgs/ph-eye-closed-3.svg"
-  />
-  <img
-    alt="streamline:eye-optic"
-    class="streamlineeye-optic-GORMlr streamlineeye-optic"
-    data-id="1142:2037"
-    src="./svgs/streamline-eye-optic-2.svg"
-  />
-  <img
-    alt="Group"
-    class="group-GORMlr group"
-    data-id="1142:2041"
-    src="./pngs/group-5@2x.png"
-  />
-  <img
-    alt="Group"
-    class="group-odWrLE group"
-    data-id="1142:2044"
-    src="./pngs/group-6@2x.png"
-  />
-  <p
-    class="allows-course-to-be-GORMlr allows-course-to-be inter-light-black-10px"
-    data-id="1142:2047"
-  >
-    Allows course to be visible in calendar view
-  </p>
-  <p
-    class="allows-course-to-be-odWrLE allows-course-to-be inter-light-black-10px"
-    data-id="1142:2048"
-  >
-    Allows course to be hidden in calendar view
-  </p>
-  <p
-    class="opens-pop-up-menu-wi-GORMlr inter-light-black-10px"
-    data-id="1142:2049"
-  >
-    Opens pop-up menu with options to add, drop or swap selected course
-  </p>
-  <img
-    alt="light_mode"
-    class="light_mode-GORMlr"
-    data-id="1142:2050"
-    src="./svgs/light-mode-2.svg"
-  />
-  <p
-    class="switches-colour-sche-GORMlr inter-light-black-10px"
-    data-id="1142:2051"
-  >
-    Switches colour scheme from light to dark mode
-  </p>
-  <div class="group-33-GORMlr" data-id="1142:1784">
-    <div class="group-26-0qPSrv" data-id="1142:1785">
-      <div class="rectangle-181-xqFkk7" data-id="1142:1786"></div>
-      <div class="rectangle-182-xqFkk7" data-id="1142:1787"></div>
-      <p
-        class="software-testing-reliability-and-quality-xqFkk7 valign-text-middle inter-medium-black-16px"
-        data-id="1142:1788"
-      >
-        SOFTWARE TESTING, RELIABILITY, AND QUALITY
+    <div class="rectangle-114-GORMlr" data-id="1142:959">
+    </div>
+    <div class="save-schedule-as-pdf-GORMlr" data-id="1142:960">
+     Save Schedule As PDF
+    </div>
+    <img alt="next-icon" class="next-icon-GORMlr" data-id="1142:961" src="./svgs/next-icon-1.svg"/>
+    <h1 class="title-GORMlr" data-id="1142:963">
+     Fall 2024
+    </h1>
+    <div class="start-something-GORMlr valign-text-middle" data-id="1142:964">
+     Start
+     <br/>
+     Something
+    </div>
+    <img alt="UC-horz-rgb 1" class="uc-horz-rgb-1-GORMlr" data-id="1142:965" src="./pngs/uc-horz-rgb-1-1.png"/>
+    <div class="filter-GORMlr valign-text-middle inter-normal-dove-gray-16px" data-id="1142:966">
+     Filter
+    </div>
+    <div class="febuary-01-GORMlr valign-text-middle inter-normal-dove-gray-16px" data-id="1142:967">
+     Febuary-01
+    </div>
+    <div class="search-bar-8Yf26g search-bar" data-id="1142:968">
+     <div class="rectangle-2-5yxVxd rectangle-2" data-id="I1142:968;4:6">
+     </div>
+    </div>
+    <div class="febuary-07-GORMlr valign-text-middle inter-normal-dove-gray-16px" data-id="1142:969">
+     Febuary-07
+    </div>
+    <div class="search-bar-Mn7a88 search-bar" data-id="1142:970">
+     <div class="rectangle-2-7e29c1 rectangle-2" data-id="I1142:970;4:6">
+     </div>
+    </div>
+    <div class="search-bar-ASeC80 search-bar" data-id="1142:971">
+     <div class="rectangle-2-ExKV2F rectangle-2" data-id="I1142:971;4:6">
+     </div>
+    </div>
+    <div class="x800-am-GORMlr valign-text-middle inter-normal-dove-gray-16px" data-id="1142:972">
+     8:00 A.M.
+    </div>
+    <div class="search-bar-azxLTg search-bar" data-id="1142:973">
+     <div class="rectangle-2-PuxRQ5 rectangle-2" data-id="I1142:973;4:6">
+     </div>
+    </div>
+    <div class="x700-pm-GORMlr valign-text-middle inter-normal-dove-gray-16px" data-id="1142:974">
+     7:00 P.M.
+    </div>
+    <div class="sce-bui-bottom-GORMlr sce-bui-bottom" data-id="1142:975">
+    </div>
+    <div class="sce-bui-bottom-odWrLE sce-bui-bottom" data-id="1142:976">
+    </div>
+    <div class="sce-bui-top-GORMlr" data-id="1142:977">
+    </div>
+    <img alt="Line 52" class="line-52-GORMlr" data-id="1142:978" src="./svgs/line-52-1.svg"/>
+    <img alt="Line 53" class="line-53-GORMlr" data-id="1142:979" src="./svgs/line-52-1.svg"/>
+    <img alt="Line 54" class="line-54-GORMlr" data-id="1142:980" src="./svgs/line-52-1.svg"/>
+    <img alt="Line 55" class="line-55-GORMlr" data-id="1142:981" src="./svgs/line-52-1.svg"/>
+    <img alt="Line 80" class="line-80-GORMlr line-80" data-id="1142:982" src="./svgs/line-52-1.svg"/>
+    <div class="x8-am-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:983">
+     8 AM
+    </div>
+    <div class="monday-GORMlr valign-text-middle inter-normal-concrete-20px" data-id="1142:984">
+     Monday
+    </div>
+    <div class="wednesday-GORMlr valign-text-middle inter-normal-concrete-20px" data-id="1142:985">
+     Wednesday
+    </div>
+    <div class="thursday-GORMlr valign-text-middle inter-normal-concrete-20px" data-id="1142:986">
+     Thursday
+    </div>
+    <div class="friday-GORMlr valign-text-middle inter-normal-concrete-20px" data-id="1142:987">
+     Friday
+    </div>
+    <div class="notes-GORMlr valign-text-middle inter-normal-concrete-20px" data-id="1142:988">
+     Notes
+    </div>
+    <div class="tuesday-GORMlr valign-text-middle inter-normal-concrete-20px" data-id="1142:989">
+     Tuesday
+    </div>
+    <div class="x9-am-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:990">
+     9 AM
+    </div>
+    <div class="x10-am-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:991">
+     10 AM
+    </div>
+    <div class="x11-am-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:992">
+     11 AM
+    </div>
+    <div class="x12-pm-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:993">
+     12 PM
+    </div>
+    <div class="x1-pm-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:994">
+     1 PM
+    </div>
+    <div class="x2-pm-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:995">
+     2 PM
+    </div>
+    <div class="x3-pm-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:996">
+     3 PM
+    </div>
+    <div class="x4-pm-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:997">
+     4 PM
+    </div>
+    <div class="x5-pm-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:998">
+     5 PM
+    </div>
+    <div class="x6-pm-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:999">
+     6 PM
+    </div>
+    <div class="x7-pm-GORMlr valign-text-middle inter-normal-black-20px" data-id="1142:1000">
+     7 PM
+    </div>
+    <img alt="Line 56" class="line-56-GORMlr" data-id="1142:1001" src="./svgs/line-56-1.svg"/>
+    <img alt="Line 67" class="line-67-GORMlr" data-id="1142:1002" src="./svgs/line-67-1.svg"/>
+    <img alt="Line 69" class="line-69-GORMlr" data-id="1142:1003" src="./svgs/line-69-1.svg"/>
+    <img alt="Line 70" class="line-70-GORMlr" data-id="1142:1004" src="./svgs/line-70-1.svg"/>
+    <img alt="Line 72" class="line-72-GORMlr" data-id="1142:1005" src="./svgs/line-70-1.svg"/>
+    <img alt="Line 74" class="line-74-GORMlr" data-id="1142:1006" src="./svgs/line-70-1.svg"/>
+    <img alt="Line 75" class="line-75-GORMlr" data-id="1142:1007" src="./svgs/line-70-1.svg"/>
+    <img alt="Line 76" class="line-76-GORMlr" data-id="1142:1008" src="./svgs/line-70-1.svg"/>
+    <img alt="Line 77" class="line-77-GORMlr" data-id="1142:1009" src="./svgs/line-70-1.svg"/>
+    <img alt="Line 78" class="line-78-GORMlr" data-id="1142:1010" src="./svgs/line-70-1.svg"/>
+    <img alt="Line 79" class="line-79-GORMlr" data-id="1142:1011" src="./svgs/line-70-1.svg"/>
+    <img alt="Line 71" class="line-71-GORMlr" data-id="1142:1012" src="./svgs/line-70-1.svg"/>
+    <img alt="Line 64" class="line-64-GORMlr" data-id="1142:1013" src="./svgs/line-64-1.svg"/>
+    <img alt="Line 65" class="line-65-GORMlr" data-id="1142:1014" src="./svgs/line-65-1.svg"/>
+    <img alt="Line 66" class="line-66-GORMlr" data-id="1142:1015" src="./svgs/line-66-1.svg"/>
+    <img alt="Line 63" class="line-63-GORMlr" data-id="1142:1016" src="./svgs/line-63-1.svg"/>
+    <img alt="Line 61" class="line-61-GORMlr" data-id="1142:1017" src="./svgs/line-61-1.svg"/>
+    <img alt="Line 62" class="line-62-GORMlr" data-id="1142:1018" src="./svgs/line-62-1.svg"/>
+    <img alt="Line 59" class="line-59-GORMlr" data-id="1142:1019" src="./svgs/line-59-1.svg"/>
+    <img alt="Line 60" class="line-60-GORMlr" data-id="1142:1020" src="./svgs/line-60-1.svg"/>
+    <img alt="Line 58" class="line-58-GORMlr" data-id="1142:1021" src="./svgs/line-58-1.svg"/>
+    <img alt="Line 57" class="line-57-GORMlr" data-id="1142:1022" src="./svgs/line-57-1.svg"/>
+    <div class="rectangle-202-GORMlr" data-id="1142:1105">
+    </div>
+    <div class="rectangle-175-GORMlr" data-id="1142:1023">
+    </div>
+    <div class="rectangle-177-GORMlr" data-id="1142:1024">
+    </div>
+    <div class="rectangle-176-GORMlr" data-id="1142:1025">
+    </div>
+    <div class="rectangle-267-GORMlr" data-id="1142:1214">
+    </div>
+    <div class="rectangle-268-GORMlr" data-id="1142:1215">
+    </div>
+    <div class="rectangle-269-GORMlr" data-id="1142:1217">
+    </div>
+    <div class="rectangle-270-GORMlr" data-id="1142:1218">
+    </div>
+    <div class="seng-401-GORMlr valign-text-middle seng-401 inter-medium-black-16px" data-id="1142:1026">
+     SENG 401
+    </div>
+    <div class="seng-401-odWrLE valign-text-middle seng-401 inter-medium-black-16px" data-id="1142:1027">
+     SENG 401
+    </div>
+    <div class="lec-01-GORMlr valign-text-middle lec-01 inter-medium-black-15px" data-id="1142:1028">
+     LEC 01
+    </div>
+    <div class="seng-471-GORMlr valign-text-middle seng-471 inter-medium-black-16px" data-id="1142:1220">
+     SENG 471
+    </div>
+    <div class="lec-02-GORMlr valign-text-middle lec-02 inter-medium-black-15px" data-id="1142:1221">
+     LEC 02
+    </div>
+    <div class="seng-471-odWrLE valign-text-middle seng-471 inter-medium-black-16px" data-id="1142:1228">
+     SENG 471
+    </div>
+    <div class="lec-02-odWrLE valign-text-middle lec-02 inter-medium-black-15px" data-id="1142:1229">
+     LEC 02
+    </div>
+    <div class="rectangle-271-GORMlr" data-id="1142:1223">
+    </div>
+    <div class="rectangle-272-GORMlr" data-id="1142:1224">
+    </div>
+    <div class="seng-471-8Yf26g valign-text-middle seng-471 inter-medium-black-16px" data-id="1142:1225">
+     SENG 471
+    </div>
+    <div class="lec-02-8Yf26g valign-text-middle lec-02 inter-medium-black-15px" data-id="1142:1226">
+     LEC 02
+    </div>
+    <div class="lec-01-odWrLE valign-text-middle lec-01 inter-medium-black-15px" data-id="1142:1029">
+     LEC 01
+    </div>
+    <div class="rectangle-266-GORMlr" data-id="1142:1030">
+    </div>
+    <img alt="Line 80" class="line-80-odWrLE line-80" data-id="1142:1031" src="./svgs/line-80-3.svg"/>
+    <img alt="Line 89" class="line-89-GORMlr" data-id="1142:1032" src="./svgs/line-89-1.svg"/>
+    <img alt="Line 88" class="line-88-GORMlr" data-id="1142:1033" src="./svgs/line-88-1.svg"/>
+    <img alt="Line 46" class="line-46-GORMlr" data-id="1142:1034" src="./svgs/line-46.svg"/>
+    <div class="group-33-GORMlr" data-id="1142:1035">
+     <div class="group-26-0qPSrv" data-id="1142:1036">
+      <div class="rectangle-181-xqFkk7" data-id="1142:1037">
+      </div>
+      <div class="rectangle-182-xqFkk7" data-id="1142:1038">
+      </div>
+      <p class="software-testing-reliability-and-quality-xqFkk7 valign-text-middle inter-medium-black-16px" data-id="1142:1039">
+       SOFTWARE TESTING, RELIABILITY, AND QUALITY
       </p>
-      <div
-        class="university-of-calgary-xqFkk7 valign-text-middle university-of-calgary inter-light-black-13px"
-        data-id="1142:1789"
-      >
-        University of Calgary
+      <div class="university-of-calgary-xqFkk7 valign-text-middle university-of-calgary inter-light-black-13px" data-id="1142:1040">
+       University of Calgary
       </div>
-      <div
-        class="try-all-classes-3-xqFkk7 valign-text-middle inter-light-black-12px"
-        data-id="1142:1790"
-      >
-        Try all classes (3)
+      <div class="try-all-classes-3-xqFkk7 valign-text-middle inter-light-black-12px" data-id="1142:1041">
+       Try all
+            classes (3)
       </div>
-      <div
-        class="seng-xqFkk7 valign-text-middle seng inter-medium-black-13px"
-        data-id="1142:1791"
-      >
-        SENG
+      <div class="seng-xqFkk7 valign-text-middle seng inter-medium-black-13px" data-id="1142:1042">
+       SENG
       </div>
-      <div
-        class="x438-xqFkk7 valign-text-middle inter-medium-black-13px"
-        data-id="1142:1792"
-      >
-        438
+      <div class="x438-xqFkk7 valign-text-middle inter-medium-black-13px" data-id="1142:1043">
+       438
       </div>
-      <img
-        alt="Group"
-        class="group-xqFkk7 group"
-        data-id="1142:1793"
-        src="./pngs/group-6@2x.png"
-      />
-      <img
-        alt="ph:eye-closed"
-        class="pheye-closed-xqFkk7 pheye-closed"
-        data-id="1142:1796"
-        src="./svgs/ph-eye-closed-5.svg"
-      />
+     </div>
     </div>
+    <div class="group-34-GORMlr" data-id="1142:1049">
+     <div class="group-27-CD4zmR" data-id="1142:1050">
+      <div class="rectangle-94-qnk4Um" data-id="1142:1051">
+      </div>
+      <div class="rectangle-95-qnk4Um" data-id="1142:1052">
+      </div>
+      <div class="software-requirements-engineering-qnk4Um valign-text-middle inter-medium-black-16px" data-id="1142:1053">
+       SOFTWARE REQUIREMENTS ENGINEERING
+      </div>
+      <div class="university-of-calgary-qnk4Um valign-text-middle university-of-calgary inter-light-black-13px" data-id="1142:1054">
+       University of Calgary
+      </div>
+      <div class="try-all-classes-1-qnk4Um valign-text-middle inter-light-black-12px" data-id="1142:1055">
+       Try all
+            classes (1)
+      </div>
+      <div class="seng-qnk4Um valign-text-middle seng inter-medium-black-13px" data-id="1142:1056">
+       SENG
+      </div>
+      <div class="x471-qnk4Um valign-text-middle inter-medium-black-13px" data-id="1142:1057">
+       471
+      </div>
+      <img alt="call_to_action_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 1" class="call_to_action_24dp_-qnk4Um call_to_action_24dp_" data-id="1192:854" src="./svgs/call-to-action-24dp-ffffff-fill0-wght400-grad0-opsz24-1.svg"/>
+      <img alt="call_to_action_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 4" class="call_to_action_24dp_-fwut4q call_to_action_24dp_" data-id="1192:857" src="./svgs/call-to-action-24dp-ffffff-fill0-wght400-grad0-opsz24-4.svg"/>
+      <img alt="image" class="image-qnk4Um image" data-id="1192:860" src="./pngs/image.png"/>
+      <img alt="image 3" class="image-3-qnk4Um image-3" data-id="1192:862" src="./pngs/image-3.png"/>
+     </div>
+    </div>
+    <img alt="call_to_action_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 2" class="call_to_action_24dp_-GORMlr call_to_action_24dp_" data-id="1193:852" src="./svgs/call-to-action-24dp-ffffff-fill0-wght400-grad0-opsz24-2.svg"/>
+    <img alt="call_to_action_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 3" class="call_to_action_24dp_-odWrLE call_to_action_24dp_" data-id="1193:855" src="./svgs/call-to-action-24dp-ffffff-fill0-wght400-grad0-opsz24-3.svg"/>
+    <div class="group-32-GORMlr" data-id="1142:1063">
+     <div class="group-28-8NKxov" data-id="1142:1064">
+      <div class="rectangle-96-eNLuf2" data-id="1142:1065">
+      </div>
+      <div class="rectangle-97-eNLuf2" data-id="1142:1066">
+      </div>
+      <div class="software-architecture-eNLuf2 valign-text-middle" data-id="1142:1067">
+       Software Architecture
+      </div>
+      <div class="university-of-calgary-eNLuf2 valign-text-middle university-of-calgary inter-light-black-13px" data-id="1142:1068">
+       University of Calgary
+      </div>
+      <div class="try-all-classes-4-eNLuf2 valign-text-middle inter-light-black-12px" data-id="1142:1069">
+       Try all
+            classes (4)
+      </div>
+      <img alt="call_to_action_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 4" class="call_to_action_24dp_-eNLuf2 call_to_action_24dp_" data-id="1193:858" src="./svgs/call-to-action-24dp-ffffff-fill0-wght400-grad0-opsz24-3.svg"/>
+      <div class="seng-eNLuf2 valign-text-middle seng inter-medium-black-13px" data-id="1142:1070">
+       SENG
+      </div>
+      <div class="x401-eNLuf2 valign-text-middle inter-medium-black-13px" data-id="1142:1071">
+       401
+      </div>
+     </div>
+    </div>
+    <img alt="Calendar" class="calendar-GORMlr calendar" data-id="1142:1079" src="./svgs/calendar-2.svg"/>
+    <img alt="Calendar" class="calendar-odWrLE calendar" data-id="1142:1080" src="./svgs/calendar-2.svg"/>
+    <div class="rectangle-180-GORMlr" data-id="1142:1081">
+    </div>
+    <div class="rectangle-179-GORMlr" data-id="1142:1082">
+    </div>
+    <div class="seng-401-8Yf26g valign-text-middle seng-401 inter-medium-black-16px" data-id="1142:1083">
+     SENG 401
+    </div>
+    <div class="lab-b01-GORMlr valign-text-middle inter-medium-black-16px" data-id="1142:1084">
+     LAB B01
+    </div>
+    <div class="rectangle-241-GORMlr" data-id="1142:1086">
+    </div>
+    <div class="icon-legend-GORMlr valign-text-middle inter-light-black-12px" data-id="1142:1087">
+     Icon Legend
+    </div>
+    <img alt="streamline:eye-optic" class="streamlineeye-optic-GORMlr" data-id="1142:1090" src="./svgs/streamline-eye-optic-2.svg"/>
+    <p class="allows-course-to-be-GORMlr allows-course-to-be inter-light-black-10px" data-id="1142:1100">
+     Allows course
+        to be visible in calendar view
+    </p>
+    <p class="allows-course-to-be-odWrLE allows-course-to-be inter-light-black-10px" data-id="1142:1101">
+     Allows course
+        to be hidden in calendar view
+    </p>
+    <p class="opens-pop-up-menu-wi-GORMlr inter-light-black-10px" data-id="1142:1102">
+     Opens pop-up menu with options
+        to add, drop or swap selected course
+    </p>
+    <img alt="light_mode" class="light_mode-GORMlr" data-id="1142:1103" src="./svgs/light-mode.svg"/>
+    <p class="switches-colour-sche-GORMlr inter-light-black-10px" data-id="1142:1104">
+     Switches colour scheme from
+        light to dark mode
+    </p>
+    <div class="rectangle-273-GORMlr" data-id="1192:848">
+    </div>
+    <div class="rectangle-274-GORMlr" data-id="1192:850">
+    </div>
+    <div class="save-schedule-to-favourites-GORMlr" data-id="1192:852">
+     Save Schedule to Favourites
+    </div>
+    <img alt="image" class="image-GORMlr image" data-id="1193:840" src="./pngs/image.png"/>
+    <img alt="image" class="image-odWrLE image" data-id="1193:850" src="./pngs/image.png"/>
+    <img alt="image 3" class="image-3-GORMlr image-3" data-id="1193:846" src="./pngs/image-3.png"/>
+    <div class="view-favourites-GORMlr" data-id="1192:853">
+     View Favourites
+    </div>
+   </div>
   </div>
-</div>
+ </body>
+</html>

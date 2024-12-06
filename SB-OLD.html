@@ -1,0 +1,2346 @@
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=1920, maximum-scale=1.0" name="viewport" />
+  <style>
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+    @import url("https://fonts.googleapis.com/css?family=Inter:500,400,400italic,300");
+
+    .screen textarea:focus,
+    .screen input:focus {
+      outline: none;
+    }
+
+    .screen * {
+      -webkit-font-smoothing: antialiased;
+      box-sizing: border-box;
+    }
+
+    .screen div {
+      -webkit-text-size-adjust: none;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    :root {
+      --alto: #d9d9d9;
+      --black: #000000;
+      --concrete: #f2f2f2;
+      --dove-gray: #6d6e71;
+      --feijoa: #a9dd91;
+      --feijoa-2: #a9dd9180;
+      --flax: #eed684;
+      --flax-2: #eed78580;
+      --white: #ffffff;
+
+      --font-size-l: 12px;
+      --font-size-m: 10px;
+      --font-size-xl: 13px;
+      --font-size-xxl: 15px;
+      --font-size-xxxl: 16px;
+      --font-size-xxxxl: 20px;
+      --font-size-xxxxxl: 24px;
+
+      --font-family-inter: "Inter", Helvetica;
+    }
+    .inter-normal-black-20px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xxxxl);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .inter-medium-black-16px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xxxl);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .inter-normal-concrete-20px {
+      color: var(--concrete);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xxxxl);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .inter-medium-black-13px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xl);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .inter-normal-dove-gray-16px {
+      color: var(--dove-gray);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xxxl);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .inter-medium-black-15px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xxl);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .inter-light-black-12px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-l);
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    .inter-light-black-10px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-m);
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    .inter-light-black-13px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xl);
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    /* screen - schedule-builder-adding-courses */
+
+    .schedule-builder-adding-courses {
+      background-color: var(--white);
+      border: 1px solid;
+      border-color: var(--black);
+      height: 1080px;
+      overflow: hidden;
+      overflow-x: hidden;
+      position: relative;
+      width: 1920px;
+    }
+
+    .schedule-builder-adding-courses .back-icon-GORMlr {
+      background-color: transparent;
+      height: 50px;
+      left: 704px;
+      position: absolute;
+      top: 24px;
+      width: 50px;
+    }
+
+    .schedule-builder-adding-courses .search-bar-GORMlr {
+      height: 40px;
+      left: 400px;
+      top: 162px;
+      width: 101px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-2-fUgBRQ {
+      height: 40px;
+      width: 99px;
+    }
+
+    .schedule-builder-adding-courses .search-bar-odWrLE {
+      height: 41px;
+      left: 677px;
+      top: 161px;
+      width: 114px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-2-4xafj8 {
+      height: 41px;
+      width: 112px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-114-GORMlr {
+      background-color: var(--white);
+      border: 1px solid;
+      border-color: var(--black);
+      border-radius: 4px;
+      box-shadow: 3px 3px 4px #00000040;
+      height: 61px;
+      left: 1008px;
+      position: absolute;
+      top: 1001px;
+      width: 279px;
+    }
+
+    .schedule-builder-adding-courses .save-schedule-as-pdf-GORMlr {
+      background-color: transparent;
+      color: #645b5b;
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xxxxxl);
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 1017px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 1017px;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .next-icon-GORMlr {
+      background-color: transparent;
+      height: 50px;
+      left: 1520px;
+      position: absolute;
+      top: 24px;
+      width: 50px;
+    }
+
+    .schedule-builder-adding-courses .title-GORMlr {
+      background-color: transparent;
+      color: #666060;
+      font-family: var(--font-family-inter);
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 500;
+      height: auto;
+      left: 1041px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: center;
+      top: 25px;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .start-something-GORMlr {
+      background-color: transparent;
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xxxxxl);
+      font-style: normal;
+      font-weight: 300;
+      height: 74px;
+      left: 372px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 40px;
+      width: 139px;
+    }
+
+    .schedule-builder-adding-courses .uc-horz-rgb-1-GORMlr {
+      background-color: transparent;
+      height: 96px;
+      left: 17px;
+      object-fit: cover;
+      position: absolute;
+      top: 26px;
+      width: 341px;
+    }
+
+    .schedule-builder-adding-courses .filter-GORMlr {
+      background-color: transparent;
+      height: 20px;
+      left: 418px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 171px;
+      width: 39px;
+    }
+
+    .schedule-builder-adding-courses .febuary-01-GORMlr {
+      background-color: transparent;
+      height: 20px;
+      left: 688px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 170px;
+      width: 99px;
+    }
+
+    .schedule-builder-adding-courses .search-bar-8Yf26g {
+      height: 41px;
+      left: 907px;
+      top: 162px;
+      width: 114px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-2-5yxVxd {
+      height: 41px;
+      width: 112px;
+    }
+
+    .schedule-builder-adding-courses .febuary-07-GORMlr {
+      background-color: transparent;
+      height: 20px;
+      left: 921px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 171px;
+      width: 99px;
+    }
+
+    .schedule-builder-adding-courses .search-bar-Mn7a88 {
+      height: 38px;
+      left: 1231px;
+      top: 163px;
+      width: 96px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-2-7e29c1 {
+      height: 38px;
+      width: 94px;
+    }
+
+    .schedule-builder-adding-courses .search-bar-ASeC80 {
+      height: 85px;
+      left: 1802px;
+      top: 19px;
+      width: 93px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-2-ExKV2F {
+      height: 85px;
+      width: 91px;
+    }
+
+    .schedule-builder-adding-courses .x800-am-GORMlr {
+      background-color: transparent;
+      height: 32px;
+      left: 1242px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 166px;
+      width: 80px;
+    }
+
+    .schedule-builder-adding-courses .search-bar-azxLTg {
+      height: 38px;
+      left: 1411px;
+      top: 164px;
+      width: 96px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-2-PuxRQ5 {
+      height: 38px;
+      width: 94px;
+    }
+
+    .schedule-builder-adding-courses .x700-pm-GORMlr {
+      background-color: transparent;
+      height: 32px;
+      left: 1422px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 167px;
+      width: 80px;
+    }
+
+    .schedule-builder-adding-courses .sce-bui-bottom-GORMlr {
+      background-color: #f33030b2;
+      height: 751px;
+      left: 1487px;
+      width: 178px;
+    }
+
+    .schedule-builder-adding-courses .sce-bui-bottom-odWrLE {
+      background-color: #6d6e71b2;
+      height: 752px;
+      left: 648px;
+      width: 838px;
+    }
+
+    .schedule-builder-adding-courses .sce-bui-top-GORMlr {
+      background-color: var(--concrete);
+      border-radius: 0px 0px 15px 15px;
+      height: 691px;
+      left: 647px;
+      position: absolute;
+      top: 282px;
+      width: 1017px;
+    }
+
+    .schedule-builder-adding-courses .line-52-GORMlr {
+      background-color: transparent;
+      height: 743px;
+      left: 816px;
+      object-fit: cover;
+      position: absolute;
+      top: 231px;
+      width: 1px;
+    }
+
+    .schedule-builder-adding-courses .line-53-GORMlr {
+      background-color: transparent;
+      height: 743px;
+      left: 984px;
+      object-fit: cover;
+      position: absolute;
+      top: 229px;
+      width: 1px;
+    }
+
+    .schedule-builder-adding-courses .line-54-GORMlr {
+      background-color: transparent;
+      height: 743px;
+      left: 1151px;
+      object-fit: cover;
+      position: absolute;
+      top: 230px;
+      width: 1px;
+    }
+
+    .schedule-builder-adding-courses .line-55-GORMlr {
+      background-color: transparent;
+      height: 743px;
+      left: 1319px;
+      object-fit: cover;
+      position: absolute;
+      top: 230px;
+      width: 1px;
+    }
+
+    .schedule-builder-adding-courses .line-80-GORMlr {
+      height: 743px;
+      left: 1486px;
+      top: 231px;
+    }
+
+    .schedule-builder-adding-courses .x8-am-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 592px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 277px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .monday-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 692px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 244px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .wednesday-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 1017px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 242px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .thursday-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 1190px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 244px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .friday-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 1375px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 243px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .notes-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 1548px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 243px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .tuesday-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 862px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 242px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x9-am-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 592px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 335px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x10-am-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 585px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 392px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x11-am-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 588px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 450px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x12-pm-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 585px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 507px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x1-pm-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 592px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 565px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x2-pm-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 592px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 623px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x3-pm-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 592px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 680px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x4-pm-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 593px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 738px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x5-pm-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 592px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 795px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x6-pm-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 593px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 853px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .x7-pm-GORMlr {
+      background-color: transparent;
+      height: 24px;
+      left: 593px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 910px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .line-56-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 339px;
+      width: 1016px;
+    }
+
+    .schedule-builder-adding-courses .line-67-GORMlr {
+      background-color: transparent;
+      height: 2px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 309px;
+      width: 837px;
+    }
+
+    .schedule-builder-adding-courses .line-69-GORMlr {
+      background-color: transparent;
+      height: 4px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 369px;
+      width: 837px;
+    }
+
+    .schedule-builder-adding-courses .line-70-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 427px;
+      width: 837px;
+    }
+
+    .schedule-builder-adding-courses .line-72-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 542px;
+      width: 837px;
+    }
+
+    .schedule-builder-adding-courses .line-74-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 655px;
+      width: 837px;
+    }
+
+    .schedule-builder-adding-courses .line-75-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 713px;
+      width: 837px;
+    }
+
+    .schedule-builder-adding-courses .line-76-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 773px;
+      width: 837px;
+    }
+
+    .schedule-builder-adding-courses .line-77-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 828px;
+      width: 837px;
+    }
+
+    .schedule-builder-adding-courses .line-78-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 886px;
+      width: 837px;
+    }
+
+    .schedule-builder-adding-courses .line-79-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 943px;
+      width: 837px;
+    }
+
+    .schedule-builder-adding-courses .line-71-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 482px;
+      width: 837px;
+    }
+
+    .schedule-builder-adding-courses .line-64-GORMlr {
+      background-color: transparent;
+      height: 2px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 799px;
+      width: 1016px;
+    }
+
+    .schedule-builder-adding-courses .line-65-GORMlr {
+      background-color: transparent;
+      height: 3px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 855px;
+      width: 1016px;
+    }
+
+    .schedule-builder-adding-courses .line-66-GORMlr {
+      background-color: transparent;
+      height: 4px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 914px;
+      width: 1016px;
+    }
+
+    .schedule-builder-adding-courses .line-63-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 742px;
+      width: 1016px;
+    }
+
+    .schedule-builder-adding-courses .line-61-GORMlr {
+      background-color: transparent;
+      height: 2px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 626px;
+      width: 1016px;
+    }
+
+    .schedule-builder-adding-courses .line-62-GORMlr {
+      background-color: transparent;
+      height: 3px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 684px;
+      width: 1016px;
+    }
+
+    .schedule-builder-adding-courses .line-59-GORMlr {
+      background-color: transparent;
+      height: 5px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 507px;
+      width: 1016px;
+    }
+
+    .schedule-builder-adding-courses .line-60-GORMlr {
+      background-color: transparent;
+      height: 5px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 565px;
+      width: 1016px;
+    }
+
+    .schedule-builder-adding-courses .line-58-GORMlr {
+      background-color: transparent;
+      height: 5px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 450px;
+      width: 1016px;
+    }
+
+    .schedule-builder-adding-courses .line-57-GORMlr {
+      background-color: transparent;
+      height: 6px;
+      left: 649px;
+      object-fit: cover;
+      position: absolute;
+      top: 391px;
+      width: 1016px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-202-GORMlr {
+      background-color: var(--feijoa-2);
+      border-radius: 0px 7px 7px 0px;
+      height: 73px;
+      left: 1163px;
+      position: absolute;
+      top: 282px;
+      width: 156px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-175-GORMlr {
+      background-color: var(--feijoa);
+      border-radius: 7px 0px 0px 7px;
+      height: 73px;
+      left: 816px;
+      position: absolute;
+      top: 282px;
+      width: 12px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-177-GORMlr {
+      background-color: var(--feijoa);
+      border-radius: 7px 0px 0px 7px;
+      height: 73px;
+      left: 1151px;
+      position: absolute;
+      top: 282px;
+      width: 12px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-176-GORMlr {
+      background-color: var(--feijoa-2);
+      border-radius: 0px 7px 7px 0px;
+      height: 73px;
+      left: 828px;
+      position: absolute;
+      top: 282px;
+      width: 156px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-267-GORMlr {
+      background-color: var(--flax);
+      border-radius: 7px 0px 0px 7px;
+      height: 73px;
+      left: 648px;
+      position: absolute;
+      top: 397px;
+      width: 12px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-268-GORMlr {
+      background-color: var(--flax-2);
+      border-radius: 0px 7px 7px 0px;
+      height: 73px;
+      left: 660px;
+      position: absolute;
+      top: 397px;
+      width: 156px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-269-GORMlr {
+      background-color: var(--flax);
+      border-radius: 7px 0px 0px 7px;
+      height: 73px;
+      left: 984px;
+      position: absolute;
+      top: 395px;
+      width: 12px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-270-GORMlr {
+      background-color: var(--flax-2);
+      border-radius: 0px 7px 7px 0px;
+      height: 73px;
+      left: 996px;
+      position: absolute;
+      top: 395px;
+      width: 156px;
+    }
+
+    .schedule-builder-adding-courses .seng-401-GORMlr {
+      left: 861px;
+      top: 291px;
+    }
+
+    .schedule-builder-adding-courses .seng-401-odWrLE {
+      left: 1199px;
+      top: 291px;
+    }
+
+    .schedule-builder-adding-courses .lec-01-GORMlr {
+      left: 877px;
+    }
+
+    .schedule-builder-adding-courses .seng-471-GORMlr {
+      left: 696px;
+      top: 408px;
+    }
+
+    .schedule-builder-adding-courses .lec-02-GORMlr {
+      left: 705px;
+      top: 436px;
+    }
+
+    .schedule-builder-adding-courses .seng-471-odWrLE {
+      left: 1031px;
+      top: 408px;
+    }
+
+    .schedule-builder-adding-courses .lec-02-odWrLE {
+      left: 1040px;
+      top: 436px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-271-GORMlr {
+      background-color: var(--flax);
+      border-radius: 7px 0px 0px 7px;
+      height: 73px;
+      left: 1320px;
+      position: absolute;
+      top: 394px;
+      width: 12px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-272-GORMlr {
+      background-color: var(--flax-2);
+      border-radius: 0px 7px 7px 0px;
+      height: 73px;
+      left: 1332px;
+      position: absolute;
+      top: 394px;
+      width: 156px;
+    }
+
+    .schedule-builder-adding-courses .seng-471-8Yf26g {
+      left: 1366px;
+      top: 405px;
+    }
+
+    .schedule-builder-adding-courses .lec-02-8Yf26g {
+      left: 1382px;
+      top: 433px;
+    }
+
+    .schedule-builder-adding-courses .lec-01-odWrLE {
+      left: 1215px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-266-GORMlr {
+      background-color: var(--alto);
+      height: 359px;
+      left: 119px;
+      position: absolute;
+      top: 1080px;
+      width: 346px;
+    }
+
+    .schedule-builder-adding-courses .line-80-odWrLE {
+      height: 1079px;
+      left: 556px;
+      top: 0px;
+    }
+
+    .schedule-builder-adding-courses .line-89-GORMlr {
+      background-color: transparent;
+      height: 143px;
+      left: 354px;
+      object-fit: cover;
+      position: absolute;
+      top: 0px;
+      width: 1px;
+    }
+
+    .schedule-builder-adding-courses .line-88-GORMlr {
+      background-color: transparent;
+      height: 1px;
+      left: 0px;
+      object-fit: cover;
+      position: absolute;
+      top: 142px;
+      width: 556px;
+    }
+
+    .schedule-builder-adding-courses .line-46-GORMlr {
+      background-color: transparent;
+      height: 541px;
+      left: 530px;
+      position: absolute;
+      top: 242px;
+      width: 15px;
+    }
+
+    .schedule-builder-adding-courses .group-34-GORMlr {
+      background-color: transparent;
+      height: 89px;
+      left: 23px;
+      position: absolute;
+      top: 342px;
+      width: 473px;
+    }
+
+    .schedule-builder-adding-courses .group-27-CD4zmR {
+      background-color: transparent;
+      height: 89px;
+      left: 0px;
+      position: relative;
+      top: 0px;
+      width: 483px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-94-qnk4Um {
+      background-color: var(--concrete);
+      border: 1px solid;
+      border-color: var(--alto);
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px #00000040;
+      height: 89px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 473px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-95-qnk4Um {
+      background-color: var(--flax);
+      box-shadow: 2px 2px 4px #00000040;
+      height: 63px;
+      left: 1px;
+      position: absolute;
+      top: 12px;
+      width: 80px;
+    }
+
+    .schedule-builder-adding-courses .software-requirements-engineering-qnk4Um {
+      background-color: transparent;
+      height: 26px;
+      left: 91px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 18px;
+      width: 302px;
+    }
+
+    .schedule-builder-adding-courses .university-of-calgary-qnk4Um {
+      top: 52px;
+    }
+
+    .schedule-builder-adding-courses .try-all-classes-1-qnk4Um {
+      background-color: transparent;
+      height: 15px;
+      left: 91px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 69px;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .seng-qnk4Um {
+      top: 27px;
+    }
+
+    .schedule-builder-adding-courses .x471-qnk4Um {
+      background-color: transparent;
+      height: 16px;
+      left: 30px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: center;
+      top: 49px;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .group-qnk4Um {
+      height: 24px;
+      left: 443px;
+      top: 9px;
+      width: 24px;
+    }
+
+    .schedule-builder-adding-courses .pheye-closed-qnk4Um {
+      left: 421px;
+      top: 12px;
+    }
+
+    .schedule-builder-adding-courses .group-32-GORMlr {
+      background-color: transparent;
+      height: 80px;
+      left: 23px;
+      position: absolute;
+      top: 243px;
+      width: 476px;
+    }
+
+    .schedule-builder-adding-courses .group-28-8NKxov {
+      background-color: transparent;
+      height: 80px;
+      left: 0px;
+      position: relative;
+      top: 0px;
+      width: 486px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-96-eNLuf2 {
+      background-color: #f0f0f0;
+      border: 1px solid;
+      border-color: var(--alto);
+      border-radius: 5px 5px 0px 0px;
+      box-shadow: 2px 2px 4px #00000040;
+      height: 80px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 476px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-97-eNLuf2 {
+      background-color: var(--feijoa);
+      box-shadow: 2px 2px 4px #00000040;
+      height: 63px;
+      left: 1px;
+      position: absolute;
+      top: 6px;
+      width: 80px;
+    }
+
+    .schedule-builder-adding-courses .software-architecture-eNLuf2 {
+      background-color: transparent;
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xxxxl);
+      font-style: normal;
+      font-weight: 500;
+      height: 24px;
+      left: 91px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 5px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .university-of-calgary-eNLuf2 {
+      top: 33px;
+    }
+
+    .schedule-builder-adding-courses .try-all-classes-4-eNLuf2 {
+      background-color: transparent;
+      height: 15px;
+      left: 91px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 54px;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .seng-eNLuf2 {
+      top: 21px;
+    }
+
+    .schedule-builder-adding-courses .x401-eNLuf2 {
+      background-color: transparent;
+      height: 16px;
+      left: 29px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: center;
+      top: 43px;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .group-eNLuf2 {
+      height: 24px;
+      left: 444px;
+      top: 5px;
+      width: 24px;
+    }
+
+    .schedule-builder-adding-courses .streamlineeye-optic-eNLuf2 {
+      left: 419px;
+      top: 5px;
+    }
+
+    .schedule-builder-adding-courses .calendar-GORMlr {
+      left: 799px;
+    }
+
+    .schedule-builder-adding-courses .calendar-odWrLE {
+      left: 1028px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-180-GORMlr {
+      background-color: var(--feijoa-2);
+      border-radius: 0px 7px 7px 0px;
+      height: 107px;
+      left: 995px;
+      position: absolute;
+      top: 686px;
+      width: 156px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-179-GORMlr {
+      background-color: var(--feijoa);
+      border-radius: 7px 0px 0px 7px;
+      height: 107px;
+      left: 983px;
+      position: absolute;
+      top: 686px;
+      width: 12px;
+    }
+
+    .schedule-builder-adding-courses .seng-401-8Yf26g {
+      left: 1034px;
+      top: 699px;
+    }
+
+    .schedule-builder-adding-courses .lab-b01-GORMlr {
+      background-color: transparent;
+      height: 19px;
+      left: 1041px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 750px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .rectangle-7-GORMlr {
+      background-color: transparent;
+      height: 218px;
+      left: 20px;
+      position: absolute;
+      top: 844px;
+      width: 442px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-241-GORMlr {
+      background-color: #91bdd5;
+      border: 1px solid;
+      border-color: var(--black);
+      border-radius: 8px;
+      height: 23px;
+      left: 162px;
+      position: absolute;
+      top: 850px;
+      width: 176px;
+    }
+
+    .schedule-builder-adding-courses .icon-legend-GORMlr {
+      background-color: transparent;
+      height: 18px;
+      left: 171px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: center;
+      top: 852px;
+      width: 155px;
+    }
+
+    .schedule-builder-adding-courses .pheye-closed-GORMlr {
+      left: 70px;
+      top: 923px;
+    }
+
+    .schedule-builder-adding-courses .streamlineeye-optic-GORMlr {
+      left: 52px;
+      top: 899px;
+    }
+
+    .schedule-builder-adding-courses .group-GORMlr {
+      height: 17px;
+      left: 70px;
+      top: 890px;
+      width: 23px;
+    }
+
+    .schedule-builder-adding-courses .group-odWrLE {
+      height: 24px;
+      left: 69px;
+      top: 963px;
+      width: 24px;
+    }
+
+    .schedule-builder-adding-courses .allows-course-to-be-GORMlr {
+      top: 894px;
+      width: 312px;
+    }
+
+    .schedule-builder-adding-courses .allows-course-to-be-odWrLE {
+      top: 929px;
+      width: 233px;
+    }
+
+    .schedule-builder-adding-courses .opens-pop-up-menu-wi-GORMlr {
+      background-color: transparent;
+      height: auto;
+      left: 110px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 970px;
+      width: 348px;
+    }
+
+    .schedule-builder-adding-courses .light_mode-GORMlr {
+      background-color: transparent;
+      height: 20px;
+      left: 68px;
+      position: absolute;
+      top: 1005px;
+      width: 25px;
+    }
+
+    .schedule-builder-adding-courses .switches-colour-sche-GORMlr {
+      background-color: transparent;
+      height: auto;
+      left: 110px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 1010px;
+      width: 317px;
+    }
+
+    .schedule-builder-adding-courses .group-33-GORMlr {
+      background-color: transparent;
+      height: 91px;
+      left: 25px;
+      position: absolute;
+      top: 451px;
+      width: 476px;
+    }
+
+    .schedule-builder-adding-courses .group-26-0qPSrv {
+      background-color: transparent;
+      height: 91px;
+      left: 0px;
+      position: relative;
+      top: 0px;
+      width: 486px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-181-xqFkk7 {
+      background-color: #f0f0f0;
+      border: 1px solid;
+      border-color: var(--alto);
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px #00000040;
+      height: 90px;
+      left: 0px;
+      position: absolute;
+      top: 1px;
+      width: 476px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-182-xqFkk7 {
+      background-color: #ddeb88;
+      box-shadow: 2px 2px 4px #00000040;
+      height: 63px;
+      left: 1px;
+      position: absolute;
+      top: 13px;
+      width: 80px;
+    }
+
+    .schedule-builder-adding-courses
+      .software-testing-reliability-and-quality-xqFkk7 {
+      background-color: transparent;
+      height: 26px;
+      left: 91px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 25px;
+      width: 259px;
+    }
+
+    .schedule-builder-adding-courses .university-of-calgary-xqFkk7 {
+      top: 52px;
+    }
+
+    .schedule-builder-adding-courses .try-all-classes-3-xqFkk7 {
+      background-color: transparent;
+      height: 15px;
+      left: 91px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 71px;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .seng-xqFkk7 {
+      top: 27px;
+    }
+
+    .schedule-builder-adding-courses .x438-xqFkk7 {
+      background-color: transparent;
+      height: 16px;
+      left: 28px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: center;
+      top: 49px;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .group-xqFkk7 {
+      height: 24px;
+      left: 445px;
+      top: 5px;
+      width: 24px;
+    }
+
+    .schedule-builder-adding-courses .pheye-closed-xqFkk7 {
+      left: 416px;
+      top: 0px;
+    }
+
+    .schedule-builder-adding-courses .allows-course-to-be {
+      background-color: transparent;
+      height: auto;
+      left: 110px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+    }
+
+    .schedule-builder-adding-courses .calendar {
+      background-color: transparent;
+      height: 44px;
+      position: absolute;
+      top: 159px;
+      width: 45px;
+    }
+
+    .schedule-builder-adding-courses .group {
+      background-color: transparent;
+      position: absolute;
+    }
+
+    .schedule-builder-adding-courses .lec-01 {
+      background-color: transparent;
+      height: 18px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 319px;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .lec-02 {
+      background-color: transparent;
+      height: 18px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .line-80 {
+      background-color: transparent;
+      object-fit: cover;
+      position: absolute;
+      width: 1px;
+    }
+
+    .schedule-builder-adding-courses .pheye-closed {
+      background-color: transparent;
+      height: 24px;
+      position: absolute;
+      width: 24px;
+    }
+
+    .schedule-builder-adding-courses .rectangle-2 {
+      background-color: var(--white);
+      border: 1.5px solid;
+      border-color: var(--alto);
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      left: 2px;
+      position: relative;
+      top: 0px;
+    }
+
+    .schedule-builder-adding-courses .sce-bui-bottom {
+      border-radius: 15px;
+      position: absolute;
+      top: 221px;
+    }
+
+    .schedule-builder-adding-courses .search-bar {
+      background-color: transparent;
+      position: absolute;
+    }
+
+    .schedule-builder-adding-courses .seng {
+      background-color: transparent;
+      height: 16px;
+      left: 23px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: center;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .seng-401 {
+      background-color: transparent;
+      height: 19px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .seng-471 {
+      background-color: transparent;
+      height: 19px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    .schedule-builder-adding-courses .streamlineeye-optic {
+      background-color: transparent;
+      height: 24px;
+      mix-blend-mode: color-burn;
+      position: absolute;
+      width: 24px;
+    }
+
+    .schedule-builder-adding-courses .university-of-calgary {
+      background-color: transparent;
+      height: 16px;
+      left: 91px;
+      letter-spacing: 0px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      width: auto;
+    }
+  </style>
+  <script
+    crossorigin="anonymous"
+    id="anime-js-script"
+    integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8="
+    src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"
+  ></script>
+  <script
+    id="imgloaded-js-script"
+    src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
+  ></script>
+</head>
+<div
+  class="schedule-builder-adding-courses screen"
+  data-id="1142:1885"
+  style="margin-top: 70px"
+>
+  <img
+    alt="back-icon"
+    class="back-icon-GORMlr"
+    data-id="1142:1886"
+    src="./svgs/back-icon-1.svg"
+  />
+  <div class="search-bar-GORMlr search-bar" data-id="1142:1888">
+    <div class="rectangle-2-fUgBRQ rectangle-2" data-id="I1142:1888;4:6"></div>
+  </div>
+  <div class="search-bar-odWrLE search-bar" data-id="1142:1889">
+    <div class="rectangle-2-4xafj8 rectangle-2" data-id="I1142:1889;4:6"></div>
+  </div>
+  <div class="rectangle-114-GORMlr" data-id="1142:1890"></div>
+  <div class="save-schedule-as-pdf-GORMlr" data-id="1142:1891">
+    Save Schedule As PDF
+  </div>
+  <img
+    alt="next-icon"
+    class="next-icon-GORMlr"
+    data-id="1142:1892"
+    src="./svgs/next-icon-1.svg"
+  />
+  <h1 class="title-GORMlr" data-id="1142:1894">Fall 2024</h1>
+  <div class="start-something-GORMlr valign-text-middle" data-id="1142:1895">
+    Start
+    <br />
+    Something
+  </div>
+  <img
+    alt="UC-horz-rgb 1"
+    class="uc-horz-rgb-1-GORMlr"
+    data-id="1142:1896"
+    src="./pngs/uc-horz-rgb-1-1.png"
+  />
+  <div
+    class="filter-GORMlr valign-text-middle inter-normal-dove-gray-16px"
+    data-id="1142:1897"
+  >
+    Filter
+  </div>
+  <div
+    class="febuary-01-GORMlr valign-text-middle inter-normal-dove-gray-16px"
+    data-id="1142:1898"
+  >
+    Febuary-01
+  </div>
+  <div class="search-bar-8Yf26g search-bar" data-id="1142:1899">
+    <div class="rectangle-2-5yxVxd rectangle-2" data-id="I1142:1899;4:6"></div>
+  </div>
+  <div
+    class="febuary-07-GORMlr valign-text-middle inter-normal-dove-gray-16px"
+    data-id="1142:1900"
+  >
+    Febuary-07
+  </div>
+  <div class="search-bar-Mn7a88 search-bar" data-id="1142:1901">
+    <div class="rectangle-2-7e29c1 rectangle-2" data-id="I1142:1901;4:6"></div>
+  </div>
+  <div class="search-bar-ASeC80 search-bar" data-id="1142:1902">
+    <div class="rectangle-2-ExKV2F rectangle-2" data-id="I1142:1902;4:6"></div>
+  </div>
+  <div
+    class="x800-am-GORMlr valign-text-middle inter-normal-dove-gray-16px"
+    data-id="1142:1903"
+  >
+    8:00 A.M.
+  </div>
+  <div class="search-bar-azxLTg search-bar" data-id="1142:1904">
+    <div class="rectangle-2-PuxRQ5 rectangle-2" data-id="I1142:1904;4:6"></div>
+  </div>
+  <div
+    class="x700-pm-GORMlr valign-text-middle inter-normal-dove-gray-16px"
+    data-id="1142:1905"
+  >
+    7:00 P.M.
+  </div>
+  <div class="sce-bui-bottom-GORMlr sce-bui-bottom" data-id="1142:1906"></div>
+  <div class="sce-bui-bottom-odWrLE sce-bui-bottom" data-id="1142:1907"></div>
+  <div class="sce-bui-top-GORMlr" data-id="1142:1908"></div>
+  <img
+    alt="Line 52"
+    class="line-52-GORMlr"
+    data-id="1142:1909"
+    src="./svgs/line-52-1.svg"
+  />
+  <img
+    alt="Line 53"
+    class="line-53-GORMlr"
+    data-id="1142:1910"
+    src="./svgs/line-52-1.svg"
+  />
+  <img
+    alt="Line 54"
+    class="line-54-GORMlr"
+    data-id="1142:1911"
+    src="./svgs/line-52-1.svg"
+  />
+  <img
+    alt="Line 55"
+    class="line-55-GORMlr"
+    data-id="1142:1912"
+    src="./svgs/line-52-1.svg"
+  />
+  <img
+    alt="Line 80"
+    class="line-80-GORMlr line-80"
+    data-id="1142:1913"
+    src="./svgs/line-52-1.svg"
+  />
+  <div
+    class="x8-am-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1914"
+  >
+    8 AM
+  </div>
+  <div
+    class="monday-GORMlr valign-text-middle inter-normal-concrete-20px"
+    data-id="1142:1915"
+  >
+    Monday
+  </div>
+  <div
+    class="wednesday-GORMlr valign-text-middle inter-normal-concrete-20px"
+    data-id="1142:1916"
+  >
+    Wednesday
+  </div>
+  <div
+    class="thursday-GORMlr valign-text-middle inter-normal-concrete-20px"
+    data-id="1142:1917"
+  >
+    Thursday
+  </div>
+  <div
+    class="friday-GORMlr valign-text-middle inter-normal-concrete-20px"
+    data-id="1142:1918"
+  >
+    Friday
+  </div>
+  <div
+    class="notes-GORMlr valign-text-middle inter-normal-concrete-20px"
+    data-id="1142:1919"
+  >
+    Notes
+  </div>
+  <div
+    class="tuesday-GORMlr valign-text-middle inter-normal-concrete-20px"
+    data-id="1142:1920"
+  >
+    Tuesday
+  </div>
+  <div
+    class="x9-am-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1921"
+  >
+    9 AM
+  </div>
+  <div
+    class="x10-am-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1922"
+  >
+    10 AM
+  </div>
+  <div
+    class="x11-am-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1923"
+  >
+    11 AM
+  </div>
+  <div
+    class="x12-pm-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1924"
+  >
+    12 PM
+  </div>
+  <div
+    class="x1-pm-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1925"
+  >
+    1 PM
+  </div>
+  <div
+    class="x2-pm-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1926"
+  >
+    2 PM
+  </div>
+  <div
+    class="x3-pm-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1927"
+  >
+    3 PM
+  </div>
+  <div
+    class="x4-pm-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1928"
+  >
+    4 PM
+  </div>
+  <div
+    class="x5-pm-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1929"
+  >
+    5 PM
+  </div>
+  <div
+    class="x6-pm-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1930"
+  >
+    6 PM
+  </div>
+  <div
+    class="x7-pm-GORMlr valign-text-middle inter-normal-black-20px"
+    data-id="1142:1931"
+  >
+    7 PM
+  </div>
+  <img
+    alt="Line 56"
+    class="line-56-GORMlr"
+    data-id="1142:1932"
+    src="./svgs/line-56-1.svg"
+  />
+  <img
+    alt="Line 67"
+    class="line-67-GORMlr"
+    data-id="1142:1933"
+    src="./svgs/line-67-1.svg"
+  />
+  <img
+    alt="Line 69"
+    class="line-69-GORMlr"
+    data-id="1142:1934"
+    src="./svgs/line-69-1.svg"
+  />
+  <img
+    alt="Line 70"
+    class="line-70-GORMlr"
+    data-id="1142:1935"
+    src="./svgs/line-70-1.svg"
+  />
+  <img
+    alt="Line 72"
+    class="line-72-GORMlr"
+    data-id="1142:1936"
+    src="./svgs/line-70-1.svg"
+  />
+  <img
+    alt="Line 74"
+    class="line-74-GORMlr"
+    data-id="1142:1937"
+    src="./svgs/line-70-1.svg"
+  />
+  <img
+    alt="Line 75"
+    class="line-75-GORMlr"
+    data-id="1142:1938"
+    src="./svgs/line-70-1.svg"
+  />
+  <img
+    alt="Line 76"
+    class="line-76-GORMlr"
+    data-id="1142:1939"
+    src="./svgs/line-70-1.svg"
+  />
+  <img
+    alt="Line 77"
+    class="line-77-GORMlr"
+    data-id="1142:1940"
+    src="./svgs/line-70-1.svg"
+  />
+  <img
+    alt="Line 78"
+    class="line-78-GORMlr"
+    data-id="1142:1941"
+    src="./svgs/line-70-1.svg"
+  />
+  <img
+    alt="Line 79"
+    class="line-79-GORMlr"
+    data-id="1142:1942"
+    src="./svgs/line-70-1.svg"
+  />
+  <img
+    alt="Line 71"
+    class="line-71-GORMlr"
+    data-id="1142:1943"
+    src="./svgs/line-70-1.svg"
+  />
+  <img
+    alt="Line 64"
+    class="line-64-GORMlr"
+    data-id="1142:1944"
+    src="./svgs/line-64-1.svg"
+  />
+  <img
+    alt="Line 65"
+    class="line-65-GORMlr"
+    data-id="1142:1945"
+    src="./svgs/line-65-1.svg"
+  />
+  <img
+    alt="Line 66"
+    class="line-66-GORMlr"
+    data-id="1142:1946"
+    src="./svgs/line-66-1.svg"
+  />
+  <img
+    alt="Line 63"
+    class="line-63-GORMlr"
+    data-id="1142:1947"
+    src="./svgs/line-63-1.svg"
+  />
+  <img
+    alt="Line 61"
+    class="line-61-GORMlr"
+    data-id="1142:1948"
+    src="./svgs/line-61-1.svg"
+  />
+  <img
+    alt="Line 62"
+    class="line-62-GORMlr"
+    data-id="1142:1949"
+    src="./svgs/line-62-1.svg"
+  />
+  <img
+    alt="Line 59"
+    class="line-59-GORMlr"
+    data-id="1142:1950"
+    src="./svgs/line-59-1.svg"
+  />
+  <img
+    alt="Line 60"
+    class="line-60-GORMlr"
+    data-id="1142:1951"
+    src="./svgs/line-60-1.svg"
+  />
+  <img
+    alt="Line 58"
+    class="line-58-GORMlr"
+    data-id="1142:1952"
+    src="./svgs/line-58-1.svg"
+  />
+  <img
+    alt="Line 57"
+    class="line-57-GORMlr"
+    data-id="1142:1953"
+    src="./svgs/line-57-1.svg"
+  />
+  <div class="rectangle-202-GORMlr" data-id="1142:1954"></div>
+  <div class="rectangle-175-GORMlr" data-id="1142:1955"></div>
+  <div class="rectangle-177-GORMlr" data-id="1142:1956"></div>
+  <div class="rectangle-176-GORMlr" data-id="1142:1957"></div>
+  <div class="rectangle-267-GORMlr" data-id="1142:1958"></div>
+  <div class="rectangle-268-GORMlr" data-id="1142:1959"></div>
+  <div class="rectangle-269-GORMlr" data-id="1142:1960"></div>
+  <div class="rectangle-270-GORMlr" data-id="1142:1961"></div>
+  <div
+    class="seng-401-GORMlr valign-text-middle seng-401 inter-medium-black-16px"
+    data-id="1142:1962"
+  >
+    SENG 401
+  </div>
+  <div
+    class="seng-401-odWrLE valign-text-middle seng-401 inter-medium-black-16px"
+    data-id="1142:1963"
+  >
+    SENG 401
+  </div>
+  <div
+    class="lec-01-GORMlr valign-text-middle lec-01 inter-medium-black-15px"
+    data-id="1142:1964"
+  >
+    LEC 01
+  </div>
+  <div
+    class="seng-471-GORMlr valign-text-middle seng-471 inter-medium-black-16px"
+    data-id="1142:1965"
+  >
+    SENG 471
+  </div>
+  <div
+    class="lec-02-GORMlr valign-text-middle lec-02 inter-medium-black-15px"
+    data-id="1142:1966"
+  >
+    LEC 02
+  </div>
+  <div
+    class="seng-471-odWrLE valign-text-middle seng-471 inter-medium-black-16px"
+    data-id="1142:1967"
+  >
+    SENG 471
+  </div>
+  <div
+    class="lec-02-odWrLE valign-text-middle lec-02 inter-medium-black-15px"
+    data-id="1142:1968"
+  >
+    LEC 02
+  </div>
+  <div class="rectangle-271-GORMlr" data-id="1142:1969"></div>
+  <div class="rectangle-272-GORMlr" data-id="1142:1970"></div>
+  <div
+    class="seng-471-8Yf26g valign-text-middle seng-471 inter-medium-black-16px"
+    data-id="1142:1971"
+  >
+    SENG 471
+  </div>
+  <div
+    class="lec-02-8Yf26g valign-text-middle lec-02 inter-medium-black-15px"
+    data-id="1142:1972"
+  >
+    LEC 02
+  </div>
+  <div
+    class="lec-01-odWrLE valign-text-middle lec-01 inter-medium-black-15px"
+    data-id="1142:1973"
+  >
+    LEC 01
+  </div>
+  <div class="rectangle-266-GORMlr" data-id="1142:1974"></div>
+  <img
+    alt="Line 80"
+    class="line-80-odWrLE line-80"
+    data-id="1142:1975"
+    src="./svgs/line-80-3.svg"
+  />
+  <img
+    alt="Line 89"
+    class="line-89-GORMlr"
+    data-id="1142:1976"
+    src="./svgs/line-89-1.svg"
+  />
+  <img
+    alt="Line 88"
+    class="line-88-GORMlr"
+    data-id="1142:1977"
+    src="./svgs/line-88-1.svg"
+  />
+  <img
+    alt="Line 46"
+    class="line-46-GORMlr"
+    data-id="1142:1978"
+    src="./svgs/line-46-1.svg"
+  />
+  <div class="group-34-GORMlr" data-id="1142:1993">
+    <div class="group-27-CD4zmR" data-id="1142:1994">
+      <div class="rectangle-94-qnk4Um" data-id="1142:1995"></div>
+      <div class="rectangle-95-qnk4Um" data-id="1142:1996"></div>
+      <div
+        class="software-requirements-engineering-qnk4Um valign-text-middle inter-medium-black-16px"
+        data-id="1142:1997"
+      >
+        SOFTWARE REQUIREMENTS ENGINEERING
+      </div>
+      <div
+        class="university-of-calgary-qnk4Um valign-text-middle university-of-calgary inter-light-black-13px"
+        data-id="1142:1998"
+      >
+        University of Calgary
+      </div>
+      <div
+        class="try-all-classes-1-qnk4Um valign-text-middle inter-light-black-12px"
+        data-id="1142:1999"
+      >
+        Try all classes (1)
+      </div>
+      <div
+        class="seng-qnk4Um valign-text-middle seng inter-medium-black-13px"
+        data-id="1142:2000"
+      >
+        SENG
+      </div>
+      <div
+        class="x471-qnk4Um valign-text-middle inter-medium-black-13px"
+        data-id="1142:2001"
+      >
+        471
+      </div>
+      <img
+        alt="Group"
+        class="group-qnk4Um group"
+        data-id="1142:2002"
+        src="./pngs/group-6@2x.png"
+      />
+      <img
+        alt="ph:eye-closed"
+        class="pheye-closed-qnk4Um pheye-closed"
+        data-id="1142:2005"
+        src="./svgs/ph-eye-closed-4.svg"
+      />
+    </div>
+  </div>
+  <div class="group-32-GORMlr" data-id="1142:2010">
+    <div class="group-28-8NKxov" data-id="1142:2011">
+      <div class="rectangle-96-eNLuf2" data-id="1142:2012"></div>
+      <div class="rectangle-97-eNLuf2" data-id="1142:2013"></div>
+      <div
+        class="software-architecture-eNLuf2 valign-text-middle"
+        data-id="1142:2014"
+      >
+        Software Architecture
+      </div>
+      <div
+        class="university-of-calgary-eNLuf2 valign-text-middle university-of-calgary inter-light-black-13px"
+        data-id="1142:2015"
+      >
+        University of Calgary
+      </div>
+      <div
+        class="try-all-classes-4-eNLuf2 valign-text-middle inter-light-black-12px"
+        data-id="1142:2016"
+      >
+        Try all classes (4)
+      </div>
+      <div
+        class="seng-eNLuf2 valign-text-middle seng inter-medium-black-13px"
+        data-id="1142:2017"
+      >
+        SENG
+      </div>
+      <div
+        class="x401-eNLuf2 valign-text-middle inter-medium-black-13px"
+        data-id="1142:2018"
+      >
+        401
+      </div>
+      <img
+        alt="Group"
+        class="group-eNLuf2 group"
+        data-id="1142:2019"
+        src="./pngs/group-6@2x.png"
+      />
+      <img
+        alt="streamline:eye-optic"
+        class="streamlineeye-optic-eNLuf2 streamlineeye-optic"
+        data-id="1142:2022"
+        src="./svgs/streamline-eye-optic-3.svg"
+      />
+    </div>
+  </div>
+  <img
+    alt="Calendar"
+    class="calendar-GORMlr calendar"
+    data-id="1142:2026"
+    src="./svgs/calendar-2.svg"
+  />
+  <img
+    alt="Calendar"
+    class="calendar-odWrLE calendar"
+    data-id="1142:2027"
+    src="./svgs/calendar-2.svg"
+  />
+  <div class="rectangle-180-GORMlr" data-id="1142:2028"></div>
+  <div class="rectangle-179-GORMlr" data-id="1142:2029"></div>
+  <div
+    class="seng-401-8Yf26g valign-text-middle seng-401 inter-medium-black-16px"
+    data-id="1142:2030"
+  >
+    SENG 401
+  </div>
+  <div
+    class="lab-b01-GORMlr valign-text-middle inter-medium-black-16px"
+    data-id="1142:2031"
+  >
+    LAB B01
+  </div>
+  <img
+    alt="Rectangle 7"
+    class="rectangle-7-GORMlr"
+    data-id="1142:2032"
+    src="./svgs/rectangle-7-1.svg"
+  />
+  <div class="rectangle-241-GORMlr" data-id="1142:2033"></div>
+  <div
+    class="icon-legend-GORMlr valign-text-middle inter-light-black-12px"
+    data-id="1142:2034"
+  >
+    Icon Legend
+  </div>
+  <img
+    alt="ph:eye-closed"
+    class="pheye-closed-GORMlr pheye-closed"
+    data-id="1142:2035"
+    src="./svgs/ph-eye-closed-3.svg"
+  />
+  <img
+    alt="streamline:eye-optic"
+    class="streamlineeye-optic-GORMlr streamlineeye-optic"
+    data-id="1142:2037"
+    src="./svgs/streamline-eye-optic-2.svg"
+  />
+  <img
+    alt="Group"
+    class="group-GORMlr group"
+    data-id="1142:2041"
+    src="./pngs/group-5@2x.png"
+  />
+  <img
+    alt="Group"
+    class="group-odWrLE group"
+    data-id="1142:2044"
+    src="./pngs/group-6@2x.png"
+  />
+  <p
+    class="allows-course-to-be-GORMlr allows-course-to-be inter-light-black-10px"
+    data-id="1142:2047"
+  >
+    Allows course to be visible in calendar view
+  </p>
+  <p
+    class="allows-course-to-be-odWrLE allows-course-to-be inter-light-black-10px"
+    data-id="1142:2048"
+  >
+    Allows course to be hidden in calendar view
+  </p>
+  <p
+    class="opens-pop-up-menu-wi-GORMlr inter-light-black-10px"
+    data-id="1142:2049"
+  >
+    Opens pop-up menu with options to add, drop or swap selected course
+  </p>
+  <img
+    alt="light_mode"
+    class="light_mode-GORMlr"
+    data-id="1142:2050"
+    src="./svgs/light-mode-2.svg"
+  />
+  <p
+    class="switches-colour-sche-GORMlr inter-light-black-10px"
+    data-id="1142:2051"
+  >
+    Switches colour scheme from light to dark mode
+  </p>
+  <div class="group-33-GORMlr" data-id="1142:1784">
+    <div class="group-26-0qPSrv" data-id="1142:1785">
+      <div class="rectangle-181-xqFkk7" data-id="1142:1786"></div>
+      <div class="rectangle-182-xqFkk7" data-id="1142:1787"></div>
+      <p
+        class="software-testing-reliability-and-quality-xqFkk7 valign-text-middle inter-medium-black-16px"
+        data-id="1142:1788"
+      >
+        SOFTWARE TESTING, RELIABILITY, AND QUALITY
+      </p>
+      <div
+        class="university-of-calgary-xqFkk7 valign-text-middle university-of-calgary inter-light-black-13px"
+        data-id="1142:1789"
+      >
+        University of Calgary
+      </div>
+      <div
+        class="try-all-classes-3-xqFkk7 valign-text-middle inter-light-black-12px"
+        data-id="1142:1790"
+      >
+        Try all classes (3)
+      </div>
+      <div
+        class="seng-xqFkk7 valign-text-middle seng inter-medium-black-13px"
+        data-id="1142:1791"
+      >
+        SENG
+      </div>
+      <div
+        class="x438-xqFkk7 valign-text-middle inter-medium-black-13px"
+        data-id="1142:1792"
+      >
+        438
+      </div>
+      <img
+        alt="Group"
+        class="group-xqFkk7 group"
+        data-id="1142:1793"
+        src="./pngs/group-6@2x.png"
+      />
+      <img
+        alt="ph:eye-closed"
+        class="pheye-closed-xqFkk7 pheye-closed"
+        data-id="1142:1796"
+        src="./svgs/ph-eye-closed-5.svg"
+      />
+    </div>
+  </div>
+</div>
