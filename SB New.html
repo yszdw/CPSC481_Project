@@ -1786,6 +1786,24 @@
         width: 64px;
       }
 
+      .schedule-builder-adding-courses .rectangle-241-uAYIAls {
+        background-color: #91bdd5;
+        height: 23px;
+        left: 342px;
+        top: 8px;
+        width: 64px;
+        display: none;
+      }
+
+      .schedule-builder-adding-courses .rectangle-241-uAYIAlseng-438 {
+        background-color: #91bdd5;
+        height: 23px;
+        left: 342px;
+        top: 8px;
+        width: 64px;
+        display: none;
+      }
+
       .schedule-builder-adding-courses .enrolled-uAYIAl {
         background-color: transparent;
         height: 27px;
@@ -1796,6 +1814,32 @@
         text-align: left;
         top: 6px;
         width: 49px;
+      }
+
+      .schedule-builder-adding-courses .enrolled-uAYIAls {
+        background-color: transparent;
+        height: 27px;
+        left: 350px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 11px;
+        width: 49px;
+        display: none;
+      }
+
+      .schedule-builder-adding-courses .enrolled-uAYIAlseng-438 {
+        background-color: transparent;
+        height: 27px;
+        left: 350px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 11px;
+        width: 49px;
+        display: none;
       }
 
       .schedule-builder-adding-courses .light_mode-GORMlr {
@@ -2912,16 +2956,20 @@
             if (event.data === "14") {
               document.querySelector(".febuary-07-GORMlr").textContent =
                 "Febuary-14";
-              const rectangleElements = document.querySelectorAll(".rectangle-180-TvivMN, .rectangle-179-TvivMN, .seng-401-Rvuv8S, .lab-b01-TvivMN");
-              rectangleElements.forEach(element => {
+              const rectangleElements = document.querySelectorAll(
+                ".rectangle-180-TvivMN, .rectangle-179-TvivMN, .seng-401-Rvuv8S, .lab-b01-TvivMN"
+              );
+              rectangleElements.forEach((element) => {
                 element.style.display = "block";
               });
             }
             if (event.data === "7") {
               document.querySelector(".febuary-07-GORMlr").textContent =
                 "Febuary-07";
-              const rectangleElements = document.querySelectorAll(".rectangle-180-TvivMN, .rectangle-179-TvivMN, .seng-401-Rvuv8S, .lab-b01-TvivMN");
-              rectangleElements.forEach(element => {
+              const rectangleElements = document.querySelectorAll(
+                ".rectangle-180-TvivMN, .rectangle-179-TvivMN, .seng-401-Rvuv8S, .lab-b01-TvivMN"
+              );
+              rectangleElements.forEach((element) => {
                 element.style.display = "none";
               });
             }
@@ -3212,6 +3260,83 @@
             src="./svgs/call-to-action-24dp-ffffff-fill0-wght400-grad0-opsz24-1-1.svg"
           />
           <div
+            id="actions-dropdown"
+            style="
+              display: none;
+              position: absolute;
+              z-index: 1000;
+              background: white;
+              border: 1px solid #ccc;
+            "
+          >
+            <iframe
+              id="actions-iframe"
+              src="./actions.html"
+              width="800"
+              height="600"
+              style="
+                border: none;
+                position: absolute;
+                top: -280px;
+                left: 400px;
+                z-index: 20;
+                width: 250px;
+                height: 280px;
+              "
+            ></iframe>
+          </div>
+          <script>
+            document
+              .querySelector(".call_to_action_24dp_-oRkC2Y")
+              .addEventListener("click", function () {
+                const dropdown = document.getElementById("actions-dropdown");
+                if (
+                  dropdown.style.display === "none" ||
+                  dropdown.style.display === ""
+                ) {
+                  dropdown.style.display = "block";
+                } else {
+                  dropdown.style.display = "none";
+                }
+              });
+
+            window.addEventListener("message", function (event) {
+              if (event.data.action === "closeIframe") {
+                const actionsDropdown =
+                  document.getElementById("actions-dropdown");
+                if (actionsDropdown) {
+                  actionsDropdown.style.display = "none";
+                }
+              }
+              if (event.data.action === "add") {
+                const courseCartElements = document.querySelectorAll(
+                  ".course-cart-oRkC2Y, .rectangle-241-oRkC2Y"
+                );
+                courseCartElements.forEach((element) => {
+                  element.style.display = "none";
+                });
+
+                // Show elements
+                const elementsToShow = document.querySelectorAll(
+                  ".rectangle-241-uAYIAls, .enrolled-uAYIAls"
+                );
+                elementsToShow.forEach((element) => {
+                  element.style.display = "block";
+                });
+              }
+            });
+          </script>
+          <div
+            class="rectangle-241-uAYIAls rectangle-241"
+            data-id="1205:1216"
+          ></div>
+          <div
+            class="enrolled-uAYIAls valign-text-middle inter-normal-black-12px"
+            data-id="1205:1217"
+          >
+            Enrolled
+          </div>
+          <div
             class="rectangle-241-oRkC2Y rectangle-241"
             data-id="1205:1227"
           ></div>
@@ -3298,6 +3423,16 @@
           >
             Course Cart
           </div>
+          <div
+            class="rectangle-241-uAYIAlseng-438 rectangle-241"
+            data-id="1205:1216"
+          ></div>
+          <div
+            class="enrolled-uAYIAlseng-438 valign-text-middle inter-normal-black-12px"
+            data-id="1205:1217"
+          >
+            Enrolled
+          </div>
           <img
             alt="arrow_drop_down"
             class="arrow_drop_down-CnnD9a arrow_drop_down"
@@ -3310,6 +3445,89 @@
             data-id="1205:1172"
             src="./svgs/call-to-action-24dp-ffffff-fill0-wght400-grad0-opsz24-2.svg"
           />
+          <div
+            id="actions-dropdown-seng-438"
+            style="
+              display: none;
+              position: absolute;
+              z-index: 1000;
+              background: white;
+              border: 1px solid #ccc;
+            "
+          >
+            <iframe
+              id="actions-iframe-seng-438"
+              src="./actions.html"
+              width="800"
+              height="600"
+              style="
+                border: none;
+                position: absolute;
+                top: -280px;
+                left: 400px;
+                z-index: 20;
+                width: 250px;
+                height: 280px;
+              "
+            ></iframe>
+          </div>
+          <script>
+            document
+              .querySelector(".call_to_action_24dp_-CnnD9a")
+              .addEventListener("click", function () {
+                const dropdown = document.getElementById(
+                  "actions-dropdown-seng-438"
+                );
+                if (
+                  dropdown.style.display === "none" ||
+                  dropdown.style.display === ""
+                ) {
+                  dropdown.style.display = "block";
+                } else {
+                  dropdown.style.display = "none";
+                }
+
+                const iframe = document.getElementById("actions-iframe-seng-438");
+                if (iframe) {
+                  console.log("Sending message to actions.html");
+                  iframe.contentWindow.postMessage("seng-438", "*");
+                }
+              });
+
+            window.addEventListener("message", function (event) {
+              if (event.data.action === "closeIframe") {
+                const actionsDropdown = document.getElementById(
+                  "actions-dropdown-seng-438"
+                );
+                if (actionsDropdown) {
+                  actionsDropdown.style.display = "none";
+                }
+              }
+              if (event.data.action === "add-seng-438") {
+                const courseCartElements = document.querySelectorAll(
+                  ".course-cart-CnnD9a, .rectangle-241-CnnD9a"
+                );
+                courseCartElements.forEach((element) => {
+                  element.style.display = "none";
+                });
+
+                // Show elements
+                const elementsToShow = document.querySelectorAll(
+                  ".rectangle-241-uAYIAlseng-438, .enrolled-uAYIAlseng-438"
+                );
+                elementsToShow.forEach((element) => {
+                  element.style.display = "block";
+                });
+              }
+              if (event.data.action === "drop") {
+                const seng438Element =
+                  document.querySelector(".seng-438-GORMlr");
+                if (seng438Element) {
+                  seng438Element.style.display = "none";
+                }
+              }
+            });
+          </script>
           <img
             alt="image 3"
             class="image-3-CnnD9a image-3"

@@ -1,0 +1,513 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+      name="viewport"
+    />
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+      @import url("https://fonts.googleapis.com/css?family=Inter:500");
+
+      .screen textarea:focus,
+      .screen input:focus {
+        outline: none;
+      }
+
+      .screen * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
+
+      .screen div {
+        -webkit-text-size-adjust: none;
+      }
+
+      .component-wrapper a {
+        display: contents;
+        pointer-events: auto;
+        text-decoration: none;
+      }
+
+      .component-wrapper * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+        pointer-events: none;
+      }
+
+      .component-wrapper a *,
+      .component-wrapper input,
+      .component-wrapper video,
+      .component-wrapper iframe {
+        pointer-events: auto;
+      }
+
+      .component-wrapper.not-ready,
+      .component-wrapper.not-ready * {
+        visibility: hidden !important;
+      }
+
+      .screen a {
+        display: contents;
+        text-decoration: none;
+      }
+
+      .full-width-a {
+        width: 100%;
+      }
+
+      .full-height-a {
+        height: 100%;
+      }
+
+      .container-center-vertical {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .container-center-vertical > * {
+        flex-shrink: 0;
+        pointer-events: auto;
+      }
+
+      .container-center-horizontal {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        pointer-events: none;
+        width: auto;
+        max-width: 100%;
+        padding: 0 10px;
+      }
+
+      .container-center-horizontal > * {
+        flex-shrink: 0;
+        pointer-events: auto;
+      }
+
+      .auto-animated div {
+        --z-index: -1;
+        opacity: 0;
+        position: absolute;
+      }
+
+      .auto-animated input {
+        --z-index: -1;
+        opacity: 0;
+        position: absolute;
+      }
+
+      .auto-animated .container-center-vertical,
+      .auto-animated .container-center-horizontal {
+        opacity: 1;
+      }
+
+      .overlay-base {
+        display: none;
+        height: 100%;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      .overlay-base.animate-appear {
+        align-items: center;
+        animation: reveal 0.3s ease-in-out 1 normal forwards;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0;
+      }
+
+      .overlay-base.animate-disappear {
+        animation: reveal 0.3s ease-in-out 1 reverse forwards;
+        display: block;
+        opacity: 1;
+        pointer-events: none;
+      }
+
+      .overlay-base.animate-disappear * {
+        pointer-events: none;
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate-nodelay {
+        animation-delay: 0s;
+      }
+
+      .align-self-flex-start {
+        align-self: flex-start;
+      }
+
+      .align-self-flex-end {
+        align-self: flex-end;
+      }
+
+      .align-self-flex-center {
+        align-self: flex-center;
+      }
+
+      .valign-text-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .valign-text-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      .listeners-active,
+      .listeners-active * {
+        pointer-events: auto;
+      }
+
+      .hidden,
+      .hidden * {
+        pointer-events: none;
+        visibility: hidden;
+      }
+
+      .smart-layers-pointers,
+      .smart-layers-pointers * {
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .listeners-active-click,
+      .listeners-active-click * {
+        cursor: pointer;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --black: #000000;
+
+        --font-size-m: 24px;
+
+        --font-family-inter: "Inter", Helvetica;
+      }
+
+      .inter-medium-black-24px {
+        color: var(--black);
+        font-family: var(--font-family-inter);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      :root {
+      }
+
+      /* screen - frame-31 */
+
+      .frame-31 {
+        background-color: transparent;
+        height: 210px;
+        overflow-x: hidden;
+        position: relative;
+        width: auto;
+        max-width: 100%;
+      }
+
+      .frame-31 .group-54-N4U6tF {
+        background-color: transparent;
+        height: 210px;
+        left: 0px;
+        position: relative;
+        top: 0px;
+        width: 165px;
+      }
+
+      .frame-31 .frame-26-ximwwC {
+        background-color: #343e35;
+        border: 1px solid;
+        border-color: var(--black);
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px #00000040;
+        height: 210px;
+        left: 0px;
+        opacity: 0.75;
+        overflow: hidden;
+        position: absolute;
+        top: 0px;
+        width: 165px;
+      }
+
+      .frame-31 .vector-WAnzDK {
+        height: 13px;
+        left: 143px;
+        top: 8px;
+        width: 13px;
+      }
+
+      /* ADD */
+      .frame-31 .frame-27-ximwwC {
+        background-color: #8deb98;
+        border: 1px solid;
+        border-color: var(--black);
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px #00000040;
+        height: 42px;
+        left: 16px;
+        opacity: 0.75;
+        overflow: hidden;
+        position: absolute;
+        top: 14px;
+        width: 110px;
+      }
+
+      .frame-31 .title-ehvM3Q {
+        background-color: transparent;
+        height: auto;
+        left: 24px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 4px;
+        white-space: nowrap;
+        width: 84px;
+      }
+
+      .frame-31 .vector-ehvM3Q {
+        height: 14px;
+        left: 9px;
+        top: 14px;
+        width: 15px;
+      }
+
+      /* DROP */
+      .frame-31 .frame-28-ximwwC {
+        /* background-color: #ed6262; */
+        background-color: #5f5858;
+        border: 1px solid;
+        border-color: var(--black);
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px #00000040;
+        height: 43px;
+        left: 16px;
+        opacity: 0.75;
+        overflow: hidden;
+        position: absolute;
+        top: 79px;
+        width: 110px;
+      }
+
+      .frame-31 .drop-8CBDUa {
+        background-color: transparent;
+        height: auto;
+        left: 26px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 6px;
+        white-space: nowrap;
+        width: 84px;
+      }
+
+      .frame-31 .arrow_downward_24dp_-8CBDUa {
+        background-color: transparent;
+        height: 24px;
+        left: 7px;
+        position: absolute;
+        top: 16px;
+        width: 24px;
+      }
+
+      /* SWAP */
+      .frame-31 .frame-29-ximwwC {
+        /* background-color: #62a9d5; */
+        background-color: #5f5858;
+        border: 1px solid;
+        border-color: var(--black);
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px #00000040;
+        height: 42px;
+        left: 16px;
+        opacity: 0.75;
+        overflow: hidden;
+        position: absolute;
+        top: 145px;
+        width: 110px;
+      }
+
+      .frame-31 .swap-Zw9wqi {
+        background-color: transparent;
+        height: auto;
+        left: 26px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 6px;
+        white-space: nowrap;
+        width: 84px;
+      }
+
+      .frame-31 .swap_vert_24dp_fffff-Zw9wqi {
+        background-color: transparent;
+        height: 24px;
+        left: 8px;
+        position: absolute;
+        top: 16px;
+        width: 24px;
+      }
+
+      .frame-31 .vector {
+        background-color: transparent;
+        position: absolute;
+      }
+
+      body {
+        margin: 0;
+        overflow: auto;
+      }
+    </style>
+    <script
+      crossorigin="anonymous"
+      id="anime-js-script"
+      integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8="
+      src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"
+    ></script>
+    <script
+      id="imgloaded-js-script"
+      src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
+    ></script>
+    <style id="action-links-styles">
+      @import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+    </style>
+  </head>
+  <body
+    data-gr-ext-installed=""
+    data-new-gr-c-s-check-loaded="14.1211.0"
+    style="margin: 0"
+  >
+    <input id="anPageName" name="page" type="hidden" value="frame-31" />
+    <div class="container-center-horizontal">
+      <div class="frame-31 screen" data-id="1216:931" style="margin-top: 70px">
+        <div class="group-54-N4U6tF" data-id="1142:1702">
+          <div class="frame-26-ximwwC" data-id="1142:1689">
+            <img
+              alt="Vector"
+              class="vector-WAnzDK vector"
+              data-id="1212:1327"
+              src="./pngs/vector.png"
+            />
+          </div>
+          <div class="frame-27-ximwwC" data-id="1142:1690">
+            <h1
+              class="title-ehvM3Q inter-medium-black-24px"
+              data-id="1142:1691"
+            >
+              Add
+            </h1>
+            <img
+              alt="Vector"
+              class="vector-ehvM3Q vector"
+              data-id="1142:1692"
+              src="./svgs/vector-1.svg"
+            />
+          </div>
+          <div class="frame-28-ximwwC" data-id="1142:1693">
+            <div
+              class="drop-8CBDUa inter-medium-black-24px"
+              data-id="1142:1694"
+            >
+              Drop
+            </div>
+            <img
+              alt="arrow_downward_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 1"
+              class="arrow_downward_24dp_-8CBDUa"
+              data-id="1142:1695"
+              src="./svgs/arrow-downward-24dp-ffffff-fill0-wght400-grad0-opsz24-1.svg"
+            />
+          </div>
+          <div class="frame-29-ximwwC" data-id="1142:1697">
+            <div
+              class="swap-Zw9wqi inter-medium-black-24px"
+              data-id="1142:1698"
+            >
+              Swap
+            </div>
+            <img
+              alt="swap_vert_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 1"
+              class="swap_vert_24dp_fffff-Zw9wqi"
+              data-id="1142:1699"
+              src="./svgs/swap-vert-24dp-ffffff-fill0-wght400-grad0-opsz24-1.svg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let seng438Received = false; // Track if seng-438 has been received
+  
+      const closeButton = document.querySelector(".vector-WAnzDK");
+      if (closeButton) {
+        closeButton.addEventListener("click", function () {
+          window.parent.postMessage({ action: "closeIframe" }, "*");
+        });
+      }
+  
+      const addButton = document.querySelector(".frame-27-ximwwC");
+      const dropButton = document.querySelector(".frame-28-ximwwC");
+      const swapButton = document.querySelector(".frame-29-ximwwC");
+      if (addButton) {
+        addButton.addEventListener("click", function () {
+          addButton.style.backgroundColor = "#5f5858";
+          dropButton.style.backgroundColor = "#ed6262";
+          swapButton.style.backgroundColor = "#62a9d5";
+          
+          // Check if seng-438 has been received
+          if (seng438Received) {
+            window.parent.postMessage({ action: "add-seng-438" }, "*");
+          } else {
+            window.parent.postMessage({ action: "add" }, "*");
+          }
+        });
+      }
+      if (dropButton) {
+        dropButton.addEventListener("click", function () {
+          addButton.style.backgroundColor = "#8deb98";
+          dropButton.style.backgroundColor = "#5f5858";
+          swapButton.style.backgroundColor = "#5f5858";
+          window.parent.postMessage({ action: "drop" }, "*");
+        });
+      }
+  
+      window.addEventListener("message", function (event) {
+        if (event.data === "seng-438" || event.data.action === "seng-438") {
+          console.log("SENG 438 received in actions.html");
+          seng438Received = true; // Set the flag to true when seng-438 is received
+        }
+      });
+    });
+  </script>
+</html>
