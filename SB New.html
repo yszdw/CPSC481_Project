@@ -62,7 +62,7 @@
       /* CURSOR */
 
       body[mode="comments"] * {
-        cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjkxNjQ4IDIzLjQxMDlDNS40OTE1MyAyMi45ODg3IDUuOTMxNzkgMjIuMzkzNSA2LjIzMjggMjEuNjQwN0M0Ljc5MDY5IDE5LjczODMgNCAxNy4zOTMzIDQgMTQuOTk3NUM0IDguOTM0MSA4LjkzMjgyIDQgMTUuMDAyMiA0QzIxLjA3MTcgNCAyNiA4LjkzOTE5IDI2IDE1LjAwMjVDMjYgMjEuMDY1OSAyMS4wNjcyIDI2IDE0Ljk5NzggMjZDMTIuOTg5NiAyNiAxMS4wMzUzIDI1LjQ1NTcgOS4zMjM2NyAyNC40MjMxQzguNDI5NjUgMjQuOTU3MiA3LjQxNDM0IDI1LjIyNjggNi4zMDAxOCAyNS4yMjY4QzUuOTU0MjYgMjUuMjI2OCA1LjU5OTM1IDI1LjIwMTQgNS4yNTM0MiAyNS4xNDU0QzQuOTAzIDI1LjA4OTUgNC42Mjg5NiAyNC44MDQ2IDQuNTUyNTggMjQuNDE4QzQuNDc2MjEgMjQuMDI2NCA0LjYxOTk3IDIzLjYyOTYgNC45MTY0OCAyMy40MTA5WiIgZmlsbD0iI0ZGNjI1MCIvPgo8L3N2Zz4K")
+        cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjkxNjQ4IDIzLjQxMDlDNS40OTE1MyAyMi45ODg3IDUuOTMxNzkgMjIuMzkzNSA2LjIzMjggMjEuNjQ0N0M0Ljc5MDY5IDE5LjczODMgNCAxNy4zOTMzIDQgMTQuOTk3NUM0IDguOTM0MSA4LjkzMjgyIDQgMTUuMDAyMiA0QzIxLjA3MTcgNCAyNiA4LjkzOTE5IDI2IDE1LjAwMjVDMjYgMjEuMDY1OSAyMS4wNjcyIDI2IDE0Ljk5NzggMjZDMTIuOTg5NiAyNiAxMS4wMzUzIDI1LjQ1NTcgOS4zMjM2NyAyNC40MjMxQzguNDI5NjUgMjQuOTU3MiA3LjQxNDM0IDI1LjIyNjggNi4zMDAxOCAyNS4yMjY4QzUuOTU0MjYgMjUuMjI2OCA1LjU5OTM1IDI1LjIwMTQgNS4yNTM0MiAyNS4xNDU0QzQuOTAzIDI1LjA4OTUgNC42Mjg5NiAyNC44MDQ2IDQuNTUyNTggMjQuNDE4QzQuNDc2MjEgMjQuMDI2NCA0LjYxOTk3IDIzLjYyOTYgNC45MTY0OCAyMy40MTA5WiIgZmlsbD0iI0ZGNjI1MCIvPgo8L3N2Zz4K")
             0 24,
           auto !important;
       }
@@ -1510,6 +1510,7 @@
         position: absolute;
         top: 404px;
         width: 156px;
+        display: none;
       }
 
       .schedule-builder-adding-courses .rectangle-179-TvivMN {
@@ -1520,6 +1521,7 @@
         position: absolute;
         top: 404px;
         width: 12px;
+        display: none;
       }
 
       .schedule-builder-adding-courses .seng-401-TvivMN {
@@ -1561,6 +1563,7 @@
         top: 418px;
         white-space: nowrap;
         width: auto;
+        display: none;
       }
 
       .schedule-builder-adding-courses .lab-b01-TvivMN {
@@ -1574,6 +1577,7 @@
         top: 469px;
         white-space: nowrap;
         width: auto;
+        display: none;
       }
 
       .schedule-builder-adding-courses .rectangle-273-GORMlr {
@@ -2870,6 +2874,59 @@
           data-id="1205:1188"
           src="./svgs/calendar-2.svg"
         />
+        <div class="calendar-dropdown-content" style="display: none">
+          <iframe
+            id="calendar-iframe"
+            src="./calendar.html"
+            width="800"
+            height="600"
+            style="
+              border: none;
+              position: absolute;
+              top: 200;
+              left: 600;
+              z-index: 20;
+              width: 500px;
+              height: 350px;
+            "
+          ></iframe>
+        </div>
+        <script>
+          document
+            .querySelector(".calendar-odWrLE")
+            .addEventListener("click", function () {
+              const dropdownContent = document.querySelector(
+                ".calendar-dropdown-content"
+              );
+              if (
+                dropdownContent.style.display === "none" ||
+                dropdownContent.style.display === ""
+              ) {
+                dropdownContent.style.display = "block";
+              } else {
+                dropdownContent.style.display = "none";
+              }
+            });
+
+          window.addEventListener("message", function (event) {
+            if (event.data === "14") {
+              document.querySelector(".febuary-07-GORMlr").textContent =
+                "Febuary-14";
+              const rectangleElements = document.querySelectorAll(".rectangle-180-TvivMN, .rectangle-179-TvivMN, .seng-401-Rvuv8S, .lab-b01-TvivMN");
+              rectangleElements.forEach(element => {
+                element.style.display = "block";
+              });
+            }
+            if (event.data === "7") {
+              document.querySelector(".febuary-07-GORMlr").textContent =
+                "Febuary-07";
+              const rectangleElements = document.querySelectorAll(".rectangle-180-TvivMN, .rectangle-179-TvivMN, .seng-401-Rvuv8S, .lab-b01-TvivMN");
+              rectangleElements.forEach(element => {
+                element.style.display = "none";
+              });
+            }
+          });
+        </script>
         <div class="seng-401-calendar-GORMlr" data-id="1213:1053">
           <div class="rectangle-202-TvivMN" data-id="1205:1123"></div>
           <div class="rectangle-175-TvivMN" data-id="1205:1124"></div>

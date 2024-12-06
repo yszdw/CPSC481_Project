@@ -44,6 +44,10 @@
         .calendar-table th {
             background-color: #f0f0f0;
         }
+        .highlight {
+            background-color: #007bff; /* Blue color */
+            color: #fff; /* White text for contrast */
+        }
     </style>
 </head>
 <body>
@@ -80,7 +84,7 @@
                         <td>4</td>
                         <td>5</td>
                         <td>6</td>
-                        <td>7</td>
+                        <td id="day-7" class="highlight">7</td>
                         <td>8</td>
                     </tr>
                     <tr>
@@ -89,7 +93,7 @@
                         <td>11</td>
                         <td>12</td>
                         <td>13</td>
-                        <td>14</td>
+                        <td id="day-14">14</td>
                         <td>15</td>
                     </tr>
                     <tr>
@@ -114,5 +118,29 @@
             </table>
         </div>
     </div>
+    <script>
+        function toggleHighlight(dayId) {
+            const day7 = document.getElementById("day-7");
+            const day14 = document.getElementById("day-14");
+
+            if (dayId === "day-7") {
+                day7.classList.add("highlight");
+                day14.classList.remove("highlight");
+            } else if (dayId === "day-14") {
+                day14.classList.add("highlight");
+                day7.classList.remove("highlight");
+            }
+        }
+
+        document.getElementById("day-14").addEventListener("click", function() {
+            toggleHighlight("day-14");
+            window.parent.postMessage("14", "*");
+        });
+
+        document.getElementById("day-7").addEventListener("click", function() {
+            toggleHighlight("day-7");
+            window.parent.postMessage("7", "*");
+        });
+    </script>
 </body>
 </html>
