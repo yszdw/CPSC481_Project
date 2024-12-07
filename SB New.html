@@ -3032,13 +3032,11 @@
           function sendMessage() {
             alert("Calendar saved to favorites");
             console.log("Sending saveCalendar message");
-            document.addEventListener("DOMContentLoaded", function () {
-              console.log("Sending saveCalendar message on startup");
-              const channel = new BroadcastChannel("calendarChannel");
-              channel.postMessage("saveCalendar");
-            });
+            const channel = new BroadcastChannel("calendarChannel");
+            channel.postMessage("saveCalendar");
+            console.log("Message sent: saveCalendar");
           }
-        </script>
+        </script>        
         <div class="view-favourites-GORMlr" data-id="1205:1211">
           View Favourites
         </div>

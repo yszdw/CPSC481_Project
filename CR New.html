@@ -14,7 +14,6 @@
       }
     </style>
     <style id="st_globalStyles">
-
       [dark-scroll]::-webkit-scrollbar {
         width: 10px;
         height: 10px;
@@ -1345,6 +1344,10 @@
         position: absolute;
         top: 374px;
         width: 162px;
+        display: none;
+      }
+
+      .course-registration-sam .seng-401-lab {
         display: none;
       }
 
@@ -3427,9 +3430,47 @@
           <div
             class="search-5WiUxV valign-text-middle"
             data-id="I1227:1079;20:5"
-          >
-            Search
-          </div>
+          ></div>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search"
+            style="
+              z-index: 10;
+              position: absolute;
+              top: 0;
+              left: 20px;
+              width: 100%;
+              height: 100%;
+              border: none;
+              background-color: transparent;
+              font-size: 20px;
+            "
+          />
+          <script>
+            document
+              .querySelector(".search-input")
+              .addEventListener("input", function () {
+                const groupElement = document.querySelector(".group-76-58UxVq");
+                const group87Element =
+                  document.querySelector(".group-87-58UxVq");
+                const group88Element =
+                  document.querySelector(".group-88-58UxVq");
+                const group75Element =
+                  document.querySelector(".group-75-58UxVq");
+                if (this.value.toLowerCase().includes("c")) {
+                  groupElement.style.display = "none";
+                  group87Element.style.display = "none";
+                  group88Element.style.display = "none";
+                  group75Element.style.top = "450px";
+                } else {
+                  groupElement.style.display = "block";
+                  group87Element.style.display = "block";
+                  group88Element.style.display = "block";
+                  group75Element.style.top = "618px";
+                }
+              });
+          </script>
         </div>
         <div class="profile-58UxVq" data-id="1227:1080">
           <div class="ellipse-1-xhxvCS" data-id="I1227:1080;4:7"></div>
@@ -3766,10 +3807,16 @@
             data-id="1227:1138"
             src="./svgs/line-57-1.svg"
           />
-          <div class="rectangle-179-g4ihxc" data-id="1227:1141"></div>
-          <div class="rectangle-180-g4ihxc" data-id="1227:1144"></div>
           <div
-            class="seng-401-g4ihxc valign-text-middle seng-401 inter-medium-black-16px"
+            class="rectangle-179-g4ihxc seng-401-lab"
+            data-id="1227:1141"
+          ></div>
+          <div
+            class="rectangle-180-g4ihxc seng-401-lab"
+            data-id="1227:1144"
+          ></div>
+          <div
+            class="seng-401-g4ihxc valign-text-middle seng-401 inter-medium-black-16px seng-401-lab"
             data-id="1227:1146"
           >
             SENG 401
@@ -3819,7 +3866,7 @@
             </div>
           </div>
           <div
-            class="lab-b01-g4ihxc valign-text-middle inter-medium-black-15px"
+            class="lab-b01-g4ihxc valign-text-middle inter-medium-black-15px seng-401-lab"
             data-id="1227:1150"
           >
             LAB B01
@@ -3972,6 +4019,13 @@
         >
           Schedule Builder
         </div>
+        <script>
+          document
+            .querySelector(".schedule-builder-58UxVq")
+            .addEventListener("click", function () {
+              window.open("SB New.html", "_blank");
+            });
+        </script>
         <img
           alt="image 2"
           class="image-2-58UxVq"
@@ -4267,6 +4321,23 @@
             data-id="1227:1194"
             src="./pngs/image-2.png"
           />
+          <script>
+            document
+              .querySelector(".image-Gvy1eN")
+              .addEventListener("click", function () {
+                const groupElement = document.querySelector(".group-82-g4ihxc");
+                if (
+                  groupElement.style.display === "none" ||
+                  groupElement.style.display === ""
+                ) {
+                  groupElement.style.display = "block";
+                  this.src = "./pngs/image.png";
+                } else {
+                  groupElement.style.display = "none";
+                  this.src = "./pngs/image-3.png";
+                }
+              });
+          </script>
           <div
             class="rectangle-273-Gvy1eN rectangle-273"
             data-id="1227:1195"
@@ -4325,6 +4396,25 @@
             data-id="1227:1448"
             src="./pngs/image-2.png"
           />
+          <script>
+            document
+              .querySelector(".image-or3ert")
+              .addEventListener("click", function () {
+                const groupElement = document.querySelector(
+                  ".seng-438-calendar-58UxVq"
+                );
+                if (
+                  groupElement.style.display === "none" ||
+                  groupElement.style.display === ""
+                ) {
+                  groupElement.style.display = "block";
+                  this.src = "./pngs/image.png";
+                } else {
+                  groupElement.style.display = "none";
+                  this.src = "./pngs/image-3.png";
+                }
+              });
+          </script>
           <img
             alt="Rectangle 273"
             class="rectangle-273-or3ert rectangle-273"
@@ -4497,6 +4587,68 @@
             data-id="1227:1370"
             src="./svgs/arrow-drop-down-6.svg"
           />
+          <div
+            id="seng-401-info-dropdown"
+            style="
+              display: none;
+              position: absolute;
+              z-index: 1000;
+              background: white;
+              border: 1px solid #ccc;
+            "
+          >
+            <iframe
+              id="seng-401-info-iframe"
+              src="./SENG401CRInfo.html"
+              style="
+                border: none;
+                position: absolute;
+                top: -10px;
+                left: -35px;
+                z-index: 20;
+                width: 500px;
+                height: 500px;
+              "
+            ></iframe>
+          </div>
+          <script>
+            document
+              .querySelector(".arrow_drop_down-T0SzOc")
+              .addEventListener("click", function () {
+                const dropdown = document.getElementById(
+                  "seng-401-info-dropdown"
+                );
+                const seng471 = document.getElementById("seng-471-GORMlr");
+                const seng438 = document.getElementById("seng-438-GORMlr");
+                const group75 = document.querySelector(".group-75-58UxVq");
+                group75.style.top = "630px";
+                if (
+                  dropdown.style.display === "none" ||
+                  dropdown.style.display === ""
+                ) {
+                  dropdown.style.display = "block";
+                  seng471.style.top = "500px";
+                  seng438.style.top = "600px";
+                } else {
+                  dropdown.style.display = "none";
+                  seng471.style.top = "337px";
+                  seng438.style.top = "440px";
+                }
+              });
+            window.addEventListener("message", function (event) {
+              if (event.data === "minimize401") {
+                const dropdown = document.getElementById(
+                  "seng-401-info-dropdown"
+                );
+                const group75 = document.querySelector(".group-75-58UxVq");
+                group75.style.top = "530px";
+
+                if (dropdown) {
+                  dropdown.style.display = "none";
+                }
+              }
+            });
+          </script>
           <div class="group-77-T0SzOc" data-id="1227:1391">
             <div
               class="rectangle-241-Ga8WR0 rectangle-241"
@@ -4515,6 +4667,30 @@
             data-id="1227:1395"
             src="./pngs/image-2.png"
           />
+          <script>
+            document
+              .querySelector(".image-T0SzOc")
+              .addEventListener("click", function () {
+                const groupElement = document.querySelector(".group-81-g4ihxc");
+                const lab = document.querySelectorAll(".seng-401-lab");
+                if (
+                  groupElement.style.display === "none" ||
+                  groupElement.style.display === ""
+                ) {
+                  groupElement.style.display = "block";
+                  this.src = "./pngs/image.png";
+                  lab.forEach((element) => {
+                    element.style.display = "block";
+                  });
+                } else {
+                  groupElement.style.display = "none";
+                  this.src = "./pngs/image-3.png";
+                  lab.forEach((element) => {
+                    element.style.display = "none";
+                  });
+                }
+              });
+          </script>
         </div>
         <div class="seng-438-calendar-58UxVq" data-id="1227:1421">
           <div class="group-86-xlAx0H" data-id="1227:1432">
@@ -4570,35 +4746,32 @@
                   document.querySelector(
                     ".rectangle-179-g4ihxc"
                   ).style.display = "block";
+                  document.querySelector(
+                    ".rectangle-180-g4ihxc"
+                  ).style.display = "block";
                   document.querySelector(".seng-401-g4ihxc").style.display =
                     "block";
                   document.querySelector(".lab-b01-g4ihxc").style.display =
                     "block";
+                  document.querySelector(".group-82-g4ihxc").style.display =
+                    "block";
+                  document.querySelector(".group-87-58UxVq").style.display =
+                    "block";
+                  document.querySelector(".group-88-58UxVq").style.display =
+                    "block";
+                  document.querySelector(
+                    ".seng-438-calendar-58UxVq"
+                  ).style.display = "block";
+                  document.querySelector(".group-75-58UxVq").style.top =
+                    "618px";
+                  document.querySelector(
+                    ".week-of-february-1-14-58UxVq"
+                  ).textContent = "Week of February 1-14";
                 }
               });
             </script>
             <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                console.log("Running startup logic");
-                document.querySelector(".rectangle-179-g4ihxc").style.display =
-                  "block";
-                document.querySelector(".rectangle-180-g4ihxc").style.display =
-                  "block";
-                document.querySelector(".seng-401-g4ihxc").style.display =
-                  "block";
-                document.querySelector(".lab-b01-g4ihxc").style.display =
-                  "block";
-                document.querySelector(".group-82-g4ihxc").style.display =
-                  "block";
-                document.querySelector(".group-87-58UxVq").style.display =
-                  "block";
-                document.querySelector(".group-88-58UxVq").style.display =
-                  "block";
-                document.querySelector(".seng-438-calendar-58UxVq").style.display = "block";
-                document.querySelector(".group-75-58UxVq").style.top = "618px";
-                document.querySelector(".week-of-february-1-14-58UxVq").textContent = "Week of February 1-14";
-                
-              });
+              document.addEventListener("DOMContentLoaded", function () {});
             </script>
           </div>
         </div>
