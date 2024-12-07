@@ -164,7 +164,7 @@
     }
   </style>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=1920, maximum-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png">
   <meta name="og:type" content="website">
   <meta name="twitter:card" content="photo">
@@ -180,13 +180,18 @@
       pointer-events: none;
     }
   </style>
+  <style id="hide-styles">
+    .hotspot {
+      display: none !important;
+    }
+  </style>
   <script id="s_turbo" src="https://animaapp.s3.amazonaws.com/static/turbo.es2017-umd.js"></script>
   <script id="anima-overrides-script" src="overrides.js"></script>
   <script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script>
   <style>
     @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
-    @import url("https://fonts.googleapis.com/css?family=Inter:400italic,600,300,500,400");
+    @import url("https://fonts.googleapis.com/css?family=Inter:400italic,700,600,700italic,300,500,400");
 
     /* The following line is used to measure usage of this code. You can remove it if you want. */
     @import url("https://px.animaapp.com/6750c8c370d25d94b4ca7fb3.6750c8c470d25d94b4ca7fb6.JKb1wLP.hch.png");
@@ -384,245 +389,2340 @@
     }
 
     :root {
+      --alto: #d9d9d9;
       --black: #000000;
+      --chicago: #645b5b;
+      --concrete: #f2f2f2;
+      --dove-gray: #6d6e71;
+      --eerie-black: #1e1e1e;
+      --feijoa: #a9dd91;
+      --feijoa-2: #a9dd9180;
+      --flax: #eed78580;
+      --half-baked: #91bdd5;
+      --heavy-metal: #2c2c2c;
+      --mindaro: #deec8980;
+      --supernova: #ffcd00;
+      --white: #ffffff;
 
       --font-size-l: 20px;
       --font-size-m: 16px;
-      --font-size-s: 13px;
+      --font-size-s: 15px;
+      --font-size-xl: 24px;
       --font-size-xs: 12px;
+      --font-size-xxl: 32px;
+      --font-size-xxxl: 40px;
 
       --font-family-inter: "Inter", Helvetica;
     }
 
-    :root {}
-
-
-    /* screen - frame-33 */
-
-    .frame-33 {
-      background-color: transparent;
-      height: 244px;
-      overflow-x: hidden;
-      position: relative;
-      width: 482px;
+    .body-base {
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-m);
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0px;
     }
 
-    .frame-33 .group-72-Kd1Dhx {
-      background-color: transparent;
-      height: 244px;
-      left: 0px;
-      position: relative;
-      top: 0px;
-      width: 500px;
-    }
-
-    .frame-33 .rectangle-96-8uQdCF {
-      background-color: #f0f0f0;
-      border: 1px solid;
-      border-color: #d9d9d9;
-      border-radius: 5px 5px 0px 0px;
-      box-shadow: 2px 2px 4px #00000040;
-      height: 244px;
-      left: 0px;
-      position: absolute;
-      top: 0px;
-      width: 476px;
-    }
-
-    .frame-33 .rectangle-97-8uQdCF {
-      background-color: #a9dd91;
-      box-shadow: 2px 2px 4px #00000040;
-      height: 63px;
-      left: 1px;
-      position: absolute;
-      top: 6px;
-      width: 80px;
-    }
-
-    .frame-33 .software-architecture-8uQdCF {
-      background-color: transparent;
+    .inter-normal-black-20px {
       color: var(--black);
       font-family: var(--font-family-inter);
       font-size: var(--font-size-l);
       font-style: normal;
-      font-weight: 500;
-      height: 24px;
-      left: 91px;
-      letter-spacing: 0.00px;
-      line-height: normal;
-      position: absolute;
-      text-align: left;
-      top: 5px;
-      white-space: nowrap;
-      width: auto;
+      font-weight: 400;
     }
 
-    .frame-33 .university-of-calgary-8uQdCF {
-      background-color: transparent;
-      color: var(--black);
-      font-family: var(--font-family-inter);
-      font-size: var(--font-size-s);
-      font-style: normal;
-      font-weight: 300;
-      height: 16px;
-      left: 91px;
-      letter-spacing: 0.00px;
-      line-height: normal;
-      position: absolute;
-      text-align: left;
-      top: 33px;
-      width: auto;
-    }
-
-    .frame-33 .try-all-classes-4-8uQdCF {
-      background-color: transparent;
-      color: var(--black);
-      font-family: var(--font-family-inter);
-      font-size: var(--font-size-xs);
-      font-style: normal;
-      font-weight: 300;
-      height: 15px;
-      left: 91px;
-      letter-spacing: 0.00px;
-      line-height: normal;
-      position: absolute;
-      text-align: left;
-      top: 54px;
-      width: auto;
-    }
-
-    .frame-33 .call_to_action_24dp_-8uQdCF {
-      background-color: transparent;
-      height: 30px;
-      left: 449px;
-      position: absolute;
-      top: 2px;
-      width: 24px;
-    }
-
-    .frame-33 .seng-8uQdCF {
-      background-color: transparent;
-      color: var(--black);
-      font-family: var(--font-family-inter);
-      font-size: var(--font-size-s);
-      font-style: normal;
-      font-weight: 500;
-      height: 16px;
-      left: 23px;
-      letter-spacing: 0.00px;
-      line-height: normal;
-      position: absolute;
-      text-align: center;
-      top: 21px;
-      width: auto;
-    }
-
-    .frame-33 .x401-8uQdCF {
-      background-color: transparent;
-      color: var(--black);
-      font-family: var(--font-family-inter);
-      font-size: var(--font-size-s);
-      font-style: normal;
-      font-weight: 500;
-      height: 16px;
-      left: 29px;
-      letter-spacing: 0.00px;
-      line-height: normal;
-      position: absolute;
-      text-align: center;
-      top: 43px;
-      width: auto;
-    }
-
-    .frame-33 .image-8uQdCF {
-      background-color: transparent;
-      height: 27px;
-      left: 414px;
-      object-fit: cover;
-      position: absolute;
-      top: 8px;
-      width: 27px;
-    }
-
-    .frame-33 .arrow_drop_down-8uQdCF {
-      background-color: transparent;
-      height: 52px;
-      left: 428px;
-      position: absolute;
-      top: 43px;
-      width: 54px;
-    }
-
-    .frame-33 .rectangle-241-8uQdCF {
-      background-color: #91bdd5;
-      border: 1px solid;
-      border-color: var(--black);
-      border-radius: 8px;
-      height: 23px;
-      left: 342px;
-      position: absolute;
-      top: 8px;
-      width: 64px;
-    }
-
-    .frame-33 .enrolled-8uQdCF {
-      background-color: transparent;
+    .inter-normal-black-12px {
       color: var(--black);
       font-family: var(--font-family-inter);
       font-size: var(--font-size-xs);
       font-style: italic;
       font-weight: 400;
-      height: 27px;
-      left: 350px;
-      letter-spacing: 0.00px;
-      line-height: normal;
-      position: absolute;
-      text-align: left;
-      top: 6px;
-      width: 49px;
     }
 
-    .frame-33 .sections-8uQdCF {
-      background-color: transparent;
+    .inter-bold-black-24px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xl);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .inter-medium-black-16px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-m);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .inter-medium-black-15px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-s);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .inter-semi-bold-black-20px {
       color: var(--black);
       font-family: var(--font-family-inter);
       font-size: var(--font-size-l);
       font-style: normal;
       font-weight: 600;
-      height: 22px;
-      left: 14px;
+    }
+
+    .inter-normal-concrete-20px {
+      color: var(--concrete);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-l);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .inter-normal-black-32px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xxl);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .inter-light-black-16px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-m);
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    .inter-light-black-24px {
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xl);
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    :root {}
+
+
+    /* screen - course-registration-sam */
+
+    .course-registration-sam {
+      background-color: var(--white);
+      border: 1px solid;
+      border-color: var(--black);
+      height: 1080px;
+      overflow: hidden;
+      overflow-x: hidden;
+      position: relative;
+      width: 1920px;
+    }
+
+    .course-registration-sam .rectangle-8-58UxVq {
+      background-color: #4d4b4b26;
+      height: 217px;
+      left: 416px;
+      top: 212px;
+      width: 433px;
+    }
+
+    .course-registration-sam .checkbox-and-label-58UxVq {
+      gap: 12px;
+      top: 323px;
+    }
+
+    .course-registration-sam .open-courses-only-Om8t7x {
+      background-color: transparent;
+      color: var(--eerie-black);
+      flex: 1;
+      font-style: normal;
+      font-weight: 400;
+      height: 26px;
+      line-height: 22.4px;
+      margin-top: -1.00px;
+      position: relative;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .course-registration-sam .checkbox-and-label-YD2Q1p {
+      gap: 12px;
+      top: 357px;
+    }
+
+    .course-registration-sam .online-lPwame {
+      background-color: transparent;
+      color: var(--eerie-black);
+      flex: 1;
+      font-style: normal;
+      font-weight: 400;
+      height: 26px;
+      line-height: 22.4px;
+      margin-top: -1.00px;
+      position: relative;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .course-registration-sam .back-button-58UxVq {
+      background-color: transparent;
+      height: 47px;
+      left: 420px;
+      position: absolute;
+      top: 60px;
+      width: 464px;
+    }
+
+    .course-registration-sam .back-icon-CQ7yTS {
+      background-color: transparent;
+      height: 48px;
+      left: 0px;
+      position: absolute;
+      top: 2px;
+      width: 45px;
+    }
+
+    .course-registration-sam .title-CQ7yTS {
+      background-color: transparent;
+      color: var(--chicago);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xxxl);
+      font-style: normal;
+      font-weight: 500;
+      height: auto;
+      left: 66px;
       letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
-      top: 82px;
+      top: 0px;
       white-space: nowrap;
+      width: 396px;
+    }
+
+    .course-registration-sam .search-bar-58UxVq {
+      background-color: transparent;
+      height: 50px;
+      left: 400px;
+      position: absolute;
+      top: 155px;
+      width: 714px;
+    }
+
+    .course-registration-sam .rectangle-2-5WiUxV {
+      background-color: var(--white);
+      border: 1.5px solid;
+      border-color: var(--alto);
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 50px;
+      left: 14px;
+      position: absolute;
+      top: 0px;
+      width: 700px;
+    }
+
+    .course-registration-sam .vector-5WiUxV {
+      height: 30px;
+      left: 660px;
+      top: 10px;
+      width: 30px;
+    }
+
+    .course-registration-sam .search-5WiUxV {
+      background-color: transparent;
+      color: var(--dove-gray);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xl);
+      font-style: italic;
+      font-weight: 400;
+      height: 33px;
+      left: 28px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 8px;
+      width: 140px;
+    }
+
+    .course-registration-sam .profile-58UxVq {
+      background-color: transparent;
+      height: 75px;
+      left: 1799px;
+      position: absolute;
+      top: 21px;
+      width: 75px;
+    }
+
+    .course-registration-sam .ellipse-1-xhxvCS {
+      background-color: var(--white);
+      border: 1px solid;
+      border-color: var(--dove-gray);
+      border-radius: 37.5px;
+      height: 75px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 75px;
+    }
+
+    .course-registration-sam .cm-xhxvCS {
+      background-color: transparent;
+      color: var(--dove-gray);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xl);
+      font-style: normal;
+      font-weight: 400;
+      height: 60px;
+      left: 2px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: center;
+      top: 6px;
+      width: 71px;
+    }
+
+    .course-registration-sam .nav-bar-58UxVq {
+      background-color: transparent;
+      height: 1080px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 404px;
+    }
+
+    .course-registration-sam .rectangle-1-OTZSdy {
+      background-color: var(--white);
+      box-shadow: 0px 4px 4px #00000040;
+      height: 1080px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 400px;
+    }
+
+    .course-registration-sam .vector-OTZSdy {
+      height: 39px;
+      left: 53px;
+      top: 22px;
+      width: 35px;
+    }
+
+    .course-registration-sam .info-OTZSdy {
+      color: var(--chicago);
+      font-family: var(--font-family-inter);
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 500;
+      height: auto;
+      left: 166px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      text-align: left;
+      white-space: nowrap;
+      width: 67px;
+    }
+
+    .course-registration-sam .settings-OTZSdy {
+      color: var(--chicago);
+      font-family: var(--font-family-inter);
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 500;
+      height: auto;
+      left: 132px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      text-align: left;
+      white-space: nowrap;
+      width: 154px;
+    }
+
+    .course-registration-sam .uc-horz-rgb-1-OTZSdy {
+      background-color: transparent;
+      height: 96px;
+      left: 30px;
+      object-fit: cover;
+      position: absolute;
+      top: 36px;
+      width: 341px;
+    }
+
+    .course-registration-sam .misc-button-OTZSdy {
+      background-color: var(--white);
+      border: 1px solid;
+      border-color: var(--alto);
+      border-radius: 20px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 84px;
+      left: 20px;
+      position: absolute;
+      top: 512px;
+      width: 360px;
+    }
+
+    .course-registration-sam .around-u-zQuKlX {
+      background-color: transparent;
+      height: 39px;
+      left: 147px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: right;
+      top: 22px;
+      width: auto;
+    }
+
+    .course-registration-sam .group-zQuKlX {
+      background-color: transparent;
+      height: 40px;
+      left: 53px;
+      position: absolute;
+      top: 22px;
+      width: 38px;
+    }
+
+    .course-registration-sam .settings-qzVwIe {
+      height: 50px;
+      left: 66px;
+      width: 50px;
+    }
+
+    .course-registration-sam .info-qzVwIe {
+      height: 50px;
+      left: 66px;
+      width: 50px;
+    }
+
+    .course-registration-sam .dashboard-button-OTZSdy {
+      background-color: #d6001c;
+      border-radius: 20px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 84px;
+      left: 21px;
+      position: absolute;
+      top: 624px;
+      width: 359px;
+    }
+
+    .course-registration-sam .academics-button-OTZSdy {
+      left: 21px;
+      top: 195px;
+    }
+
+    .course-registration-sam .academics-C0i7Zu {
+      left: 143px;
+    }
+
+    .course-registration-sam .finance-widget-58UxVq {
+      background-color: transparent;
+      height: 526px;
+      left: 863px;
+      position: absolute;
+      top: 236px;
+      width: 1083px;
+    }
+
+    .course-registration-sam .rectangle-53-g4ihxc {
+      background-color: transparent;
+      height: 533px;
+      left: 6px;
+      position: absolute;
+      top: 0px;
+      width: 1043px;
+    }
+
+    .course-registration-sam .line-46-g4ihxc {
+      background-color: transparent;
+      height: 346px;
+      left: -6px;
+      position: absolute;
+      top: 96px;
+      width: 15px;
+    }
+
+    .course-registration-sam .sce-bui-bottom-g4ihxc {
+      background-color: #6d6e71b2;
+      border-radius: 15px;
+      height: 478px;
+      left: 105px;
+      position: absolute;
+      top: 19px;
+      width: 869px;
+    }
+
+    .course-registration-sam .sce-bui-top-g4ihxc {
+      background-color: transparent;
+      height: 449px;
+      left: 105px;
+      position: absolute;
+      top: 77px;
+      width: 869px;
+    }
+
+    .course-registration-sam .line-52-g4ihxc {
+      background-color: transparent;
+      height: 468px;
+      left: 279px;
+      object-fit: cover;
+      position: absolute;
+      top: 52px;
+      width: 1px;
+    }
+
+    .course-registration-sam .line-53-g4ihxc {
+      background-color: transparent;
+      height: 468px;
+      left: 453px;
+      object-fit: cover;
+      position: absolute;
+      top: 51px;
+      width: 1px;
+    }
+
+    .course-registration-sam .line-54-g4ihxc {
+      background-color: transparent;
+      height: 468px;
+      left: 627px;
+      object-fit: cover;
+      position: absolute;
+      top: 51px;
+      width: 1px;
+    }
+
+    .course-registration-sam .line-55-g4ihxc {
+      background-color: transparent;
+      height: 468px;
+      left: 801px;
+      object-fit: cover;
+      position: absolute;
+      top: 51px;
+      width: 1px;
+    }
+
+    .course-registration-sam .x8-am-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 50px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 96px;
+      white-space: nowrap;
+      width: 74px;
+    }
+
+    .course-registration-sam .monday-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 151px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 52px;
+      white-space: nowrap;
+      width: 79px;
+    }
+
+    .course-registration-sam .wednesday-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 488px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 52px;
+      white-space: nowrap;
+      width: 115px;
+    }
+
+    .course-registration-sam .thursday-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 667px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 52px;
+      white-space: nowrap;
+      width: 92px;
+    }
+
+    .course-registration-sam .friday-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 860px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 51px;
+      white-space: nowrap;
+      width: 61px;
+    }
+
+    .course-registration-sam .tuesday-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 327px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 51px;
+      white-space: nowrap;
+      width: 83px;
+    }
+
+    .course-registration-sam .x9-am-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 52px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 131px;
+      white-space: nowrap;
+      width: 52px;
+    }
+
+    .course-registration-sam .x10-am-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 43px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 168px;
+      white-space: nowrap;
+      width: 61px;
+    }
+
+    .course-registration-sam .x11-am-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 46px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 200px;
+      white-space: nowrap;
+      width: 58px;
+    }
+
+    .course-registration-sam .x12-pm-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 44px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 236px;
+      white-space: nowrap;
+      width: 60px;
+    }
+
+    .course-registration-sam .x1-pm-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 56px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 272px;
+      white-space: nowrap;
+      width: 48px;
+    }
+
+    .course-registration-sam .x2-pm-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 53px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 307px;
+      white-space: nowrap;
+      width: 51px;
+    }
+
+    .course-registration-sam .x3-pm-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 53px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 348px;
+      white-space: nowrap;
+      width: 51px;
+    }
+
+    .course-registration-sam .x4-pm-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 53px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 383px;
+      white-space: nowrap;
+      width: 51px;
+    }
+
+    .course-registration-sam .x5-pm-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 53px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 420px;
+      white-space: nowrap;
+      width: 51px;
+    }
+
+    .course-registration-sam .x6-pm-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 48px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 457px;
+      white-space: nowrap;
+      width: 51px;
+    }
+
+    .course-registration-sam .x7-pm-g4ihxc {
+      background-color: transparent;
+      height: 15px;
+      left: 49px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 492px;
+      white-space: nowrap;
+      width: 71px;
+    }
+
+    .course-registration-sam .line-56-g4ihxc {
+      background-color: transparent;
+      height: 5px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 119px;
+      width: 868px;
+    }
+
+    .course-registration-sam .line-69-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 140px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-70-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 175px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-72-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 247px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-74-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 319px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-75-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 355px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-76-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 393px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-77-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 428px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-78-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 464px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-79-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 500px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-71-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 210px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-64-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 410px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-65-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 446px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-66-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 482px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-63-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 373px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-61-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 301px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-62-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 337px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-59-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 228px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-60-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 264px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-58-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 192px;
+      width: 867px;
+    }
+
+    .course-registration-sam .line-57-g4ihxc {
+      background-color: transparent;
+      height: 1px;
+      left: 106px;
+      object-fit: cover;
+      position: absolute;
+      top: 156px;
+      width: 867px;
+    }
+
+    .course-registration-sam .rectangle-179-g4ihxc {
+      background-color: var(--feijoa);
+      border-radius: 7px 0px 0px 7px;
+      height: 67px;
+      left: 453px;
+      position: absolute;
+      top: 374px;
+      width: 12px;
+    }
+
+    .course-registration-sam .rectangle-180-g4ihxc {
+      background-color: var(--feijoa-2);
+      border-radius: 0px 7px 7px 0px;
+      height: 67px;
+      left: 466px;
+      position: absolute;
+      top: 374px;
+      width: 162px;
+    }
+
+    .course-registration-sam .seng-401-g4ihxc {
+      height: 12px;
+      left: 503px;
+      text-align: left;
+      top: 394px;
+      white-space: nowrap;
+      width: 80px;
+    }
+
+    .course-registration-sam .group-81-g4ihxc {
+      background-color: transparent;
+      height: 60px;
+      left: 279px;
+      position: absolute;
+      top: 76px;
+      width: 521px;
+    }
+
+    .course-registration-sam .group-79-NiJVdk {
+      background-color: transparent;
+      height: 58px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 178px;
+    }
+
+    .course-registration-sam .rectangle-176-9Bvbrg {
+      background-color: var(--feijoa-2);
+      height: 57px;
+      left: 12px;
+      top: 0px;
+      width: 162px;
+    }
+
+    .course-registration-sam .seng-401-HlyPBd {
+      height: 15px;
+      left: 47px;
+      text-align: left;
+      top: 9px;
+      white-space: nowrap;
+      width: 80px;
+    }
+
+    .course-registration-sam .group-80-NiJVdk {
+      background-color: transparent;
+      height: 58px;
+      left: 347px;
+      position: absolute;
+      top: 2px;
+      width: 178px;
+    }
+
+    .course-registration-sam .rectangle-176-uM9ei7 {
+      background-color: var(--feijoa-2);
+      height: 57px;
+      left: 12px;
+      top: 0px;
+      width: 162px;
+    }
+
+    .course-registration-sam .seng-401-BvBwxq {
+      height: 15px;
+      left: 47px;
+      text-align: left;
+      top: 9px;
+      white-space: nowrap;
+      width: 80px;
+    }
+
+    .course-registration-sam .lab-b01-g4ihxc {
+      background-color: transparent;
+      height: 11px;
+      left: 509px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 414px;
+      white-space: nowrap;
+      width: 62px;
+    }
+
+    .course-registration-sam .group-82-g4ihxc {
+      background-color: transparent;
+      height: 44px;
+      left: 105px;
+      position: absolute;
+      top: 156px;
+      width: 870px;
+    }
+
+    .course-registration-sam .group-5-zJzPPV {
+      background-color: transparent;
+      height: 44px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 178px;
+    }
+
+    .course-registration-sam .seng-471-KD3hXF {
+      height: 16px;
+      left: 53px;
+      text-align: left;
+      top: 4px;
+      white-space: nowrap;
+      width: 80px;
+    }
+
+    .course-registration-sam .group-84-zJzPPV {
+      background-color: transparent;
+      height: 44px;
+      left: 348px;
+      position: absolute;
+      top: 0px;
+      width: 178px;
+    }
+
+    .course-registration-sam .seng-471-bK8gm7 {
+      height: 16px;
+      left: 53px;
+      text-align: left;
+      top: 4px;
+      white-space: nowrap;
+      width: 80px;
+    }
+
+    .course-registration-sam .group-83-zJzPPV {
+      background-color: transparent;
+      height: 44px;
+      left: 696px;
+      position: absolute;
+      top: 0px;
+      width: 178px;
+    }
+
+    .course-registration-sam .seng-471-8RA1sN {
+      height: 16px;
+      left: 53px;
+      text-align: left;
+      top: 4px;
+      white-space: nowrap;
+      width: 80px;
+    }
+
+    .course-registration-sam .group-25-58UxVq {
+      height: 73px;
+      top: 853px;
+      width: 281px;
+    }
+
+    .course-registration-sam .save-schedule-to-favourites-xBfshP {
+      background-color: transparent;
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-l);
+      font-style: normal;
+      font-weight: 300;
+      height: auto;
+      left: 9px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 15px;
+      width: 270px;
+    }
+
+    .course-registration-sam .semester-dropdown-58UxVq {
+      background-color: transparent;
+      height: 50px;
+      left: 1563px;
+      position: absolute;
+      top: 154px;
+      width: 275px;
+    }
+
+    .course-registration-sam .rectangle-6-HpdVtj {
+      background-color: var(--white);
+      border: 1px solid;
+      border-color: var(--alto);
+      border-radius: 7px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 50px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 275px;
+    }
+
+    .course-registration-sam .winter-2023-HpdVtj {
+      background-color: transparent;
+      color: var(--dove-gray);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xl);
+      font-style: normal;
+      font-weight: 400;
+      height: 50px;
+      left: 32px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: -1px;
+      width: 224px;
+    }
+
+    .course-registration-sam .vector-HpdVtj {
+      height: 10px;
+      left: 236px;
+      top: 20px;
+      width: 20px;
+    }
+
+    .course-registration-sam .registration-58UxVq {
+      background-color: transparent;
+      height: 39px;
+      left: 167px;
+      position: absolute;
+      top: 654px;
+      width: 184px;
+    }
+
+    .course-registration-sam .vector-58UxVq {
+      height: 44px;
+      left: 67px;
+      top: 645px;
+      width: 50px;
+    }
+
+    .course-registration-sam .vector-YD2Q1p {
+      height: 39px;
+      left: 82px;
+      top: 217px;
+      width: 35px;
+    }
+
+    .course-registration-sam .academics-button-58UxVq {
+      left: 20px;
+      top: 304px;
+    }
+
+    .course-registration-sam .vector-5yB4PP {
+      height: 40px;
+      left: 53px;
+      top: 22px;
+      width: 49px;
+    }
+
+    .course-registration-sam .academics-5yB4PP {
+      left: 141px;
+    }
+
+    .course-registration-sam .applications-button-58UxVq {
+      background-color: var(--white);
+      border: 1px solid;
+      border-color: var(--alto);
+      border-radius: 20px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 84px;
+      left: 20px;
+      position: absolute;
+      top: 407px;
+      width: 360px;
+    }
+
+    .course-registration-sam .vector-CnTd5J {
+      height: 40px;
+      left: 53px;
+      top: 22px;
+      width: 40px;
+    }
+
+    .course-registration-sam .applications-CnTd5J {
+      background-color: transparent;
+      height: 39px;
+      left: 141px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: right;
+      top: 22px;
+      width: auto;
+    }
+
+    .course-registration-sam .rectangle-268-58UxVq {
+      background-color: transparent;
+      height: 51px;
+      left: 1137px;
+      position: absolute;
+      top: 154px;
+      width: 262px;
+    }
+
+    .course-registration-sam .schedule-builder-58UxVq {
+      background-color: transparent;
+      color: var(--white);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-l);
+      font-style: italic;
+      font-weight: 700;
+      height: 33px;
+      left: 1146px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 161px;
+      width: 247px;
+    }
+
+    .course-registration-sam .image-2-58UxVq {
+      background-color: transparent;
+      height: 37px;
+      left: 1347px;
+      object-fit: cover;
+      position: absolute;
+      top: 161px;
+      width: 46px;
+    }
+
+    .course-registration-sam .checkbox-and-label-U7IBAw {
+      gap: 12px;
+      top: 391px;
+    }
+
+    .course-registration-sam .show-waitlistable-courses-2OYQSQ {
+      background-color: transparent;
+      color: var(--eerie-black);
+      flex: 1;
+      font-style: normal;
+      font-weight: 400;
+      height: 26px;
+      line-height: 22.4px;
+      margin-top: -1.00px;
+      position: relative;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .course-registration-sam .checkbox-and-label-4TDWfI {
+      gap: 14px;
+      top: 287px;
+    }
+
+    .course-registration-sam .graduate-bQdYfA {
+      background-color: transparent;
+      color: var(--eerie-black);
+      flex: 1;
+      font-style: normal;
+      font-weight: 400;
+      height: 26px;
+      line-height: 22.4px;
+      margin-top: -1.00px;
+      position: relative;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .course-registration-sam .table-view-58UxVq {
+      background-color: transparent;
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-m);
+      font-style: normal;
+      font-weight: 700;
+      height: auto;
+      left: 1240px;
+      letter-spacing: 0.00px;
+      line-height: 22.4px;
+      position: absolute;
+      text-align: left;
+      top: 778px;
+      width: 90px;
+    }
+
+    .course-registration-sam .filters-58UxVq {
+      background-color: transparent;
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-l);
+      font-style: normal;
+      font-weight: 700;
+      height: 27px;
+      left: 423px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      text-decoration: underline;
+      top: 215px;
+      width: 264px;
+    }
+
+    .course-registration-sam .minimize_24dp_ffffff-58UxVq {
+      background-color: transparent;
+      height: 24px;
+      left: 809px;
+      position: absolute;
+      top: 213px;
+      width: 24px;
+    }
+
+    .course-registration-sam .group-23-58UxVq {
+      background-color: transparent;
+      height: 261px;
+      left: 1058px;
+      position: absolute;
+      top: 809px;
+      width: 516px;
+    }
+
+    .course-registration-sam .rectangle-270-RAE8oe {
+      background-color: var(--alto);
+      border-radius: 15px;
+      height: 261px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 516px;
+    }
+
+    .course-registration-sam .group-10-RAE8oe {
+      background-color: transparent;
+      height: 32px;
+      left: 33px;
+      position: absolute;
+      top: 8px;
+      width: 200px;
+    }
+
+    .course-registration-sam .rectangle-241-QUxyJd {
+      background-color: var(--half-baked);
+      height: 27px;
+      width: 198px;
+    }
+
+    .course-registration-sam .enrolled-QUxyJd {
+      height: 32px;
+      left: 25px;
+      text-align: center;
+      width: 152px;
+    }
+
+    .course-registration-sam .group-13-RAE8oe {
+      height: 32px;
+      left: 269px;
+      top: 6px;
+      width: 200px;
+    }
+
+    .course-registration-sam .rectangle-241-9mKEjq {
+      background-color: #a05c5c;
+      height: 27px;
+      width: 198px;
+    }
+
+    .course-registration-sam .waitlisted-9mKEjq {
+      height: 32px;
+      left: 25px;
+      text-align: center;
+      top: -0px;
+      width: 152px;
+    }
+
+    .course-registration-sam .group-11-RAE8oe {
+      background-color: transparent;
+      height: 210px;
+      left: 33px;
+      position: absolute;
+      top: 51px;
+      width: 216px;
+    }
+
+    .course-registration-sam .rectangle-278-Grwhyp {
+      background-color: transparent;
+      height: 48px;
+      left: 0px;
+      position: absolute;
+      top: 162px;
+      width: 198px;
+    }
+
+    .course-registration-sam .rectangle-275-Grwhyp {
+      background-color: transparent;
+      height: 194px;
+      left: 0px;
+      width: 199px;
+    }
+
+    .course-registration-sam .group-12-Grwhyp {
+      height: 66px;
+      left: 8px;
+      top: 63px;
+      width: 185px;
+    }
+
+    .course-registration-sam .rectangle-176-0EbEf4 {
+      background-color: var(--flax);
+      height: 50px;
+      left: 23px;
+      top: 8px;
+      width: 158px;
+    }
+
+    .course-registration-sam .seng-471-0EbEf4 {
+      height: 42px;
+      left: 21px;
+      text-align: center;
+      top: 0px;
+      width: 152px;
+    }
+
+    .course-registration-sam .l02-t01-0EbEf4 {
+      background-color: transparent;
+      height: 42px;
+      left: 21px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: center;
+      top: 24px;
+      width: 152px;
+    }
+
+    .course-registration-sam .rectangle-278-0EbEf4 {
+      background-color: #eed684;
+      border-radius: 7px 0px 0px 7px;
+      height: 50px;
+      left: 0px;
+      position: absolute;
+      top: 8px;
+      width: 23px;
+    }
+
+    .course-registration-sam .group-13-Grwhyp {
+      height: 66px;
+      left: 10px;
+      top: 129px;
+      width: 185px;
+    }
+
+    .course-registration-sam .rectangle-176-0HYVPq {
+      background-color: var(--mindaro);
+      height: 50px;
+      left: 23px;
+      top: 8px;
+      width: 158px;
+    }
+
+    .course-registration-sam .seng-438-0HYVPq {
+      height: 42px;
+      left: 21px;
+      text-align: center;
+      top: 0px;
+      width: 152px;
+    }
+
+    .course-registration-sam .l04-t02-0HYVPq {
+      background-color: transparent;
+      height: 42px;
+      left: 21px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: center;
+      top: 24px;
+      width: 152px;
+    }
+
+    .course-registration-sam .rectangle-278-0HYVPq {
+      background-color: #ddeb88;
+      border-radius: 7px 0px 0px 7px;
+      height: 50px;
+      left: 0px;
+      position: absolute;
+      top: 8px;
+      width: 23px;
+    }
+
+    .course-registration-sam .rectangle-176-Grwhyp {
+      background-color: var(--feijoa-2);
+      height: 50px;
+      left: 31px;
+      top: 8px;
+      width: 158px;
+    }
+
+    .course-registration-sam .seng-401-Grwhyp {
+      height: 42px;
+      left: 29px;
+      text-align: center;
+      top: 0px;
+      width: 152px;
+    }
+
+    .course-registration-sam .rectangle-278-H2xxi1 {
+      background-color: var(--feijoa);
+      border-radius: 7px 0px 0px 7px;
+      height: 50px;
+      left: 8px;
+      position: absolute;
+      top: 8px;
+      width: 23px;
+    }
+
+    .course-registration-sam .group-12-RAE8oe {
+      height: 210px;
+      left: 269px;
+      top: 51px;
+      width: 216px;
+    }
+
+    .course-registration-sam .rectangle-278-4jPWWn {
+      background-color: transparent;
+      height: 48px;
+      left: 0px;
+      position: absolute;
+      top: 162px;
+      width: 198px;
+    }
+
+    .course-registration-sam .rectangle-275-4jPWWn {
+      background-color: transparent;
+      height: 194px;
+      left: 0px;
+      width: 199px;
+    }
+
+    .course-registration-sam .rectangle-176-4jPWWn {
+      background-color: #c80c0c85;
+      height: 50px;
+      left: 31px;
+      top: 8px;
+      width: 158px;
+    }
+
+    .course-registration-sam .cpsc-481-4jPWWn {
+      height: 42px;
+      left: 29px;
+      text-align: center;
+      top: 0px;
+      width: 152px;
+    }
+
+    .course-registration-sam .rectangle-278-ToxzET {
+      background-color: #952b2f;
+      border-radius: 7px 0px 0px 7px;
+      height: 50px;
+      left: 8px;
+      position: absolute;
+      top: 8px;
+      width: 23px;
+    }
+
+    .course-registration-sam .group-24-58UxVq {
+      background-color: transparent;
+      height: 237px;
+      left: 400px;
+      position: absolute;
+      top: 833px;
+      width: 519px;
+    }
+
+    .course-registration-sam .rectangle-271-xwae6u {
+      background-color: var(--alto);
+      border-radius: 15px;
+      height: 237px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 519px;
+    }
+
+    .course-registration-sam .group-22-xwae6u {
+      background-color: transparent;
+      height: 226px;
+      left: 26px;
+      position: absolute;
+      top: 11px;
+      width: 447px;
+    }
+
+    .course-registration-sam .group-17-NrRh2x {
+      background-color: transparent;
+      height: 163px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 449px;
+    }
+
+    .course-registration-sam .allows-courses-to-be-ZBJVxa {
+      background-color: transparent;
+      height: 163px;
+      left: 57px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 0px;
+      width: 390px;
+    }
+
+    .course-registration-sam .image-ZBJVxa {
+      height: 49px;
+      left: 0px;
+      top: 36px;
+    }
+
+    .course-registration-sam .group-18-NrRh2x {
+      background-color: transparent;
+      height: 120px;
+      left: 54px;
+      position: absolute;
+      top: 106px;
+      width: 291px;
+    }
+
+    .course-registration-sam .drops-down-more-info-on-the-course-i1PzDa {
+      background-color: transparent;
+      height: 120px;
+      left: 0px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 0px;
+      width: 289px;
+    }
+
+    .course-registration-sam .group-25-YD2Q1p {
+      height: 61px;
+      top: 772px;
+      width: 284px;
+    }
+
+    .course-registration-sam .save-schedule-as-pdf-Hhto71 {
+      background-color: transparent;
+      height: auto;
+      left: 16px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 16px;
+      width: 266px;
+    }
+
+    .course-registration-sam .note-this-page-is-vi-58UxVq {
+      background-color: transparent;
+      color: var(--black);
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xl);
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 895px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 69px;
+      width: 747px;
+    }
+
+    .course-registration-sam .icon-legend-58UxVq {
+      background-color: transparent;
+      height: 15px;
+      left: 558px;
+      position: absolute;
+      top: 844px;
+      width: 90px;
+    }
+
+    .course-registration-sam .week-of-february-1-14-58UxVq {
+      background-color: transparent;
+      height: 21px;
+      left: 997px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 221px;
+      width: 822px;
+    }
+
+    .course-registration-sam .group-26-58UxVq {
+      background-color: transparent;
+      height: 72px;
+      left: 1626px;
+      position: absolute;
+      top: 934px;
+      width: 320px;
+    }
+
+    .course-registration-sam .view-favourites-xBkuHV {
+      background-color: transparent;
+      height: auto;
+      left: 48px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 14px;
+      width: 270px;
+    }
+
+    .course-registration-sam .group-27-58UxVq {
+      background-color: transparent;
+      height: 72px;
+      left: 1626px;
+      position: absolute;
+      top: 1010px;
+      width: 320px;
+    }
+
+    .course-registration-sam .need-help-bZDMXP {
+      background-color: transparent;
+      height: auto;
+      left: 48px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 14px;
+      width: 270px;
+    }
+
+    .course-registration-sam .group-87-58UxVq {
+      background-color: transparent;
+      height: 53px;
+      left: 416px;
+      position: absolute;
+      top: 508px;
+      width: 435px;
+    }
+
+    .course-registration-sam .phones-Gvy1eN {
+      width: 433px;
+    }
+
+    .course-registration-sam .rectangle-8-9XrYkz {
+      background-color: var(--white);
+      height: 49px;
+      left: 0px;
+      top: 0px;
+      width: 433px;
+    }
+
+    .course-registration-sam .phone-9XrYkz {
+      left: 21px;
+      width: 264px;
+    }
+
+    .course-registration-sam .home-9XrYkz {
+      left: 21px;
       width: 141px;
     }
 
-    .frame-33 .group-74-8uQdCF {
-      background-color: transparent;
-      height: 62px;
-      left: 29px;
-      position: absolute;
-      top: 104px;
-      width: 308px;
+    .course-registration-sam .x403-287-1120-9XrYkz {
+      left: 21px;
+      width: 393px;
     }
 
-    .frame-33 .checkbox-and-label-9iu92X {
-      align-items: center;
-      background-color: transparent;
-      display: flex;
-      gap: 12px;
-      left: 11px;
-      position: absolute;
-      top: 4px;
-      width: 293px;
+    .course-registration-sam .rectangle-12-9XrYkz {
+      left: 21px;
+      width: 71px;
     }
 
-    .frame-33 .checkbox-9jnhTP {
+    .course-registration-sam .seng-471-Gvy1eN {
+      height: 27px;
+      left: 17px;
+      text-align: left;
+      top: 13px;
+      white-space: nowrap;
+      width: 229px;
+    }
+
+    .course-registration-sam .image-Gvy1eN {
+      height: 30px;
+      left: 388px;
+      top: 10px;
+    }
+
+    .course-registration-sam .rectangle-273-Gvy1eN {
+      background-color: #eed684;
+      border-radius: 7px 0px 0px 7px;
+    }
+
+    .course-registration-sam .rectangle-241-5ZgIbR {
+      background-color: var(--half-baked);
+      height: 23px;
+      width: 64px;
+    }
+
+    .course-registration-sam .enrolled-5ZgIbR {
+      height: 27px;
+      left: 8px;
+      text-align: left;
+      width: 49px;
+    }
+
+    .course-registration-sam .arrow_drop_down-Gvy1eN {
+      left: 340px;
+      top: 1px;
+    }
+
+    .course-registration-sam .group-88-58UxVq {
+      background-color: transparent;
+      height: 53px;
+      left: 416px;
+      position: absolute;
+      top: 561px;
+      width: 435px;
+    }
+
+    .course-registration-sam .phones-or3ert {
+      width: 433px;
+    }
+
+    .course-registration-sam .rectangle-8-bk2x92 {
+      background-color: var(--white);
+      height: 49px;
+      left: 0px;
+      top: 0px;
+      width: 433px;
+    }
+
+    .course-registration-sam .phone-bk2x92 {
+      left: 21px;
+      width: 264px;
+    }
+
+    .course-registration-sam .home-bk2x92 {
+      left: 21px;
+      width: 141px;
+    }
+
+    .course-registration-sam .x403-287-1120-bk2x92 {
+      left: 21px;
+      width: 393px;
+    }
+
+    .course-registration-sam .rectangle-12-bk2x92 {
+      left: 21px;
+      width: 71px;
+    }
+
+    .course-registration-sam .seng-438-or3ert {
+      height: 27px;
+      left: 17px;
+      text-align: left;
+      top: 13px;
+      white-space: nowrap;
+      width: 229px;
+    }
+
+    .course-registration-sam .image-or3ert {
+      height: 30px;
+      left: 388px;
+      top: 10px;
+    }
+
+    .course-registration-sam .rectangle-273-or3ert {
+      background-color: transparent;
+    }
+
+    .course-registration-sam .rectangle-241-3oC62o {
+      background-color: var(--half-baked);
+      height: 23px;
+      width: 64px;
+    }
+
+    .course-registration-sam .enrolled-3oC62o {
+      height: 27px;
+      left: 8px;
+      text-align: left;
+      width: 49px;
+    }
+
+    .course-registration-sam .arrow_drop_down-or3ert {
+      left: 340px;
+      top: 1px;
+    }
+
+    .course-registration-sam .arrow_drop_down-58UxVq {
+      left: 420px;
+      top: 984px;
+    }
+
+    .course-registration-sam .group-75-58UxVq {
+      background-color: transparent;
+      height: 53px;
+      left: 413px;
+      position: absolute;
+      top: 618px;
+      width: 440px;
+    }
+
+    .course-registration-sam .phones-wJ7ygD {
+      width: 438px;
+    }
+
+    .course-registration-sam .rectangle-8-xoxkgE {
+      background-color: var(--white);
+      height: 49px;
+      left: 0px;
+      top: 0px;
+      width: 438px;
+    }
+
+    .course-registration-sam .phone-xoxkgE {
+      left: 22px;
+      width: 267px;
+    }
+
+    .course-registration-sam .home-xoxkgE {
+      left: 22px;
+      width: 143px;
+    }
+
+    .course-registration-sam .x403-287-1120-xoxkgE {
+      left: 22px;
+      width: 398px;
+    }
+
+    .course-registration-sam .rectangle-12-xoxkgE {
+      left: 22px;
+      width: 72px;
+    }
+
+    .course-registration-sam .phones-gZBlOm {
+      width: 438px;
+    }
+
+    .course-registration-sam .rectangle-8-zBKIRy {
+      background-color: var(--white);
+      height: 49px;
+      left: 0px;
+      top: 0px;
+      width: 438px;
+    }
+
+    .course-registration-sam .phone-zBKIRy {
+      left: 22px;
+      width: 267px;
+    }
+
+    .course-registration-sam .home-zBKIRy {
+      left: 22px;
+      width: 143px;
+    }
+
+    .course-registration-sam .x403-287-1120-zBKIRy {
+      left: 22px;
+      width: 398px;
+    }
+
+    .course-registration-sam .rectangle-12-zBKIRy {
+      left: 22px;
+      width: 72px;
+    }
+
+    .course-registration-sam .image-3-wJ7ygD {
+      background-color: transparent;
+      height: 26px;
+      left: 388px;
+      object-fit: cover;
+      position: absolute;
+      top: 12px;
+      width: 36px;
+    }
+
+    .course-registration-sam .cpsc-481-wJ7ygD {
+      height: 27px;
+      left: 22px;
+      text-align: left;
+      top: 13px;
+      white-space: nowrap;
+      width: 229px;
+    }
+
+    .course-registration-sam .rectangle-274-wJ7ygD {
+      background-color: #a05c5c;
+    }
+
+    .course-registration-sam .group-7-wJ7ygD {
+      background-color: transparent;
+      height: 27px;
+      left: 153px;
+      position: absolute;
+      top: 14px;
+      width: 66px;
+    }
+
+    .course-registration-sam .rectangle-241-xdPNAc {
+      background-color: #d59191;
+      height: 23px;
+      width: 64px;
+    }
+
+    .course-registration-sam .waitlisted-xdPNAc {
+      height: 27px;
+      left: 4px;
+      text-align: left;
+      top: 0px;
+      width: 56px;
+    }
+
+    .course-registration-sam .arrow_drop_down-wJ7ygD {
+      left: 340px;
+      top: 1px;
+    }
+
+    .course-registration-sam .group-76-58UxVq {
+      background-color: transparent;
+      height: 53px;
+      left: 413px;
+      position: absolute;
+      top: 453px;
+      width: 440px;
+    }
+
+    .course-registration-sam .phones-T0SzOc {
+      width: 438px;
+    }
+
+    .course-registration-sam .rectangle-8-Qez36u {
+      background-color: var(--white);
+      height: 49px;
+      left: 0px;
+      top: 0px;
+      width: 438px;
+    }
+
+    .course-registration-sam .phone-Qez36u {
+      left: 22px;
+      width: 267px;
+    }
+
+    .course-registration-sam .home-Qez36u {
+      left: 22px;
+      width: 143px;
+    }
+
+    .course-registration-sam .x403-287-1120-Qez36u {
+      left: 22px;
+      width: 398px;
+    }
+
+    .course-registration-sam .rectangle-12-Qez36u {
+      left: 22px;
+      width: 72px;
+    }
+
+    .course-registration-sam .phones-OK35D4 {
+      width: 438px;
+    }
+
+    .course-registration-sam .rectangle-8-gwOGq3 {
+      background-color: var(--white);
+      height: 49px;
+      left: 0px;
+      top: 0px;
+      width: 438px;
+    }
+
+    .course-registration-sam .phone-gwOGq3 {
+      left: 22px;
+      width: 267px;
+    }
+
+    .course-registration-sam .home-gwOGq3 {
+      left: 22px;
+      width: 143px;
+    }
+
+    .course-registration-sam .x403-287-1120-gwOGq3 {
+      left: 22px;
+      width: 398px;
+    }
+
+    .course-registration-sam .rectangle-12-gwOGq3 {
+      left: 22px;
+      width: 72px;
+    }
+
+    .course-registration-sam .seng-481-T0SzOc {
+      background-color: transparent;
+      height: 27px;
+      left: 22px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 13px;
+      white-space: nowrap;
+      width: 229px;
+    }
+
+    .course-registration-sam .rectangle-274-T0SzOc {
+      background-color: var(--feijoa);
+    }
+
+    .course-registration-sam .arrow_drop_down-T0SzOc {
+      left: 340px;
+      top: 1px;
+    }
+
+    .course-registration-sam .group-77-T0SzOc {
+      background-color: transparent;
+      height: 27px;
+      left: 153px;
+      position: absolute;
+      top: 13px;
+      width: 66px;
+    }
+
+    .course-registration-sam .rectangle-241-Ga8WR0 {
+      background-color: var(--half-baked);
+      height: 23px;
+      width: 64px;
+    }
+
+    .course-registration-sam .enrolled-Ga8WR0 {
+      height: 27px;
+      left: 8px;
+      text-align: left;
+      width: 49px;
+    }
+
+    .course-registration-sam .image-T0SzOc {
+      height: 30px;
+      left: 388px;
+      top: 13px;
+    }
+
+    .course-registration-sam .seng-438-calendar-58UxVq {
+      background-color: transparent;
+      height: 49px;
+      left: 1142px;
+      position: absolute;
+      top: 499px;
+      width: 516px;
+    }
+
+    .course-registration-sam .group-86-xlAx0H {
+      background-color: transparent;
+      height: 49px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 172px;
+    }
+
+    .course-registration-sam .rectangle-276-MgBPbh {
+      background-color: transparent;
+      height: 49px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 12px;
+    }
+
+    .course-registration-sam .rectangle-275-MgBPbh {
+      background-color: var(--mindaro);
+      border-radius: 0px 7px 7px 0px;
+      height: 49px;
+      left: 12px;
+      width: 156px;
+    }
+
+    .course-registration-sam .seng-438-MgBPbh {
+      height: 13px;
+      left: 45px;
+      text-align: left;
+      top: 7px;
+      white-space: nowrap;
+      width: 79px;
+    }
+
+    .course-registration-sam .lec-04-MgBPbh {
+      left: 59px;
+      top: 28px;
+    }
+
+    .course-registration-sam .group-85-xlAx0H {
+      background-color: transparent;
+      height: 47px;
+      left: 348px;
+      position: absolute;
+      top: 2px;
+      width: 172px;
+    }
+
+    .course-registration-sam .rectangle-278-1M8MMn {
+      background-color: transparent;
+      height: 47px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 12px;
+    }
+
+    .course-registration-sam .rectangle-277-1M8MMn {
+      background-color: var(--mindaro);
+      border-radius: 0px 7px 7px 0px;
+      height: 47px;
+      left: 12px;
+      position: absolute;
+      top: 0px;
+      width: 156px;
+    }
+
+    .course-registration-sam .lec-04-1M8MMn {
+      left: 58px;
+      top: 27px;
+    }
+
+    .course-registration-sam .seng-438-1M8MMn {
+      height: 12px;
+      left: 44px;
+      text-align: left;
+      top: 7px;
+      white-space: nowrap;
+      width: 79px;
+    }
+
+    .course-registration-sam .academics {
+      background-color: transparent;
+      height: 39px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: right;
+      top: 21px;
+      width: auto;
+    }
+
+    .course-registration-sam .academics-button {
+      background-color: var(--white);
+      border: 1px solid;
+      border-color: var(--alto);
+      border-radius: 20px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 84px;
+      position: absolute;
+      width: 360px;
+    }
+
+    .course-registration-sam .arrow_drop_down {
+      background-color: transparent;
+      height: 52px;
+      position: absolute;
+      width: 54px;
+    }
+
+    .course-registration-sam .check {
+      background-color: transparent;
+      height: 16px;
+      position: relative;
+      width: 16px;
+    }
+
+    .course-registration-sam .checkbox {
       align-items: center;
-      background-color: #2c2c2c;
+      background-color: var(--heavy-metal);
       border-radius: 4px;
       display: flex;
       gap: 10px;
@@ -633,121 +2733,304 @@
       width: 16px;
     }
 
-    .frame-33 .check-QYxKxx {
-      background-color: transparent;
-      height: 16px;
-      position: relative;
-      width: 16px;
-    }
-
-    .frame-33 .checkboxes-9iu92X {
+    .course-registration-sam .checkbox-and-label {
       align-items: center;
       background-color: transparent;
       display: flex;
-      flex-direction: column;
-      height: 36px;
-      justify-content: center;
-      left: 0px;
-      padding: 4px;
+      left: 437px;
       position: absolute;
-      top: 26px;
-      width: 39px;
+      width: 293px;
     }
 
-    .frame-33 .state-layer-VvxKoC {
-      align-items: center;
+    .course-registration-sam .cpsc-481 {
       background-color: transparent;
-      border-radius: 100px;
-      display: inline-flex;
-      flex: 0 0 auto;
-      justify-content: center;
-      margin-bottom: -6.00px;
-      margin-left: -4.50px;
-      margin-right: -4.50px;
-      margin-top: -6.00px;
-      padding: 11px;
-      position: relative;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
     }
 
-    .frame-33 .container-wMWCkM {
+    .course-registration-sam .enrolled {
       background-color: transparent;
-      border: 2px solid;
-      border-color: #49454f;
-      border-radius: 2px;
-      height: 18px;
-      position: relative;
-      width: 18px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      top: 0px;
     }
 
-    .frame-33 .lec-01-tutorial-01-9iu92X {
+    .course-registration-sam .group-12 {
       background-color: transparent;
-      color: var(--black);
-      font-family: var(--font-family-inter);
-      font-size: var(--font-size-m);
-      font-style: normal;
-      font-weight: 300;
-      height: 23px;
-      left: 34px;
+      position: absolute;
+    }
+
+    .course-registration-sam .group-13 {
+      background-color: transparent;
+      position: absolute;
+    }
+
+    .course-registration-sam .group-25 {
+      background-color: transparent;
+      left: 1626px;
+      position: absolute;
+    }
+
+    .course-registration-sam .group-6 {
+      background-color: transparent;
+      height: 27px;
+      left: 153px;
+      position: absolute;
+      top: 13px;
+      width: 66px;
+    }
+
+    .course-registration-sam .group-78 {
+      background-color: transparent;
+      height: 58px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 174px;
+    }
+
+    .course-registration-sam .home {
+      background-color: transparent;
+      height: 5px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 9px;
+      white-space: nowrap;
+    }
+
+    .course-registration-sam .image {
+      background-color: transparent;
+      object-fit: cover;
+      position: absolute;
+      width: 36px;
+    }
+
+    .course-registration-sam .info {
+      background-color: transparent;
+      position: absolute;
+      top: 1000px;
+    }
+
+    .course-registration-sam .l01-t01 {
+      background-color: transparent;
+      height: 42px;
+      left: 29px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: center;
+      top: 24px;
+      width: 152px;
+    }
+
+    .course-registration-sam .lec-01 {
+      background-color: transparent;
+      height: 15px;
+      left: 64px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 33px;
+      white-space: nowrap;
+      width: 52px;
+    }
+
+    .course-registration-sam .lec-02 {
+      background-color: transparent;
+      height: 15px;
+      left: 62px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      top: 25px;
+      white-space: nowrap;
+      width: 64px;
+    }
+
+    .course-registration-sam .lec-04 {
+      background-color: transparent;
+      height: 12px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+      text-align: left;
+      white-space: nowrap;
+      width: 53px;
+    }
+
+    .course-registration-sam .line-47 {
+      background-color: transparent;
+      height: 125px;
+      left: 206px;
+      position: absolute;
+      top: 7px;
+      width: 15px;
+    }
+
+    .course-registration-sam .phone {
+      background-color: transparent;
+      height: 6px;
       letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
       top: 0px;
-      width: 217px;
-    }
-
-    .frame-33 .lec-01-tutorial-02-9iu92X {
-      background-color: transparent;
-      color: var(--black);
-      font-family: var(--font-family-inter);
-      font-size: var(--font-size-m);
-      font-style: normal;
-      font-weight: 300;
-      height: 25px;
-      left: 34px;
-      letter-spacing: 0.00px;
-      line-height: normal;
-      position: absolute;
-      text-align: left;
-      top: 32px;
-      width: 240px;
-    }
-
-    .frame-33 .professor-dr-teacher-8uQdCF {
-      background-color: transparent;
-      color: var(--black);
-      font-family: var(--font-family-inter);
-      font-size: var(--font-size-l);
-      font-style: normal;
-      font-weight: 600;
-      height: 22px;
-      left: 14px;
-      letter-spacing: 0.00px;
-      line-height: normal;
-      position: absolute;
-      text-align: left;
-      top: 174px;
       white-space: nowrap;
-      width: 266px;
     }
 
-    .frame-33 .view-more-information-8uQdCF {
+    .course-registration-sam .phones {
       background-color: transparent;
-      color: #6d6e71;
-      font-family: var(--font-family-inter);
-      font-size: var(--font-size-l);
-      font-style: normal;
-      font-weight: 400;
-      height: 15px;
-      left: 15px;
+      height: 49px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+    }
+
+    .course-registration-sam .rectangle-114 {
+      background-color: var(--white);
+      border: 1px solid;
+      border-color: var(--black);
+      border-radius: 4px;
+      box-shadow: 3px 3px 4px #00000040;
+      height: 61px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 279px;
+    }
+
+    .course-registration-sam .rectangle-12 {
+      background-color: var(--supernova);
+      height: 1px;
+      position: absolute;
+      top: 6px;
+    }
+
+    .course-registration-sam .rectangle-175 {
+      background-color: var(--feijoa);
+      border-radius: 7px 0px 0px 7px;
+      height: 57px;
+      left: 0px;
+      position: absolute;
+      top: 1px;
+      width: 12px;
+    }
+
+    .course-registration-sam .rectangle-176 {
+      border-radius: 0px 7px 7px 0px;
+      position: absolute;
+    }
+
+    .course-registration-sam .rectangle-186 {
+      background-color: transparent;
+      height: 44px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 12px;
+    }
+
+    .course-registration-sam .rectangle-189 {
+      background-color: var(--flax);
+      border-radius: 0px 7px 7px 0px;
+      height: 44px;
+      left: 12px;
+      position: absolute;
+      top: 0px;
+      width: 162px;
+    }
+
+    .course-registration-sam .rectangle-241 {
+      border: 1px solid;
+      border-color: var(--black);
+      border-radius: 8px;
+      left: 0px;
+      position: absolute;
+      top: 2px;
+    }
+
+    .course-registration-sam .rectangle-273 {
+      height: 43px;
+      left: 0px;
+      position: absolute;
+      top: 6px;
+      width: 12px;
+    }
+
+    .course-registration-sam .rectangle-274 {
+      border-radius: 7px 0px 0px 7px;
+      height: 43px;
+      left: 0px;
+      position: absolute;
+      top: 6px;
+      width: 12px;
+    }
+
+    .course-registration-sam .rectangle-275 {
+      position: absolute;
+      top: 0px;
+    }
+
+    .course-registration-sam .rectangle-8 {
+      border-radius: 15px;
+      box-shadow: 0px 4px 4px #00000040;
+      position: absolute;
+    }
+
+    .course-registration-sam .seng-401 {
+      background-color: transparent;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+    }
+
+    .course-registration-sam .seng-438 {
+      background-color: transparent;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+    }
+
+    .course-registration-sam .seng-471 {
+      background-color: transparent;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+    }
+
+    .course-registration-sam .settings {
+      background-color: transparent;
+      position: absolute;
+      top: 930px;
+    }
+
+    .course-registration-sam .vector {
+      background-color: transparent;
+      position: absolute;
+    }
+
+    .course-registration-sam .waitlisted {
+      background-color: transparent;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      position: absolute;
+    }
+
+    .course-registration-sam .x403-287-1120 {
+      background-color: transparent;
+      height: 5px;
       letter-spacing: 0.00px;
       line-height: normal;
       position: absolute;
       text-align: left;
-      text-decoration: underline;
-      top: 208px;
+      top: 14px;
       white-space: nowrap;
-      width: 348px;
     }
   </style>
   <script id="anime-js-script" src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"
@@ -1082,49 +3365,527 @@
   </style>
 </head>
 
-<body style="margin: 0px; overflow-x: hidden;" dark-scroll="" data-new-gr-c-s-check-loaded="14.1211.0"
-  data-gr-ext-installed=""><input type="hidden" id="anPageName" name="page" value="frame-33">
+<body style="margin: 0;background: #ffffff;" data-new-gr-c-s-check-loaded="14.1211.0" data-gr-ext-installed=""><input
+    type="hidden" id="anPageName" name="page" value="course-registration-sam">
   <div class="container-center-horizontal">
-    <div class="frame-33 screen " data-id="1226:1008">
-      <div class="group-72-Kd1Dhx" data-id="1226:991">
-        <div class="rectangle-96-8uQdCF" data-id="1226:974"></div>
-        <div class="rectangle-97-8uQdCF" data-id="1226:975"></div>
-        <div class="software-architecture-8uQdCF valign-text-middle" data-id="1226:976">Software Architecture</div>
-        <div class="university-of-calgary-8uQdCF valign-text-middle" data-id="1226:977">University of Calgary</div>
-        <div class="try-all-classes-4-8uQdCF valign-text-middle" data-id="1226:978">Try all classes (4)</div><img
-          class="call_to_action_24dp_-8uQdCF" data-id="1226:979"
-          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/call-to-action-24dp-ffffff-fill0-wght400-grad0-opsz24-4-2.svg"
-          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/call-to-action-24dp-ffffff-fill0-wght400-grad0-opsz24-4-2.svg"
-          alt="call_to_action_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 4">
-        <div class="seng-8uQdCF valign-text-middle" data-id="1226:981">SENG</div>
-        <div class="x401-8uQdCF valign-text-middle" data-id="1226:982">401</div><img class="image-8uQdCF"
-          data-id="1226:983"
+    <div class="course-registration-sam screen " data-id="1227:1065" style="margin-top: 70px;">
+      <div class="rectangle-8-58UxVq rectangle-8" data-id="1227:1066"></div>
+      <div class="checkbox-and-label-58UxVq checkbox-and-label" data-id="1227:1067">
+        <div class="checkbox" data-id="1227:1068"><img class="check" data-id="1227:1069"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/check-2.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/check-2.svg"
+            alt="Check"></div>
+        <div class="open-courses-only-Om8t7x body-base" data-id="1227:1070">Open Courses Only</div>
+      </div>
+      <div class="checkbox-and-label-YD2Q1p checkbox-and-label" data-id="1227:1071">
+        <div class="checkbox" data-id="1227:1072"><img class="check" data-id="1227:1073"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/check-2.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/check-2.svg"
+            alt="Check"></div>
+        <div class="online-lPwame body-base" data-id="1227:1074">Online</div>
+      </div>
+      <div class="back-button-58UxVq" data-id="1227:1075"><img class="back-icon-CQ7yTS" data-id="1227:1076"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/back-icon-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/back-icon-1.svg"
+          alt="back-icon">
+        <h1 class="title-CQ7yTS" data-id="1227:1078">Course Registration</h1>
+      </div>
+      <div class="search-bar-58UxVq" data-id="1227:1079">
+        <div class="rectangle-2-5WiUxV" data-id="I1227:1079;4:6"></div><img class="vector-5WiUxV vector"
+          data-id="I1227:1079;20:4"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-32.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-32.svg"
+          alt="Vector">
+        <div class="search-5WiUxV valign-text-middle" data-id="I1227:1079;20:5">Search</div>
+      </div>
+      <div class="profile-58UxVq" data-id="1227:1080">
+        <div class="ellipse-1-xhxvCS" data-id="I1227:1080;4:7"></div>
+        <div class="cm-xhxvCS valign-text-middle" data-id="I1227:1080;18:9">KB</div>
+      </div>
+      <div class="nav-bar-58UxVq" data-id="1227:1081">
+        <div class="rectangle-1-OTZSdy" data-id="1227:1082"></div><img class="vector-OTZSdy vector" data-id="1227:1083"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-33.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-33.svg"
+          alt="Vector">
+        <div class="info-OTZSdy info" data-id="1227:1084">info</div>
+        <div class="settings-OTZSdy settings" data-id="1227:1085">settings</div><img class="uc-horz-rgb-1-OTZSdy"
+          data-id="1227:1086"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/uc-horz-rgb-1-1.png"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/uc-horz-rgb-1-1.png"
+          alt="UC-horz-rgb 1">
+        <div class="misc-button-OTZSdy" data-id="1227:1087">
+          <div class="around-u-zQuKlX valign-text-middle inter-normal-black-32px" data-id="I1227:1087;9:56">Finances
+          </div><img class="group-zQuKlX" data-id="I1227:1087;12:15"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/group-4@2x.png"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/group-4@2x.png"
+            alt="Group">
+        </div><img class="settings-qzVwIe settings" data-id="1227:1088"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/settings-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/settings-1.svg"
+          alt="Settings"><img class="info-qzVwIe info" data-id="1227:1089"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/info-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/info-1.svg"
+          alt="Info">
+        <div class="dashboard-button-OTZSdy" data-id="1227:1090"></div>
+        <div class="academics-button-OTZSdy academics-button" data-id="1227:1091">
+          <div class="academics-C0i7Zu valign-text-middle academics inter-normal-black-32px" data-id="I1227:1091;9:25">
+            Dashboard</div>
+        </div>
+      </div>
+      <div class="finance-widget-58UxVq" data-id="1227:1092"><img class="rectangle-53-g4ihxc" data-id="1227:1093"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-53-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-53-1.svg"
+          alt="Rectangle 53"><img class="line-46-g4ihxc" data-id="1227:1094"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-46-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-46-1.svg"
+          alt="Line 46">
+        <div class="sce-bui-bottom-g4ihxc" data-id="1227:1095"></div><img class="sce-bui-top-g4ihxc" data-id="1227:1096"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/sce-bui-top-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/sce-bui-top-1.svg"
+          alt="sce-bui-top"><img class="line-52-g4ihxc" data-id="1227:1097"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-52-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-52-1.svg"
+          alt="Line 52"><img class="line-53-g4ihxc" data-id="1227:1098"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-53-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-53-1.svg"
+          alt="Line 53"><img class="line-54-g4ihxc" data-id="1227:1099"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-54-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-54-1.svg"
+          alt="Line 54"><img class="line-55-g4ihxc" data-id="1227:1100"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-55-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-55-1.svg"
+          alt="Line 55">
+        <div class="x8-am-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1101">8 AM</div>
+        <div class="monday-g4ihxc valign-text-middle inter-normal-concrete-20px" data-id="1227:1102">Monday</div>
+        <div class="wednesday-g4ihxc valign-text-middle inter-normal-concrete-20px" data-id="1227:1103">Wednesday</div>
+        <div class="thursday-g4ihxc valign-text-middle inter-normal-concrete-20px" data-id="1227:1104">Thursday</div>
+        <div class="friday-g4ihxc valign-text-middle inter-normal-concrete-20px" data-id="1227:1105">Friday</div>
+        <div class="tuesday-g4ihxc valign-text-middle inter-normal-concrete-20px" data-id="1227:1106">Tuesday</div>
+        <div class="x9-am-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1107">9 AM</div>
+        <div class="x10-am-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1108">10 AM</div>
+        <div class="x11-am-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1109">11 AM</div>
+        <div class="x12-pm-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1110">12 PM</div>
+        <div class="x1-pm-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1111">1 PM</div>
+        <div class="x2-pm-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1112">2 PM</div>
+        <div class="x3-pm-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1113">3 PM</div>
+        <div class="x4-pm-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1114">4 PM</div>
+        <div class="x5-pm-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1115">5 PM</div>
+        <div class="x6-pm-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1116">6 PM</div>
+        <div class="x7-pm-g4ihxc valign-text-middle inter-normal-black-20px" data-id="1227:1117">7 PM</div><img
+          class="line-56-g4ihxc" data-id="1227:1118"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-56-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-56-1.svg"
+          alt="Line 56"><img class="line-69-g4ihxc" data-id="1227:1119"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-69-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-69-1.svg"
+          alt="Line 69"><img class="line-70-g4ihxc" data-id="1227:1120"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-70-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-70-1.svg"
+          alt="Line 70"><img class="line-72-g4ihxc" data-id="1227:1121"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-72-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-72-1.svg"
+          alt="Line 72"><img class="line-74-g4ihxc" data-id="1227:1122"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-74-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-74-1.svg"
+          alt="Line 74"><img class="line-75-g4ihxc" data-id="1227:1123"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-75-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-75-1.svg"
+          alt="Line 75"><img class="line-76-g4ihxc" data-id="1227:1124"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-76-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-76-1.svg"
+          alt="Line 76"><img class="line-77-g4ihxc" data-id="1227:1125"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-77-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-77-1.svg"
+          alt="Line 77"><img class="line-78-g4ihxc" data-id="1227:1126"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-78-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-78-1.svg"
+          alt="Line 78"><img class="line-79-g4ihxc" data-id="1227:1127"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-79-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-79-1.svg"
+          alt="Line 79"><img class="line-71-g4ihxc" data-id="1227:1128"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-71-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-71-1.svg"
+          alt="Line 71"><img class="line-64-g4ihxc" data-id="1227:1129"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-64-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-64-1.svg"
+          alt="Line 64"><img class="line-65-g4ihxc" data-id="1227:1130"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-65-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-65-1.svg"
+          alt="Line 65"><img class="line-66-g4ihxc" data-id="1227:1131"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-66-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-66-1.svg"
+          alt="Line 66"><img class="line-63-g4ihxc" data-id="1227:1132"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-63-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-63-1.svg"
+          alt="Line 63"><img class="line-61-g4ihxc" data-id="1227:1133"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-61-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-61-1.svg"
+          alt="Line 61"><img class="line-62-g4ihxc" data-id="1227:1134"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-62-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-62-1.svg"
+          alt="Line 62"><img class="line-59-g4ihxc" data-id="1227:1135"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-59-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-59-1.svg"
+          alt="Line 59"><img class="line-60-g4ihxc" data-id="1227:1136"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-60-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-60-1.svg"
+          alt="Line 60"><img class="line-58-g4ihxc" data-id="1227:1137"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-58-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-58-1.svg"
+          alt="Line 58"><img class="line-57-g4ihxc" data-id="1227:1138"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-57-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-57-1.svg"
+          alt="Line 57">
+        <div class="rectangle-179-g4ihxc" data-id="1227:1141"></div>
+        <div class="rectangle-180-g4ihxc" data-id="1227:1144"></div>
+        <div class="seng-401-g4ihxc valign-text-middle seng-401 inter-medium-black-16px" data-id="1227:1146">SENG 401
+        </div>
+        <div class="group-81-g4ihxc" data-id="1227:1406">
+          <div class="group-79-NiJVdk" data-id="1227:1398">
+            <div class="group-78" data-id="1227:1397">
+              <div class="rectangle-175" data-id="1227:1139"></div>
+              <div class="rectangle-176-9Bvbrg rectangle-176" data-id="1227:1142"></div>
+            </div>
+            <div class="seng-401-HlyPBd valign-text-middle seng-401 inter-medium-black-16px" data-id="1227:1145">SENG
+              401</div>
+            <div class="lec-01 valign-text-middle inter-medium-black-15px" data-id="1227:1148">LEC 01</div>
+          </div>
+          <div class="group-80-NiJVdk" data-id="1227:1399">
+            <div class="group-78" data-id="1227:1400">
+              <div class="rectangle-175" data-id="1227:1401"></div>
+              <div class="rectangle-176-uM9ei7 rectangle-176" data-id="1227:1402"></div>
+            </div>
+            <div class="seng-401-BvBwxq valign-text-middle seng-401 inter-medium-black-16px" data-id="1227:1403">SENG
+              401</div>
+            <div class="lec-01 valign-text-middle inter-medium-black-15px" data-id="1227:1404">LEC 01</div>
+          </div>
+        </div>
+        <div class="lab-b01-g4ihxc valign-text-middle inter-medium-black-15px" data-id="1227:1150">LAB B01</div>
+        <div class="group-82-g4ihxc" data-id="1227:1407">
+          <div class="group-5-zJzPPV" data-id="1227:1156"><img class="rectangle-186" data-id="1227:1157"
+              src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-186-3.svg"
+              anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-186-3.svg"
+              alt="Rectangle 186">
+            <div class="rectangle-189" data-id="1227:1158"></div>
+            <div class="seng-471-KD3hXF valign-text-middle seng-471 inter-medium-black-16px" data-id="1227:1164">SENG
+              471</div>
+            <div class="lec-02 valign-text-middle inter-medium-black-15px" data-id="1227:1165">LEC 02</div>
+          </div>
+          <div class="group-84-zJzPPV" data-id="1227:1420"><img class="rectangle-186" data-id="1227:1408"
+              src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-186-3.svg"
+              anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-186-3.svg"
+              alt="Rectangle 186">
+            <div class="rectangle-189" data-id="1227:1409"></div>
+            <div class="seng-471-bK8gm7 valign-text-middle seng-471 inter-medium-black-16px" data-id="1227:1410">SENG
+              471</div>
+            <div class="lec-02 valign-text-middle inter-medium-black-15px" data-id="1227:1411">LEC 02</div>
+          </div>
+          <div class="group-83-zJzPPV" data-id="1227:1419"><img class="rectangle-186" data-id="1227:1414"
+              src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-186-3.svg"
+              anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-186-3.svg"
+              alt="Rectangle 186">
+            <div class="rectangle-189" data-id="1227:1415"></div>
+            <div class="seng-471-8RA1sN valign-text-middle seng-471 inter-medium-black-16px" data-id="1227:1416">SENG
+              471</div>
+            <div class="lec-02 valign-text-middle inter-medium-black-15px" data-id="1227:1417">LEC 02</div>
+          </div>
+        </div>
+      </div>
+      <div class="group-25-58UxVq group-25" data-id="1227:1167">
+        <div class="rectangle-114" data-id="1227:1168"></div>
+        <div class="save-schedule-to-favourites-xBfshP" data-id="1227:1169">Save Schedule to Favourites</div>
+      </div>
+      <div class="semester-dropdown-58UxVq" data-id="1227:1170">
+        <div class="rectangle-6-HpdVtj" data-id="I1227:1170;5:370"></div>
+        <div class="winter-2023-HpdVtj valign-text-middle" data-id="I1227:1170;5:371">Fall 2024</div><img
+          class="vector-HpdVtj vector" data-id="I1227:1170;5:372"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-34.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-34.svg"
+          alt="Vector">
+      </div><img class="registration-58UxVq" data-id="1227:1171"
+        src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/registration-1.png"
+        anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/registration-1.png"
+        alt="Registration"><img class="vector-58UxVq vector" data-id="1227:1172"
+        src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-30.svg"
+        anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-30.svg"
+        alt="Vector"><img class="vector-YD2Q1p vector" data-id="1227:1173"
+        src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-31.svg"
+        anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-31.svg"
+        alt="Vector">
+      <div class="academics-button-58UxVq academics-button" data-id="1227:1174"><img class="vector-5yB4PP vector"
+          data-id="I1227:1174;10:17"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-35.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-35.svg"
+          alt="Vector">
+        <div class="academics-5yB4PP valign-text-middle academics inter-normal-black-32px" data-id="I1227:1174;9:25">
+          Academics</div>
+      </div>
+      <div class="applications-button-58UxVq" data-id="1227:1175"><img class="vector-CnTd5J vector"
+          data-id="I1227:1175;12:7"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-36.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/vector-36.svg"
+          alt="Vector">
+        <div class="applications-CnTd5J valign-text-middle inter-normal-black-32px" data-id="I1227:1175;9:36">
+          Applications</div>
+      </div><img class="rectangle-268-58UxVq" data-id="1227:1176"
+        src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-268-1.svg"
+        anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-268-1.svg"
+        alt="Rectangle 268">
+      <div class="schedule-builder-58UxVq valign-text-middle" data-id="1227:1177">Schedule Builder</div><img
+        class="image-2-58UxVq" data-id="1227:1178"
+        src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/image-2-1.png"
+        anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/image-2-1.png"
+        alt="image 2">
+      <div class="checkbox-and-label-U7IBAw checkbox-and-label" data-id="1227:1179">
+        <div class="checkbox" data-id="1227:1180"><img class="check" data-id="1227:1181"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/check-2.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/check-2.svg"
+            alt="Check"></div>
+        <div class="show-waitlistable-courses-2OYQSQ body-base" data-id="1227:1182">Show Waitlistable Courses</div>
+      </div>
+      <div class="checkbox-and-label-4TDWfI checkbox-and-label" data-id="1227:1183">
+        <div class="checkbox" data-id="1227:1184"><img class="check" data-id="1227:1185"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/check-2.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/check-2.svg"
+            alt="Check"></div>
+        <div class="graduate-bQdYfA body-base" data-id="1227:1186">Graduate</div>
+      </div>
+      <div class="table-view-58UxVq" data-id="1227:1187">Table view</div>
+      <div class="filters-58UxVq valign-text-middle" data-id="1227:1188">Filters:</div><img
+        class="minimize_24dp_ffffff-58UxVq" data-id="1227:1203"
+        src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/minimize-24dp-ffffff-fill0-wght400-grad0-opsz24-1-1.svg"
+        anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/minimize-24dp-ffffff-fill0-wght400-grad0-opsz24-1-1.svg"
+        alt="minimize_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 1">
+      <div class="group-23-58UxVq" data-id="1227:1205">
+        <div class="rectangle-270-RAE8oe" data-id="1227:1206"></div>
+        <div class="group-10-RAE8oe" data-id="1227:1207">
+          <div class="rectangle-241-QUxyJd rectangle-241" data-id="1227:1208"></div>
+          <div class="enrolled-QUxyJd valign-text-middle enrolled inter-normal-black-12px" data-id="1227:1209">Enrolled
+          </div>
+        </div>
+        <div class="group-13-RAE8oe group-13" data-id="1227:1210">
+          <div class="rectangle-241-9mKEjq rectangle-241" data-id="1227:1211"></div>
+          <div class="waitlisted-9mKEjq valign-text-middle waitlisted inter-normal-black-12px" data-id="1227:1212">
+            Waitlisted</div>
+        </div>
+        <div class="group-11-RAE8oe" data-id="1227:1213"><img class="rectangle-278-Grwhyp" data-id="1227:1214"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-278-3.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-278-3.svg"
+            alt="Rectangle 278"><img class="rectangle-275-Grwhyp rectangle-275" data-id="1227:1215"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-275-2.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-275-2.svg"
+            alt="Rectangle 275">
+          <div class="group-12-Grwhyp group-12" data-id="1227:1216">
+            <div class="rectangle-176-0EbEf4 rectangle-176" data-id="1227:1217"></div>
+            <div class="seng-471-0EbEf4 valign-text-middle seng-471 inter-normal-black-12px" data-id="1227:1218">SENG
+              471</div>
+            <div class="l02-t01-0EbEf4 valign-text-middle inter-normal-black-12px" data-id="1227:1219">L02 T01</div>
+            <div class="rectangle-278-0EbEf4" data-id="1227:1220"></div>
+          </div>
+          <div class="group-13-Grwhyp group-13" data-id="1228:1466">
+            <div class="rectangle-176-0HYVPq rectangle-176" data-id="1228:1467"></div>
+            <div class="seng-438-0HYVPq valign-text-middle seng-438 inter-normal-black-12px" data-id="1228:1468">SENG
+              438</div>
+            <div class="l04-t02-0HYVPq valign-text-middle inter-normal-black-12px" data-id="1228:1469">L04 T02</div>
+            <div class="rectangle-278-0HYVPq" data-id="1228:1470"></div>
+          </div>
+          <div class="rectangle-176-Grwhyp rectangle-176" data-id="1227:1221"></div>
+          <div class="seng-401-Grwhyp valign-text-middle seng-401 inter-normal-black-12px" data-id="1227:1222">SENG 401
+          </div>
+          <div class="l01-t01 valign-text-middle inter-normal-black-12px" data-id="1227:1223">L01 T01</div>
+          <div class="rectangle-278-H2xxi1" data-id="1227:1224"></div><img class="line-47" data-id="1227:1225"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-47-2.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-47-2.svg"
+            alt="Line 47">
+        </div>
+        <div class="group-12-RAE8oe group-12" data-id="1227:1226"><img class="rectangle-278-4jPWWn" data-id="1227:1227"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-278-4.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-278-4.svg"
+            alt="Rectangle 278"><img class="rectangle-275-4jPWWn rectangle-275" data-id="1227:1228"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-275-3.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-275-3.svg"
+            alt="Rectangle 275">
+          <div class="rectangle-176-4jPWWn rectangle-176" data-id="1227:1229"></div>
+          <div class="cpsc-481-4jPWWn valign-text-middle cpsc-481 inter-normal-black-12px" data-id="1227:1230">CPSC 481
+          </div>
+          <div class="l01-t01 valign-text-middle inter-normal-black-12px" data-id="1227:1231">L01 T01</div>
+          <div class="rectangle-278-ToxzET" data-id="1227:1232"></div><img class="line-47" data-id="1227:1233"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-47-3.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/line-47-3.svg"
+            alt="Line 47">
+        </div>
+      </div>
+      <div class="group-24-58UxVq" data-id="1227:1234">
+        <div class="rectangle-271-xwae6u" data-id="1227:1235"></div>
+        <div class="group-22-xwae6u" data-id="1227:1236">
+          <div class="group-17-NrRh2x" data-id="1227:1237">
+            <p class="allows-courses-to-be-ZBJVxa valign-text-middle inter-light-black-16px" data-id="1227:1238">Allows
+              courses to be hidden/unhidden in calendar view</p><img class="image-ZBJVxa image" data-id="1227:1239"
+              src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/image-2.png"
+              anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/image-2.png"
+              alt="image">
+          </div>
+          <div class="group-18-NrRh2x" data-id="1227:1240">
+            <p class="drops-down-more-info-on-the-course-i1PzDa valign-text-middle inter-light-black-16px"
+              data-id="1227:1241">Drops down more info on the course</p>
+          </div>
+        </div>
+      </div>
+      <div class="group-25-YD2Q1p group-25" data-id="1227:1253">
+        <div class="rectangle-114" data-id="1227:1254"></div>
+        <div class="save-schedule-as-pdf-Hhto71 inter-light-black-24px" data-id="1227:1255">Save Schedule As PDF</div>
+      </div>
+      <p class="note-this-page-is-vi-58UxVq" data-id="1227:1256">Note: This page is VIEW-ONLY. To perform course
+        actions, please enter the schedule builder.</p><img class="icon-legend-58UxVq" data-id="1227:1257"
+        src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/icon-legend-1.png"
+        anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/icon-legend-1.png"
+        alt="Icon Legend">
+      <div class="week-of-february-1-14-58UxVq valign-text-middle inter-light-black-16px" data-id="1227:1258">Week of
+        February 1-14</div>
+      <div class="group-26-58UxVq" data-id="1227:1259">
+        <div class="rectangle-114" data-id="1227:1260"></div>
+        <div class="view-favourites-xBkuHV inter-light-black-24px" data-id="1227:1261">View Favourites</div>
+      </div>
+      <div class="group-27-58UxVq" data-id="1227:1262">
+        <div class="rectangle-114" data-id="1227:1263"></div>
+        <div class="need-help-bZDMXP inter-light-black-24px" data-id="1227:1264">Need Help?</div>
+      </div>
+      <div class="group-87-58UxVq" data-id="1227:1444">
+        <div class="phones-Gvy1eN phones" data-id="1227:1192">
+          <div class="rectangle-8-9XrYkz rectangle-8" data-id="I1227:1192;16:321"></div>
+          <div class="phone-9XrYkz valign-text-middle phone inter-bold-black-24px" data-id="I1227:1192;16:322"></div>
+          <div class="home-9XrYkz valign-text-middle home inter-semi-bold-black-20px" data-id="I1227:1192;16:349"></div>
+          <div class="x403-287-1120-9XrYkz valign-text-middle x403-287-1120 inter-normal-black-20px"
+            data-id="I1227:1192;16:377"></div>
+          <div class="rectangle-12-9XrYkz rectangle-12" data-id="I1227:1192;16:376"></div>
+        </div>
+        <div class="seng-471-Gvy1eN valign-text-middle seng-471 inter-bold-black-24px" data-id="1227:1193">SENG 471
+        </div><img class="image-Gvy1eN image" data-id="1227:1194"
           src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/image-2.png"
           anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/image-2.png"
-          alt="image"><img class="arrow_drop_down-8uQdCF" data-id="1226:984"
-          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/arrow-drop-down-3.svg"
-          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/arrow-drop-down-3.svg"
+          alt="image">
+        <div class="rectangle-273-Gvy1eN rectangle-273" data-id="1227:1195"></div>
+        <div class="group-6" data-id="1227:1197">
+          <div class="rectangle-241-5ZgIbR rectangle-241" data-id="1227:1198"></div>
+          <div class="enrolled-5ZgIbR valign-text-middle enrolled inter-normal-black-12px" data-id="1227:1199">Enrolled
+          </div>
+        </div><img class="arrow_drop_down-Gvy1eN arrow_drop_down" data-id="1227:1265"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/arrow-drop-down-6.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/arrow-drop-down-6.svg"
           alt="arrow_drop_down">
-        <div class="rectangle-241-8uQdCF" data-id="1226:985"></div>
-        <div class="enrolled-8uQdCF valign-text-middle" data-id="1226:986">Enrolled</div>
-        <div class="sections-8uQdCF valign-text-middle" data-id="1226:989">Sections:</div>
-        <div class="group-74-8uQdCF" data-id="1226:993">
-          <div class="checkbox-and-label-9iu92X" data-id="1226:994">
-            <div class="checkbox-9jnhTP" data-id="1226:995"><img class="check-QYxKxx" data-id="1226:996"
-                src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/check-2.svg"
-                anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/check-2.svg"
-                alt="Check"></div>
-          </div>
-          <div class="checkboxes-9iu92X" data-id="1226:997">
-            <div class="state-layer-VvxKoC" data-id="I1226:997;51859:5666">
-              <div class="container-wMWCkM" data-id="I1226:997;51859:5667"></div>
-            </div>
-          </div>
-          <p class="lec-01-tutorial-01-9iu92X valign-text-middle" data-id="1226:998">Lec 01 - Tutorial 01</p>
-          <p class="lec-01-tutorial-02-9iu92X valign-text-middle" data-id="1226:999">Lec 01 - Tutorial 02</p>
+      </div>
+      <div class="group-88-58UxVq" data-id="1227:1445">
+        <div class="phones-or3ert phones" data-id="1227:1446">
+          <div class="rectangle-8-bk2x92 rectangle-8" data-id="I1227:1446;16:321"></div>
+          <div class="phone-bk2x92 valign-text-middle phone inter-bold-black-24px" data-id="I1227:1446;16:322"></div>
+          <div class="home-bk2x92 valign-text-middle home inter-semi-bold-black-20px" data-id="I1227:1446;16:349"></div>
+          <div class="x403-287-1120-bk2x92 valign-text-middle x403-287-1120 inter-normal-black-20px"
+            data-id="I1227:1446;16:377"></div>
+          <div class="rectangle-12-bk2x92 rectangle-12" data-id="I1227:1446;16:376"></div>
         </div>
-        <div class="professor-dr-teacher-8uQdCF valign-text-middle" data-id="1226:1004">Professor: Dr. Teacher</div>
-        <div class="view-more-information-8uQdCF valign-text-middle" data-id="1226:1006">View more information</div>
+        <div class="seng-438-or3ert valign-text-middle seng-438 inter-bold-black-24px" data-id="1227:1447">SENG 438
+        </div><img class="image-or3ert image" data-id="1227:1448"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/image-2.png"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/image-2.png"
+          alt="image"><img class="rectangle-273-or3ert rectangle-273" data-id="1227:1449"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-273-1.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-273-1.svg"
+          alt="Rectangle 273">
+        <div class="group-6" data-id="1227:1450">
+          <div class="rectangle-241-3oC62o rectangle-241" data-id="1227:1451"></div>
+          <div class="enrolled-3oC62o valign-text-middle enrolled inter-normal-black-12px" data-id="1227:1452">Enrolled
+          </div>
+        </div><img class="arrow_drop_down-or3ert arrow_drop_down" data-id="1227:1453"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/arrow-drop-down-6.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/arrow-drop-down-6.svg"
+          alt="arrow_drop_down">
+      </div><img class="arrow_drop_down-58UxVq arrow_drop_down" data-id="1227:1266"
+        src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/arrow-drop-down-6.svg"
+        anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/arrow-drop-down-6.svg"
+        alt="arrow_drop_down">
+      <div class="group-75-58UxVq" data-id="1227:1360">
+        <div class="phones-wJ7ygD phones" data-id="1227:1189">
+          <div class="rectangle-8-xoxkgE rectangle-8" data-id="I1227:1189;16:321"></div>
+          <div class="phone-xoxkgE valign-text-middle phone inter-bold-black-24px" data-id="I1227:1189;16:322"></div>
+          <div class="home-xoxkgE valign-text-middle home inter-semi-bold-black-20px" data-id="I1227:1189;16:349"></div>
+          <div class="x403-287-1120-xoxkgE valign-text-middle x403-287-1120 inter-normal-black-20px"
+            data-id="I1227:1189;16:377"></div>
+          <div class="rectangle-12-xoxkgE rectangle-12" data-id="I1227:1189;16:376"></div>
+        </div>
+        <div class="phones-gZBlOm phones" data-id="1227:1349">
+          <div class="rectangle-8-zBKIRy rectangle-8" data-id="I1227:1349;16:321"></div>
+          <div class="phone-zBKIRy valign-text-middle phone inter-bold-black-24px" data-id="I1227:1349;16:322"></div>
+          <div class="home-zBKIRy valign-text-middle home inter-semi-bold-black-20px" data-id="I1227:1349;16:349"></div>
+          <div class="x403-287-1120-zBKIRy valign-text-middle x403-287-1120 inter-normal-black-20px"
+            data-id="I1227:1349;16:377"></div>
+          <div class="rectangle-12-zBKIRy rectangle-12" data-id="I1227:1349;16:376"></div>
+        </div><img class="image-3-wJ7ygD" data-id="1227:1190"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/image-3-1.png"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/image-3-1.png"
+          alt="image 3">
+        <div class="cpsc-481-wJ7ygD valign-text-middle cpsc-481 inter-bold-black-24px" data-id="1227:1191">CPSC 481
+        </div>
+        <div class="rectangle-274-wJ7ygD rectangle-274" data-id="1227:1196"></div>
+        <div class="group-7-wJ7ygD" data-id="1227:1200">
+          <div class="rectangle-241-xdPNAc rectangle-241" data-id="1227:1201"></div>
+          <div class="waitlisted-xdPNAc valign-text-middle waitlisted inter-normal-black-12px" data-id="1227:1202">
+            Waitlisted</div>
+        </div><img class="arrow_drop_down-wJ7ygD arrow_drop_down" data-id="1227:1267"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/arrow-drop-down-6.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/arrow-drop-down-6.svg"
+          alt="arrow_drop_down">
+      </div>
+      <div class="group-76-58UxVq" data-id="1227:1361">
+        <div class="phones-T0SzOc phones" data-id="1227:1362">
+          <div class="rectangle-8-Qez36u rectangle-8" data-id="I1227:1362;16:321"></div>
+          <div class="phone-Qez36u valign-text-middle phone inter-bold-black-24px" data-id="I1227:1362;16:322"></div>
+          <div class="home-Qez36u valign-text-middle home inter-semi-bold-black-20px" data-id="I1227:1362;16:349"></div>
+          <div class="x403-287-1120-Qez36u valign-text-middle x403-287-1120 inter-normal-black-20px"
+            data-id="I1227:1362;16:377"></div>
+          <div class="rectangle-12-Qez36u rectangle-12" data-id="I1227:1362;16:376"></div>
+        </div>
+        <div class="phones-OK35D4 phones" data-id="1227:1363">
+          <div class="rectangle-8-gwOGq3 rectangle-8" data-id="I1227:1363;16:321"></div>
+          <div class="phone-gwOGq3 valign-text-middle phone inter-bold-black-24px" data-id="I1227:1363;16:322"></div>
+          <div class="home-gwOGq3 valign-text-middle home inter-semi-bold-black-20px" data-id="I1227:1363;16:349"></div>
+          <div class="x403-287-1120-gwOGq3 valign-text-middle x403-287-1120 inter-normal-black-20px"
+            data-id="I1227:1363;16:377"></div>
+          <div class="rectangle-12-gwOGq3 rectangle-12" data-id="I1227:1363;16:376"></div>
+        </div>
+        <div class="seng-481-T0SzOc valign-text-middle inter-bold-black-24px" data-id="1227:1365">SENG 481</div>
+        <div class="rectangle-274-T0SzOc rectangle-274" data-id="1227:1366"></div><img
+          class="arrow_drop_down-T0SzOc arrow_drop_down" data-id="1227:1370"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/arrow-drop-down-6.svg"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/arrow-drop-down-6.svg"
+          alt="arrow_drop_down">
+        <div class="group-77-T0SzOc" data-id="1227:1391">
+          <div class="rectangle-241-Ga8WR0 rectangle-241" data-id="1227:1392"></div>
+          <div class="enrolled-Ga8WR0 valign-text-middle enrolled inter-normal-black-12px" data-id="1227:1393">Enrolled
+          </div>
+        </div><img class="image-T0SzOc image" data-id="1227:1395"
+          src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/image-2.png"
+          anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753bc01acaf059687804e64/img/image-2.png"
+          alt="image">
+      </div>
+      <div class="seng-438-calendar-58UxVq" data-id="1227:1421">
+        <div class="group-86-xlAx0H" data-id="1227:1432"><img class="rectangle-276-MgBPbh" data-id="1227:1422"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-276-1.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-276-1.svg"
+            alt="Rectangle 276">
+          <div class="rectangle-275-MgBPbh rectangle-275" data-id="1227:1424"></div>
+          <div class="seng-438-MgBPbh valign-text-middle seng-438 inter-medium-black-16px" data-id="1227:1426">SENG 438
+          </div>
+          <div class="lec-04-MgBPbh valign-text-middle lec-04 inter-medium-black-15px" data-id="1227:1428">LEC 04</div>
+        </div>
+        <div class="group-85-xlAx0H" data-id="1227:1431"><img class="rectangle-278-1M8MMn" data-id="1227:1423"
+            src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-278-5.svg"
+            anima-src="https://cdn.animaapp.com/projects/6753bbedaaa365bed17c9040/releases/6753c7f070bd3fa80444ef6d/img/rectangle-278-5.svg"
+            alt="Rectangle 278">
+          <div class="rectangle-277-1M8MMn" data-id="1227:1425"></div>
+          <div class="lec-04-1M8MMn valign-text-middle lec-04 inter-medium-black-15px" data-id="1227:1429">LEC 04</div>
+          <div class="seng-438-1M8MMn valign-text-middle seng-438 inter-medium-black-16px" data-id="1227:1427">SENG 438
+          </div>
+        </div>
       </div>
     </div>
   </div>

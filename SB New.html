@@ -3021,9 +3021,24 @@
         </div>
         <div class="rectangle-273-GORMlr" data-id="1205:1204"></div>
         <div class="rectangle-274-GORMlr" data-id="1205:1205"></div>
-        <div class="save-schedule-to-favourites-GORMlr" data-id="1205:1206">
+        <div
+          class="save-schedule-to-favourites-GORMlr"
+          data-id="1205:1206"
+          onclick="sendMessage()"
+        >
           Save Schedule to Favourites
         </div>
+        <script>
+          function sendMessage() {
+            alert("Calendar saved to favorites");
+            console.log("Sending saveCalendar message");
+            document.addEventListener("DOMContentLoaded", function () {
+              console.log("Sending saveCalendar message on startup");
+              const channel = new BroadcastChannel("calendarChannel");
+              channel.postMessage("saveCalendar");
+            });
+          }
+        </script>
         <div class="view-favourites-GORMlr" data-id="1205:1211">
           View Favourites
         </div>
@@ -3171,7 +3186,7 @@
                   "seng-401-info-dropdown"
                 );
                 const seng471 = document.getElementById("seng-471-GORMlr");
-                
+
                 if (dropdown) {
                   dropdown.style.display = "none";
                   seng471.style.top = "337px";
@@ -3444,7 +3459,11 @@
             });
           </script>
         </div>
-        <div class="seng-438-GORMlr seng-438" id="seng-438-GORMlr" data-id="1213:1015">
+        <div
+          class="seng-438-GORMlr seng-438"
+          id="seng-438-GORMlr"
+          data-id="1213:1015"
+        >
           <div class="rectangle-181-CnnD9a" data-id="1205:1150"></div>
           <div class="rectangle-182-CnnD9a" data-id="1205:1151"></div>
           <p
