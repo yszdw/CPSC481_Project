@@ -3120,6 +3120,66 @@
             src="./svgs/arrow-drop-down-4.svg"
           />
           <div
+            id="seng-401-info-dropdown"
+            style="
+              display: none;
+              position: absolute;
+              z-index: 1000;
+              background: white;
+              border: 1px solid #ccc;
+            "
+          >
+            <iframe
+              id="seng-401-info-iframe"
+              src="./SENG401Info.html"
+              style="
+                border: none;
+                position: absolute;
+                top: 0px;
+                left: -10px;
+                z-index: 20;
+                width: 500px;
+                height: 500px;
+              "
+            ></iframe>
+          </div>
+          <script>
+            document
+              .querySelector(".arrow_drop_down-uAYIAl")
+              .addEventListener("click", function () {
+                const dropdown = document.getElementById(
+                  "seng-401-info-dropdown"
+                );
+                const seng471 = document.getElementById("seng-471-GORMlr");
+                const seng438 = document.getElementById("seng-438-GORMlr");
+                if (
+                  dropdown.style.display === "none" ||
+                  dropdown.style.display === ""
+                ) {
+                  dropdown.style.display = "block";
+                  seng471.style.top = "500px";
+                  seng438.style.top = "600px";
+                } else {
+                  dropdown.style.display = "none";
+                  seng471.style.top = "337px";
+                  seng438.style.top = "440px";
+                }
+              });
+            window.addEventListener("message", function (event) {
+              if (event.data === "minimize401") {
+                const dropdown = document.getElementById(
+                  "seng-401-info-dropdown"
+                );
+                const seng471 = document.getElementById("seng-471-GORMlr");
+                
+                if (dropdown) {
+                  dropdown.style.display = "none";
+                  seng471.style.top = "337px";
+                }
+              }
+            });
+          </script>
+          <div
             class="rectangle-241-uAYIAl rectangle-241"
             data-id="1205:1216"
           ></div>
@@ -3220,7 +3280,11 @@
             src="./pngs/image-3.png"
           />
         </div>
-        <div class="seng-471-GORMlr seng-471" data-id="1213:1012">
+        <div
+          class="seng-471-GORMlr seng-471"
+          id="seng-471-GORMlr"
+          data-id="1213:1012"
+        >
           <div class="rectangle-94-oRkC2Y" data-id="1205:1159"></div>
           <div class="rectangle-95-oRkC2Y" data-id="1205:1160"></div>
           <div
@@ -3380,7 +3444,7 @@
             });
           </script>
         </div>
-        <div class="seng-438-GORMlr seng-438" data-id="1213:1015">
+        <div class="seng-438-GORMlr seng-438" id="seng-438-GORMlr" data-id="1213:1015">
           <div class="rectangle-181-CnnD9a" data-id="1205:1150"></div>
           <div class="rectangle-182-CnnD9a" data-id="1205:1151"></div>
           <p
@@ -3487,7 +3551,9 @@
                   dropdown.style.display = "none";
                 }
 
-                const iframe = document.getElementById("actions-iframe-seng-438");
+                const iframe = document.getElementById(
+                  "actions-iframe-seng-438"
+                );
                 if (iframe) {
                   console.log("Sending message to actions.html");
                   iframe.contentWindow.postMessage("seng-438", "*");
@@ -3524,6 +3590,20 @@
                   document.querySelector(".seng-438-GORMlr");
                 if (seng438Element) {
                   seng438Element.style.display = "none";
+                  const seng438CalendarElement = document.querySelector(
+                    ".seng-438-calendar-GORMlr"
+                  );
+                  if (seng438CalendarElement) {
+                    seng438CalendarElement.style.display = "none";
+                  }
+                }
+              }
+            });
+            window.addEventListener("message", function (event) {
+              if (event.data === "minimize401") {
+                const seng438 = document.getElementById("seng-438-GORMlr");
+                if (seng438) {
+                  seng438.style.top = "440px";
                 }
               }
             });
