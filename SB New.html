@@ -1228,7 +1228,7 @@
         left: 0px;
         position: absolute;
         top: 0px;
-        width: 12px;
+        width: 20px;
       }
 
       .schedule-builder-adding-courses .rectangle-278-YLhxIx {
@@ -1237,7 +1237,7 @@
         left: 335px;
         position: absolute;
         top: 0px;
-        width: 12px;
+        width: 20px;
       }
 
       .schedule-builder-adding-courses .rectangle-275-YLhxIx {
@@ -2431,6 +2431,7 @@
       src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
     ></script>
   </head>
+
   <body
     data-gr-ext-installed=""
     data-new-gr-c-s-check-loaded="14.1210.0"
@@ -3044,12 +3045,77 @@
             console.log("Sending saveCalendar message");
             const channel = new BroadcastChannel("calendarChannel");
             channel.postMessage("saveCalendar");
+            document.querySelector(".s2").style.display = "block";
+            document.querySelector(".dropup-content").style.top = "900px";
             console.log("Message sent: saveCalendar");
           }
         </script>
-        <div class="view-favourites-GORMlr" data-id="1205:1211">
+        <div
+          class="view-favourites-GORMlr"
+          data-id="1205:1211"
+          onclick="toggleDropup()"
+        >
           View Favourites
         </div>
+        <div
+          id="favourites-dropup"
+          class="dropup-content"
+          style="display: none"
+        >
+          <div class="dropup-item s2" onclick="toggleDropupS2()" style="display: none">- Schedule 2</div>
+          <script>
+            function toggleDropupS2() {
+              document.querySelector(".seng-438-GORMlr").style.display = "block";
+              document.querySelector(".seng-438-calendar-GORMlr").style.display = "block";
+            }
+          </script>
+          <div class="dropup-item s1" onclick="toggleDropupS1()">- Schedule 1</div>
+          <script>
+            function toggleDropupS1() {
+              document.querySelector(".seng-438-GORMlr").style.display = "none";
+              document.querySelector(".seng-438-calendar-GORMlr").style.display = "none";
+            }
+          </script>
+        </div>
+        <style>
+          .dropup-content {
+            position: absolute;
+            bottom: 100%;
+            top: 940px;
+            left: 1330px;
+            background-color: red;
+            border: 1px solid #ccc;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 30;
+            width: 190px;
+          }
+
+          .dropup-item {
+            background-color: white;
+            padding: 10px;
+            width: 190px;
+            font-size: 30px;
+            cursor: pointer;
+          }
+
+          .dropup-item:hover {
+            background-color: #f0f0f0;
+          }
+        </style>
+        <script>
+          function toggleDropup() {
+            console.log("Toggling dropup");
+            const dropup = document.getElementById("favourites-dropup");
+            if (
+              dropup.style.display === "none" ||
+              dropup.style.display === ""
+            ) {
+              dropup.style.display = "block";
+            } else {
+              dropup.style.display = "none";
+            }
+          }
+        </script>
         <div class="filter-GORMlr filter" data-id="1213:1054">
           <div class="search-bar-ZNSQmE search-bar" data-id="1205:1057">
             <div
@@ -3388,9 +3454,9 @@
               });
 
             window.addEventListener("message", function (event) {
+              const actionsDropdown =
+                document.getElementById("actions-dropdown");
               if (event.data.action === "closeIframe") {
-                const actionsDropdown =
-                  document.getElementById("actions-dropdown");
                 if (actionsDropdown) {
                   actionsDropdown.style.display = "none";
                 }
@@ -3401,6 +3467,7 @@
                 );
                 courseCartElements.forEach((element) => {
                   element.style.display = "none";
+                  actionsDropdown.style.display = "none";
                 });
 
                 // Show elements
@@ -3623,6 +3690,18 @@
                   if (seng438CalendarElement) {
                     seng438CalendarElement.style.display = "none";
                   }
+                  const elementsToHide = document.querySelectorAll(
+                    ".rectangle-241-uAYIAlseng-438, .enrolled-uAYIAlseng-438"
+                  );
+                  elementsToHide.forEach((element) => {
+                    element.style.display = "none";
+                  });
+                  const elementsToShow = document.querySelectorAll(
+                    ".rectangle-241-CnnD9a, .course-cart-CnnD9a"
+                  );
+                  elementsToShow.forEach((element) => {
+                    element.style.display = "block";
+                  });
                 }
               }
             });
@@ -3639,7 +3718,7 @@
             alt="image 3"
             class="image-3-CnnD9a image-3"
             data-id="1205:1209"
-            src="./pngs/image-3.png"
+            src="./pngs/image.png"
           />
         </div>
         <script>
@@ -3706,12 +3785,18 @@
 
                   // Add click event listener
                   seng438Element.addEventListener("click", function () {
-                    seng438Element.style.display = "block";
-                    seng438Element.style.top = "440px";
-                    document.querySelector(".seng-401-GORMlr").style.display =
-                      "block";
-                    document.querySelector(".seng-471-GORMlr").style.display =
-                      "block";
+                    if (seng438Element.style.top === "240px") {
+                      seng438Element.style.display = "block";
+                      seng438Element.style.top = "440px";
+                      document.querySelector(".seng-401-GORMlr").style.display =
+                        "block";
+                      document.querySelector(".seng-471-GORMlr").style.display =
+                        "block";
+                      document.querySelector(
+                        ".seng-438-calendar-GORMlr"
+                      ).style.display = "block";
+                    }
+
                     searchInput.value = "";
                   });
                 } else {

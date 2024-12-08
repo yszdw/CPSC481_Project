@@ -1853,6 +1853,7 @@
         left: 8px;
         top: 63px;
         width: 185px;
+        display: none;
       }
 
       .course-registration-sam .rectangle-176-0EbEf4 {
@@ -1898,6 +1899,7 @@
         left: 10px;
         top: 129px;
         width: 185px;
+        display: none;
       }
 
       .course-registration-sam .rectangle-176-0HYVPq {
@@ -3937,12 +3939,12 @@
             </div>
           </div>
         </div>
-        <div class="group-25-58UxVq group-25" data-id="1227:1167">
+        <!-- <div class="group-25-58UxVq group-25" data-id="1227:1167">
           <div class="rectangle-114" data-id="1227:1168"></div>
           <div class="save-schedule-to-favourites-xBfshP" data-id="1227:1169">
             Save Schedule to Favourites
           </div>
-        </div>
+        </div> -->
         <div class="semester-dropdown-58UxVq" data-id="1227:1170">
           <div class="rectangle-6-HpdVtj" data-id="I1227:1170;5:370"></div>
           <div
@@ -4275,7 +4277,7 @@
         >
           Week of February 1-7
         </div>
-        <div class="group-26-58UxVq" data-id="1227:1259">
+        <!-- <div class="group-26-58UxVq" data-id="1227:1259">
           <div class="rectangle-114" data-id="1227:1260"></div>
           <div
             class="view-favourites-xBkuHV inter-light-black-24px"
@@ -4283,15 +4285,20 @@
           >
             View Favourites
           </div>
-        </div>
+        </div> -->
         <div class="group-27-58UxVq" data-id="1227:1262">
           <div class="rectangle-114" data-id="1227:1263"></div>
-          <div
-            class="need-help-bZDMXP inter-light-black-24px"
-            data-id="1227:1264"
+          <a
+            href="https://www.ucalgary.ca/registrar/registration/how-register"
+            target="_blank"
           >
-            Need Help?
-          </div>
+            <div
+              class="need-help-bZDMXP inter-light-black-24px"
+              data-id="1227:1264"
+            >
+              Need Help?
+            </div>
+          </a>
         </div>
         <div class="group-87-58UxVq" data-id="1227:1444">
           <div class="phones-Gvy1eN phones" data-id="1227:1192">
@@ -4774,6 +4781,10 @@
                   document.querySelector(
                     ".week-of-february-1-14-58UxVq"
                   ).textContent = "Week of February 1-14";
+                  document.querySelector(".group-12-Grwhyp").style.display =
+                    "block";
+                  document.querySelector(".group-13-Grwhyp").style.display =
+                    "block";
                 }
               });
             </script>
