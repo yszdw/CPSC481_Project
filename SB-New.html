@@ -2453,6 +2453,7 @@
           class="back-icon-GORMlr"
           data-id="1205:1055"
           src="./svgs/back-icon-1.svg"
+          onClick="changeSemester('back')"
         />
         <div class="search-bar-GORMlr search-bar" data-id="1205:1058">
           <div
@@ -2469,8 +2470,9 @@
           class="next-icon-GORMlr"
           data-id="1205:1061"
           src="./svgs/next-icon-1.svg"
+          onClick="changeSemester('next')"
         />
-        <h1 class="title-GORMlr" data-id="1205:1063">Fall 2024</h1>
+        <h1 class="title-GORMlr" data-id="1205:1063" id="semester-title">Fall 2024</h1>
         <div
           class="febuary-01-GORMlr valign-text-middle inter-normal-dove-gray-16px"
           data-id="1205:1067"
@@ -2814,7 +2816,7 @@
           <div class="rectangle-275-YLhxIx" data-id="1205:1302"></div>
           <div class="rectangle-277-YLhxIx" data-id="1205:1311"></div>
           <div
-            class="seng-438-YLhxIx valign-text-middle seng-438 inter-medium-black-16px"
+            class="course seng-438-YLhxIx valign-text-middle seng-438 inter-medium-black-16px"
             data-id="1205:1306"
           >
             SENG 438
@@ -2838,7 +2840,7 @@
             LEC 04
           </div>
         </div>
-        <div class="seng-471-calendar-GORMlr" data-id="1213:1050">
+        <div class="seng-471-calendar-GORMlr course" data-id="1213:1050">
           <div class="rectangle-267-atxfFH" data-id="1205:1127"></div>
           <div class="rectangle-268-atxfFH" data-id="1205:1128"></div>
           <div class="rectangle-269-atxfFH" data-id="1205:1129"></div>
@@ -2936,6 +2938,52 @@
           ></iframe>
         </div>
         <script>
+          function changeSemester(direction) {
+              const semesterTitle = document.getElementById('semester-title');
+              const currentSemester = semesterTitle.innerText;
+              const newSemester = currentSemester === 'Fall 2024' ? 'Winter 2024' : 'Fall 2024';
+      
+              const userChoice = confirm("You are about to change the semester from " + currentSemester + " to " + newSemester + ". Click OK to continue or Cancel to undo.");
+      
+              if (userChoice) {
+                  if (direction === 'back') {
+                      semesterTitle.innerText = newSemester;
+                  } else if (direction === 'next') {
+                      semesterTitle.innerText = newSemester;
+                  }
+              } else {
+                  alert("Semester change cancelled.");
+              }
+          }
+      </script>
+      
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              // Function to check the semester and hide or show course elements
+              function checkAndToggleCourses() {
+                  const semesterTitle = document.getElementById('semester-title').textContent;
+                  const courses = document.querySelectorAll('.course');
+                  if (semesterTitle.includes('Winter 2024')) {
+                      courses.forEach(course => course.style.display = 'none');
+                  } else if (semesterTitle.includes('Fall 2024')) {
+                      courses.forEach(course => course.style.display = '');
+                  }
+              }
+  
+              // Event listener for semester change buttons
+              document.querySelectorAll('[onClick^="changeSemester"]').forEach(button => {
+                  button.addEventListener('click', function () {
+                      // Timeout to wait for the semester title update
+                      setTimeout(checkAndToggleCourses, 100);
+                  });
+              });
+  
+              // Initial check on page load
+              checkAndToggleCourses();
+          });
+      </script>
+  
+        <script>
           document
             .querySelector(".calendar-odWrLE")
             .addEventListener("click", function () {
@@ -2975,7 +3023,32 @@
             }
           });
         </script>
-        <div class="seng-401-calendar-GORMlr" data-id="1213:1053">
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+
+            function toggleSENGElements() {
+              var semesterTitle = document.getElementById('semester-title').textContent;
+              var sengElements = document.querySelectorAll('[class*="SENG"], [id*="SENG"]');
+              if (semesterTitle.includes('Winter 2024')) {
+                sengElements.forEach(function(elem) {
+                  elem.style.display = 'none';
+                });
+              } else if (semesterTitle.includes('Fall 2024')) {
+                sengElements.forEach(function(elem) {
+                  elem.style.display = '';
+                });
+              }
+            }
+          
+            document.querySelectorAll('[onClick^="changeSemester"]').forEach(button => {
+              button.addEventListener('click', function() {
+                setTimeout(toggleSENGElements, 100); 
+              });
+            });
+          });
+          </script>
+          
+        <div class="seng-401-calendar-GORMlr course" data-id="1213:1053">
           <div class="rectangle-202-TvivMN" data-id="1205:1123"></div>
           <div class="rectangle-175-TvivMN" data-id="1205:1124"></div>
           <div class="rectangle-177-TvivMN" data-id="1205:1125"></div>
@@ -3130,12 +3203,7 @@
             Enrolled
           </div>
         </div>
-        <img
-          alt="light_mode"
-          class="light_mode-GORMlr light_mode"
-          data-id="1205:1230"
-          src="./svgs/light-mode-2.svg"
-        />
+  
         <img
           alt="Clock"
           class="clock-GORMlr clock"
@@ -3189,18 +3257,7 @@
           >
             Opens pop-up menu with options to add, drop or swap selected course
           </p>
-          <img
-            alt="light_mode"
-            class="light_mode-32WEmz light_mode"
-            data-id="1205:1202"
-            src="./svgs/light-mode.svg"
-          />
-          <p
-            class="switches-colour-sche-32WEmz inter-light-black-10px"
-            data-id="1205:1203"
-          >
-            Switches colour scheme from light to dark mode
-          </p>
+          
           <img
             alt="call_to_action_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 4"
             class="call_to_action_24dp_-32WEmz call_to_action_24dp_"
@@ -3380,7 +3437,7 @@
             });
           </script>
         </div>
-        <div class="seng-438-GORMlr seng-438" data-id="1213:1015">
+        <div class="seng-438-GORMlr seng-438 course" data-id="1213:1015">
           <div class="rectangle-181-CnnD9a" data-id="1205:1150"></div>
           <div class="rectangle-182-CnnD9a" data-id="1205:1151"></div>
           <p
@@ -3626,7 +3683,7 @@
                 }
               });
           </script>
-          <div class="search-bar-xuax3B search-bar" data-id="1205:1233">
+          <div class="search-bar-xuax3B search-bar" data-="1205:1233">
             <div
               class="rectangle-2-TsxNgA rectangle-2"
               data-id="I1205:1233;4:6"
