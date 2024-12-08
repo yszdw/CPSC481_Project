@@ -3047,8 +3047,8 @@
             if (
               document.querySelector(".seng-438-GORMlr").style.display ===
                 "block" &&
-              document.querySelector(".rectangle-241-uAYIAlseng-438").style.display ===
-                "block"
+              document.querySelector(".rectangle-241-uAYIAlseng-438").style
+                .display === "block"
             ) {
               channel.postMessage("show438");
               console.log("show438 message sent");
@@ -3160,7 +3160,68 @@
             class="filter-sb6kqJ filter"
             data-id="1205:1212"
             src="./svgs/filter-1.svg"
+            onclick="toggleFilter()"
           />
+          <div id="filter-dropdown" style="display: none; position: absolute">
+            <iframe
+              id="filter-iframe"
+              src="./filter.html"
+              style="
+                border: none;
+                position: absolute;
+                top: 40px;
+                left: 50px;
+                z-index: 20;
+                width: 430px;
+                height: 800px;
+              "
+            ></iframe>
+            <script>
+              function toggleFilter() {
+                const dropdown = document.getElementById("filter-dropdown");
+                if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                  dropdown.style.display = "block";
+                } else {
+                  dropdown.style.display = "none";
+                }
+              }
+              window.addEventListener("message", function (event) {
+                console.log(event.data);
+                if (event.data === "filterClicked") {
+                  const seng438Element =
+                    document.querySelector(".seng-438-GORMlr");
+                    const dropdown = document.getElementById("filter-dropdown");
+                  seng438Element.style.display = "block";
+                  seng438Element.style.top = "240px";
+                  dropdown.style.display = "none";
+                  const seng401Element = document.querySelector(".seng-401-GORMlr");
+                  seng401Element.style.display = "none";
+                  const seng471Element = document.querySelector(".seng-471-GORMlr");
+                  seng471Element.style.display = "none";
+                  seng438Element.addEventListener("click", function () {
+                    if (seng438Element.style.top === "240px") {
+                      seng438Element.style.display = "block";
+                      seng438Element.style.top = "440px";
+                      document.querySelector(".seng-401-GORMlr").style.display =
+                        "block";
+                      document.querySelector(".seng-471-GORMlr").style.display =
+                        "block";
+                      document.querySelector(
+                        ".seng-438-calendar-GORMlr"
+                      ).style.display = "block";
+                    }
+                  });
+                }
+                if (event.data === "filterClickedCS") {
+                  const seng401Element = document.querySelector(".seng-401-GORMlr");
+                  seng401Element.style.display = "none";
+                  const seng471Element = document.querySelector(".seng-471-GORMlr");
+                  seng471Element.style.display = "none";
+                  alert("No results found");
+                }
+              });
+            </script>
+          </div>
         </div>
         <div class="seng-401-GORMlr seng-401" data-id="1213:1046">
           <div class="rectangle-96-uAYIAl" data-id="1205:1178"></div>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Filter Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: white;
+      }
+
+      form {
+        border: 1px solid #ccc;
+        padding: 20px;
+        max-width: 300px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      select,
+      input[type="number"] {
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+
+      .course-number-group,
+      .mode-buttons,
+      .time-range,
+      .days-checkboxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .course-number-group select {
+        width: auto;
+      }
+
+      .mode-buttons label,
+      .days-checkboxes label {
+        font-weight: normal;
+      }
+
+      .time-range > span {
+        margin: 0 5px;
+      }
+
+      button[type="submit"] {
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="course-filter-form">
+      <div class="form-group">
+        <label for="requirementType">Requirement Type</label>
+        <select id="requirementType" name="requirementType">
+          <option value="general" selected>general</option>
+          <!-- Add other requirement types as needed -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="faculty">Faculty</label>
+        <select id="faculty" name="faculty">
+          <option value="science" selected>science</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="major">Major</label>
+        <select id="major" name="major">
+          <option value="computer-science" selected>Computer Science</option>
+          <option value="software-engineering">Software Engineering</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Course Number</label>
+        <div class="course-number-group">
+          <select id="courseNumberOperator" name="courseNumberOperator">
+            <option value=">=" selected>≥</option>
+            <option value="<=">≤</option>
+          </select>
+          <input
+            type="number"
+            id="courseNumber"
+            name="courseNumber"
+            value="400"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Mode</label>
+        <div class="mode-buttons">
+          <label
+            ><input type="radio" name="mode" value="on-campus" checked />
+            On-Campus</label
+          >
+          <label
+            ><input type="radio" name="mode" value="online" /> Online</label
+          >
+          <label
+            ><input type="checkbox" name="disableMode" value="true" />
+            disable</label
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Starting to Ending</label>
+        <div class="time-range">
+          <select id="startTime" name="startTime">
+            <option value="">Select Start</option>
+            <option value="08:00">8:00 AM</option>
+            <option value="09:00">9:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+          </select>
+          <span>to</span>
+          <select id="endTime" name="endTime">
+            <option value="">Select End</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="13:00">1:00 PM</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group days-checkboxes">
+        <label>Days</label>
+        <label
+          ><input type="checkbox" name="days" value="monday" /> Monday</label
+        >
+        <label
+          ><input type="checkbox" name="days" value="tuesday" /> Tuesday</label
+        >
+        <label
+          ><input type="checkbox" name="days" value="wednesday" />
+          Wednesday</label
+        >
+        <label
+          ><input type="checkbox" name="days" value="thursday" />
+          Thursday</label
+        >
+        <label
+          ><input type="checkbox" name="days" value="friday" /> Friday</label
+        >
+      </div>
+
+      <button type="submit">Search</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("course-filter-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const requirementType =
+            document.getElementById("requirementType").value;
+          const faculty = document.getElementById("faculty").value;
+          const major = document.getElementById("major").value;
+          const courseNumberOperator = document.getElementById(
+            "courseNumberOperator"
+          ).value;
+          const courseNumber = document.getElementById("courseNumber").value;
+
+          let mode = "";
+          const modeRadios = document.querySelectorAll('input[name="mode"]');
+          modeRadios.forEach((radio) => {
+            if (radio.checked) mode = radio.value;
+          });
+
+          const disableMode = document.querySelector(
+            'input[name="disableMode"]'
+          ).checked;
+
+          const startTime = document.getElementById("startTime").value;
+          const endTime = document.getElementById("endTime").value;
+
+          const days = Array.from(
+            document.querySelectorAll('input[name="days"]:checked')
+          ).map((checkbox) => checkbox.value);
+          console.log("filterClicked");
+          if (major === "software-engineering") {
+            window.parent.postMessage("filterClicked", "*");
+          } else if (major === "computer-science") {
+            window.parent.postMessage("filterClickedCS", "*");
+          }
+        });
+    </script>
+  </body>
+</html>
