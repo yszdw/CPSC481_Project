@@ -3465,11 +3465,19 @@
                   group87Element.style.display = "none";
                   group88Element.style.display = "none";
                   group75Element.style.top = "450px";
+
+                } else if (this.value.toLowerCase().includes("s")) {
+                  group75Element.style.display = "none";
                 } else {
-                  groupElement.style.display = "block";
-                  group87Element.style.display = "block";
-                  group88Element.style.display = "block";
+                  group75Element.style.display = "block";
                   group75Element.style.top = "618px";
+                  groupElement.style.display = "block";
+                  if (document.querySelector(".group-82-g4ihxc").style.display === "block") {
+                    group87Element.style.display = "block";
+                  }
+                  if (document.querySelector(".seng-438-calendar-58UxVq").style.display === "block") {
+                    group88Element.style.display = "block";
+                  }
                 }
               });
           </script>
@@ -4755,7 +4763,7 @@
               const channel = new BroadcastChannel("calendarChannel");
               channel.addEventListener("message", (event) => {
                 console.log("Message received:", event.data);
-                if (event.data === "saveCalendar") {
+                if (event.data === "show438") {
                   console.log("Save Calendar message received");
                   document.querySelector(
                     ".rectangle-179-g4ihxc"
@@ -4785,6 +4793,14 @@
                     "block";
                   document.querySelector(".group-13-Grwhyp").style.display =
                     "block";
+                }
+                if (event.data === "hide438") {
+                  document.querySelector(".group-87-58UxVq").style.display = "block";
+                  document.querySelector(".group-88-58UxVq").style.display = "block";
+                  document.querySelector(".group-82-g4ihxc").style.display = "block";
+                  document.querySelector(".group-12-Grwhyp").style.display = "block";
+                  document.querySelector(".group-75-58UxVq").style.top =
+                    "568px";
                 }
               });
             </script>

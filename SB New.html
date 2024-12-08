@@ -3044,10 +3044,23 @@
             alert("Calendar saved to favorites");
             console.log("Sending saveCalendar message");
             const channel = new BroadcastChannel("calendarChannel");
-            channel.postMessage("saveCalendar");
-            document.querySelector(".s2").style.display = "block";
-            document.querySelector(".dropup-content").style.top = "900px";
-            console.log("Message sent: saveCalendar");
+            if (
+              document.querySelector(".seng-438-GORMlr").style.display ===
+                "block" &&
+              document.querySelector(".rectangle-241-uAYIAlseng-438").style.display ===
+                "block"
+            ) {
+              channel.postMessage("show438");
+              console.log("show438 message sent");
+              document.querySelector(".s2").style.display = "block";
+              document.querySelector(".dropup-content").style.top = "900px";
+            } else if (
+              document.querySelector(".rectangle-241-uAYIAls ").style
+                .display === "block"
+            ) {
+              channel.postMessage("hide438");
+              console.log("hide438 message sent");
+            }
           }
         </script>
         <div
@@ -3062,18 +3075,31 @@
           class="dropup-content"
           style="display: none"
         >
-          <div class="dropup-item s2" onclick="toggleDropupS2()" style="display: none">- Schedule 2</div>
+          <div
+            class="dropup-item s2"
+            onclick="toggleDropupS2()"
+            style="display: none"
+          >
+            - Schedule 2
+          </div>
           <script>
             function toggleDropupS2() {
-              document.querySelector(".seng-438-GORMlr").style.display = "block";
-              document.querySelector(".seng-438-calendar-GORMlr").style.display = "block";
+              document.querySelector(".seng-438-GORMlr").style.display =
+                "block";
+              document.querySelector(
+                ".seng-438-calendar-GORMlr"
+              ).style.display = "block";
             }
           </script>
-          <div class="dropup-item s1" onclick="toggleDropupS1()">- Schedule 1</div>
+          <div class="dropup-item s1" onclick="toggleDropupS1()">
+            - Schedule 1
+          </div>
           <script>
             function toggleDropupS1() {
               document.querySelector(".seng-438-GORMlr").style.display = "none";
-              document.querySelector(".seng-438-calendar-GORMlr").style.display = "none";
+              document.querySelector(
+                ".seng-438-calendar-GORMlr"
+              ).style.display = "none";
             }
           </script>
         </div>
