@@ -2179,6 +2179,41 @@
           data-id="1205:1061"
           src="./svgs/next-icon-1.svg"
         />
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const nextIcon = document.querySelector('.next-icon-GORMlr');
+        
+            nextIcon.addEventListener('click', function(event) {
+              const userConfirmed = confirm('Are you sure you want to change schedule? All changes will be lost.');
+              if (!userConfirmed) {
+                event.preventDefault();
+              }
+              document.querySelector('.seng-401-GORMlr').style.display = 'none';
+              document.querySelector('.seng-471-GORMlr').style.display = 'none';
+              document.querySelector('.seng-438-GORMlr').style.display = 'none';
+              document.querySelector('.seng-401-calendar-GORMlr').style.display = 'none';
+              document.querySelector('.seng-471-calendar-GORMlr').style.display = 'none';
+              document.querySelector('.seng-438-calendar-GORMlr').style.display = 'none';
+            document.querySelector('.title-GORMlr').textContent = 'Winter 2025';
+            });
+          });
+
+          document.addEventListener('DOMContentLoaded', function() {
+            const nextIcon = document.querySelector('.back-icon-GORMlr');
+        
+            nextIcon.addEventListener('click', function(event) {
+              const userConfirmed = confirm('Are you sure you want to change schedule? All changes will be lost.');
+              if (!userConfirmed) {
+                event.preventDefault();
+              }
+              document.querySelector('.seng-401-GORMlr').style.display = 'block';
+              document.querySelector('.seng-471-GORMlr').style.display = 'block';
+              document.querySelector('.seng-401-calendar-GORMlr').style.display = 'block';
+              document.querySelector('.seng-471-calendar-GORMlr').style.display = 'block';
+            document.querySelector('.title-GORMlr').textContent = 'Fall 2024';
+            });
+          });
+        </script>
         <h1 class="title-GORMlr" data-id="1205:1063">Fall 2024</h1>
         <div
           class="febuary-01-GORMlr valign-text-middle inter-normal-dove-gray-16px"
@@ -3303,7 +3338,6 @@
                   actionsDropdown.style.display = "none";
                 });
 
-                // Show elements
                 const elementsToShow = document.querySelectorAll(
                   ".rectangle-241-uAYIAls, .enrolled-uAYIAls"
                 );
@@ -3504,7 +3538,6 @@
                   element.style.display = "none";
                 });
 
-                // Show elements
                 const elementsToShow = document.querySelectorAll(
                   ".rectangle-241-uAYIAlseng-438, .enrolled-uAYIAlseng-438"
                 );
@@ -3619,7 +3652,6 @@
                   seng438Element.style.display = "block";
                   seng438Element.style.top = "240px";
 
-                  // Add click event listener
                   seng438Element.addEventListener("click", function () {
                     if (seng438Element.style.top === "240px") {
                       seng438Element.style.display = "block";

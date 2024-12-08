@@ -3467,8 +3467,34 @@
             class="winter-2023-HpdVtj valign-text-middle"
             data-id="I1227:1170;5:371"
           >
-            Fall 2024
           </div>
+          <select
+            class="semester-select"
+            data-id="I1227:1170;5:373"
+            style="
+              z-index: 1000;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border: none;
+              background-color: transparent;
+              font-size: 20px;
+            "
+          >
+            <option value="fall-2024">Fall 2024</option>
+            <option value="winter-2025">Winter 2025</option>
+          </select>
+          <script>
+          document.querySelector('select.semester-select').addEventListener('change', function() {
+            if (this.value === 'winter-2025') {
+              document.querySelector('.group-81-g4ihxc').style.display = 'none';
+            } else {
+              document.querySelector('.group-81-g4ihxc').style.display = 'block';
+            }
+          });
+          </script>
           <img
             alt="Vector"
             class="vector-HpdVtj vector"
