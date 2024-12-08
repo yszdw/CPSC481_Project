@@ -2690,6 +2690,47 @@
           <div class="rectangle-177-TvivMN" data-id="1205:1125"></div>
           <div class="rectangle-176-TvivMN" data-id="1205:1126"></div>
           <div class="rectangle-180-TvivMN" data-id="1205:1189"></div>
+          <div
+            class="alert-message"
+            style="
+              position: absolute;
+              left: 675px;
+              top: 404px;
+              background-color: #f8d7da;
+              color: #721c24;
+              padding: 5px;
+              border-radius: 3px;
+              border: 1px solid #f5c6cb;
+              width: 165px;
+              height: 110px;
+              font-size: 25px;
+            "
+          >
+            ⚠This period reoccurs biweekly
+          </div>
+          <script>
+            function toggleAlertMessage() {
+              const rectangle180 = document.querySelector(
+                ".rectangle-180-TvivMN"
+              );
+              const alertMessage = document.querySelector(".alert-message");
+
+              if (rectangle180.style.display === "block") {
+                alertMessage.style.display = "block";
+              } else {
+                alertMessage.style.display = "none";
+              }
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+              toggleAlertMessage();
+              window.addEventListener("message", function (event) {
+                if (event.data === "14" || event.data === "7") {
+                  toggleAlertMessage();
+                }
+              });
+            });
+          </script>
           <div class="rectangle-179-TvivMN" data-id="1205:1190"></div>
           <div
             class="seng-401-TvivMN valign-text-middle seng-401 inter-medium-black-16px"
@@ -2877,7 +2918,10 @@
             <script>
               function toggleFilter() {
                 const dropdown = document.getElementById("filter-dropdown");
-                if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                if (
+                  dropdown.style.display === "none" ||
+                  dropdown.style.display === ""
+                ) {
                   dropdown.style.display = "block";
                 } else {
                   dropdown.style.display = "none";
@@ -2888,13 +2932,15 @@
                 if (event.data === "filterClicked") {
                   const seng438Element =
                     document.querySelector(".seng-438-GORMlr");
-                    const dropdown = document.getElementById("filter-dropdown");
+                  const dropdown = document.getElementById("filter-dropdown");
                   seng438Element.style.display = "block";
                   seng438Element.style.top = "240px";
                   dropdown.style.display = "none";
-                  const seng401Element = document.querySelector(".seng-401-GORMlr");
+                  const seng401Element =
+                    document.querySelector(".seng-401-GORMlr");
                   seng401Element.style.display = "none";
-                  const seng471Element = document.querySelector(".seng-471-GORMlr");
+                  const seng471Element =
+                    document.querySelector(".seng-471-GORMlr");
                   seng471Element.style.display = "none";
                   seng438Element.addEventListener("click", function () {
                     if (seng438Element.style.top === "240px") {
@@ -2911,9 +2957,11 @@
                   });
                 }
                 if (event.data === "filterClickedCS") {
-                  const seng401Element = document.querySelector(".seng-401-GORMlr");
+                  const seng401Element =
+                    document.querySelector(".seng-401-GORMlr");
                   seng401Element.style.display = "none";
-                  const seng471Element = document.querySelector(".seng-471-GORMlr");
+                  const seng471Element =
+                    document.querySelector(".seng-471-GORMlr");
                   seng471Element.style.display = "none";
                   alert("No results found");
                 }
@@ -3562,6 +3610,9 @@
               .querySelector(".search-input")
               .addEventListener("keyup", function () {
                 const searchInput = this;
+                if (event.key === 'Enter' && !searchInput.value.toLowerCase().includes("sen")) {
+                  alert("No results found for your search.");
+                }
                 if (searchInput.value.toLowerCase().includes("sen")) {
                   const seng438Element =
                     document.querySelector(".seng-438-GORMlr");
