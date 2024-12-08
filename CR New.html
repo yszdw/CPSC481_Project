@@ -4248,9 +4248,16 @@
           <div
             class="save-schedule-as-pdf-Hhto71 inter-light-black-24px"
             data-id="1227:1255"
+            onclick="openPDF()"
           >
             Save Schedule As PDF
           </div>
+          <script>
+            function openPDF() {
+              const filePath = "./schedule.pdf";
+              window.open(filePath, "_blank");
+            }
+          </script>
         </div>
         <p class="note-this-page-is-vi-58UxVq" data-id="1227:1256">
           Note: This page is VIEW-ONLY. To perform course actions, please enter

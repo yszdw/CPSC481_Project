@@ -2461,9 +2461,19 @@
           ></div>
         </div>
         <div class="rectangle-114-GORMlr" data-id="1205:1059"></div>
-        <div class="save-schedule-as-pdf-GORMlr" data-id="1205:1060">
+        <div
+          class="save-schedule-as-pdf-GORMlr"
+          data-id="1205:1060"
+          onclick="openPDF()"
+        >
           Save Schedule As PDF
         </div>
+        <script>
+          function openPDF() {
+            const filePath = "./schedule.pdf";
+            window.open(filePath, "_blank");
+          }
+        </script>
         <img
           alt="next-icon"
           class="next-icon-GORMlr"
@@ -3036,7 +3046,7 @@
             channel.postMessage("saveCalendar");
             console.log("Message sent: saveCalendar");
           }
-        </script>        
+        </script>
         <div class="view-favourites-GORMlr" data-id="1205:1211">
           View Favourites
         </div>
